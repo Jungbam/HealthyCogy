@@ -5,28 +5,41 @@ import Slider from '../Slide/Slider'
 import YouCon from '../Youtoube/YouCon/YouCon'
 
 import './Intro.css'
+
 const Intro = (props) => {
+  const [isTip, setIsTip] = useState(false)
+  const plusBoxHandler = () => {
+    console.log('hi')
+    setIsTip(true)
+  }
   const seo = 'https://www.tving.com/onboarding'
   const seo2 = './Img/rec.png'
+  const sliderHandler = () => {
+    setIsTip(false)
+  }
+
   const [mainPage, setPage] = useState(
     <main>
       <div id="backgroundImg">
         <div className="background-Img"></div>
       </div>
 
-      <ul className="chucheon-container">
+      <ul className="content-container">
         <div>
-          <h1>다이어트 동기부여</h1>
+          <h2>"맞춤 다이어트 플랫폼"</h2>
+          <p>
+            개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
+            플랫폼을 통해 ..{' '}
+          </p>
           <div className="chucheon-container">
             <Chucheon pageNum={seo} imgSet={seo2} />
             <Chucheon pageNum={seo} imgSet={seo2} />
           </div>
         </div>
-        <Slider />
       </ul>
       <div>
         <div id="section3">
-          <span>다이어트에 대한 정보/꿀팁</span>
+          <h2>다이어트에 대한 정보/꿀팁</h2>
           <YouCon />
         </div>
       </div>
@@ -39,7 +52,18 @@ const Intro = (props) => {
   return (
     <div>
       <HeadeLine changePage={changePageHandler} />
-      <main>{mainPage}</main>
+      <main>
+        {mainPage}
+        <div className="fixedContent">
+          {isTip ? (
+            <Slider onCLickFn={sliderHandler} />
+          ) : (
+            <div className="plusBox" onClick={plusBoxHandler}>
+              꿀팁+
+            </div>
+          )}
+        </div>
+      </main>
     </div>
   )
 }

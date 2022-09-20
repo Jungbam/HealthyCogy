@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Slide from './Slide'
 
-const TOTAL_SLIDES = 2 // 전체 슬라이드 개수(총3개. 배열로 계산)
+const TOTAL_SLIDES = 2 // 전체 슬라이드 개수(총3개. 배열로 계산)
 
-export default function Slider() {
+export default function Slider(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideRef = useRef(null)
   const img = './Img/rec.png'
@@ -39,6 +39,7 @@ export default function Slider() {
       <Text>
         <h1>다이어트 꿀팁</h1>
       </Text>
+
       <SliderContainer ref={slideRef}>
         <Slide img={img} />
         <Slide img={img} />
@@ -47,6 +48,7 @@ export default function Slider() {
       <Center>
         <Button onClick={PrevSlide}>Prev</Button>
         <Button onClick={NextSlide}>Next</Button>
+        <Button onClick={props.onCLickFn}>닫기</Button>
       </Center>
     </Container>
   )
