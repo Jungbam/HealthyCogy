@@ -1,6 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.main-container {
+  height: 800px;
+}
+.enterContainer {
+  padding: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.main_title {
+  margin: 1.5rem;
+}
+.imgContent {
+  padding: 0;
+  overflow: hidden;
+  margin: 2rem;
+}
+.imgContent img {
+  object-fit: cover;
+}
 .img {
   width: 80%;
   border-radius: 20%;
   border: 1px solid black;
   box-shadow: 2px 2px 1px #ccc;
+  margin: 2rem;
 }
