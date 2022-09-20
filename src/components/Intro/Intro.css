@@ -27,6 +27,7 @@
   position: absolute;
   top: 10rem;
   right: 1rem;
+  z-index: 100;
 }
 .plusBox {
   width: 3rem;
