@@ -4,6 +4,10 @@ import './HeadeLine.css'
 import HeadeLineList from './HeadLineList/HeadLineList'
 
 const HeadeLine = (props) => {
+  const onClickedBMIHandler = (e) => {
+    const BMIPage = <p>This is BMIPage</p>
+    props.changePage(BMIPage)
+  } //BMI 계산기 페이지 추가
   const onClickedAboutHandler = (e) => {
     const AboutPage = <p>This is about</p>
     props.changePage(AboutPage)
@@ -29,7 +33,7 @@ const HeadeLine = (props) => {
       </div>
       <nav>
         <ul>
-          <HeadeLineList listname="About" onClicked={onClickedAboutHandler} />
+          <HeadeLineList listname="BMI계산기" onClicked={onClickedBMIHandler} />
           <HeadeLineList
             listname="식단 추천"
             onClicked={onClickedFoodHandler}
@@ -39,6 +43,7 @@ const HeadeLine = (props) => {
             listname="My Storage"
             onClicked={onClickedMyPageHandler}
           />
+          <HeadeLineList listname="LOGIN" />
         </ul>
       </nav>
     </div>
