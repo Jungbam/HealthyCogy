@@ -39,7 +39,6 @@ const HeadeLine = (props) => {
             listname="식단 추천"
             onClicked={onClickedFoodHandler}
           />
-          <HeadeLineList listname="운동 추천" onClicked={onClickedExHandler} />
           <HeadeLineList
             listname="My Storage"
             onClicked={onClickedMyPageHandler}
