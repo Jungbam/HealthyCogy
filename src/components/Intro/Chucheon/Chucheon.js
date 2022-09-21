@@ -7,7 +7,7 @@ const Chucheon = (props) => {
       <a href={props.pageNum}>
         <img src={props.imgSet} />
       </a>
-      <p className="text">추천메시지</p>
+      <p className="text">{props.text}</p>
     </div>
   )
 }

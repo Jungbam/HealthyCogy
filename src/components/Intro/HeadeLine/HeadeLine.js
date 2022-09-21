@@ -1,11 +1,12 @@
 import React from 'react'
 import Food from '../../Food/Food'
+import BMI from '../../BMI/BMI'
 import './HeadeLine.css'
 import HeadeLineList from './HeadLineList/HeadLineList'
 
 const HeadeLine = (props) => {
   const onClickedBMIHandler = (e) => {
-    const BMIPage = <p>This is BMIPage</p>
+    const BMIPage = <BMI />
     props.changePage(BMIPage)
   } //BMI 계산기 페이지 추가
   const onClickedAboutHandler = (e) => {

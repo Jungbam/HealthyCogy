@@ -1,0 +1,12 @@
+.BMIpage{
+    padding-top: 150px;
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+.cal{
+    border: 1px solid black;
+    width: 500px;
+    height: 600px;
+    display: inline-block;
+}
