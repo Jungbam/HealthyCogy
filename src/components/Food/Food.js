@@ -58,7 +58,7 @@ const Food = (props) => {
   }
   return (
     <div className="main-container">
-      <div>
+      <div className='dd'>
         <h1 className="main_title">연예인 다이어트 식단</h1>
         <label htmlFor="food-num">식사 횟수 선택 </label>
         <select id="food-num" onChange={onChangeHandler}>

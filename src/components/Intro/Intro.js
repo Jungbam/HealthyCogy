@@ -13,7 +13,12 @@ const Intro = (props) => {
     setIsTip(true)
   }
   const seo = 'https://www.tving.com/onboarding'
-  const seo2 = './Img/rec.png'
+  const seo2 = './Img/120.jpg'
+  const seo4 = './Img/Checklist.jpg'
+  const seo1 = './Img/9kta_1h59_211101.jpg'
+  const seo3 = '원하는 끼수를 정하면 유명 연예인 다이어트 식단을 볼 수 있어요!!'
+  const seo5 = '변하는 인바디를 한눈에 보기 쉽게 기록해봐요!'
+  const seo6 = '식단, 운동 등 달력에 체크리스트로 기록해봐요!'
   const sliderHandler = () => {
     setIsTip(false)
   }
@@ -27,13 +32,15 @@ const Intro = (props) => {
       <ul className="content-container">
         <div>
           <h2>"맞춤 다이어트 플랫폼"</h2>
-          <p>
+          <span>다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가 도와드립니다..</span>
+          {/* <p>
             개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
             플랫폼을 통해 ..{' '}
-          </p>
+          </p> */}
           <div className="chucheon-container">
-            <Chucheon pageNum={seo} imgSet={seo2} />
-            <Chucheon pageNum={seo} imgSet={seo2} />
+            <Chucheon pageNum={seo} imgSet={seo2} text={seo3}/>
+            <Chucheon pageNum={seo} imgSet={seo4} text={seo5}/>
+            <Chucheon pageNum={seo} imgSet={seo1} text={seo6} />
           </div>
         </div>
       </ul>
@@ -50,7 +57,7 @@ const Intro = (props) => {
   }
 
   return (
-    <div>
+    <div className='pBox'>
       <HeadeLine changePage={changePageHandler} />
       <main>
         {mainPage}
