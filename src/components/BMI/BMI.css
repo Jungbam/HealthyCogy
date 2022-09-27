@@ -4,6 +4,7 @@
     text-align: center;
 }
 .cal{
+    padding: 0;
     margin-top: 100px;
     border: 1px solid black;
     width: 500px;
@@ -12,7 +13,32 @@
     border-radius: 10%;
     box-shadow: 5px 5px 5px 5px gray;
 }
-p{
+label{
     font-size: 20px;
-    font-weight: bold;
+    padding: 10px;
 }
+input{
+    height: 20px;
+}
+form{
+    width: 500px;
+    height: 70px;
+}
+button{
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    height: 40px;
+    background-color: bisque;
+    border-radius: 20%;
+}
+
+.imgresult{
+    width: 500px;
+    height: 300px;
+    margin-top: 10px;
+}
+img{
+    height: 300px;
+}
+
