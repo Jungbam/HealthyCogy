@@ -9,5 +9,5 @@ function App() {
     </div>
   )
 }
-//페이지
+//페이지!!
 export default App
