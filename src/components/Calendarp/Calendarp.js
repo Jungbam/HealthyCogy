@@ -5,8 +5,10 @@ import './Calendarp.css'
 import moment from 'moment';
 
 
-function Calendarp() {
-    
+const Calendarp=() =>{
+  // console.log(value)
+    const today = moment(); //현재시간이 출력됨
+    console.log(today) 
     const [value, onChange] = useState(new Date());
 
   return (

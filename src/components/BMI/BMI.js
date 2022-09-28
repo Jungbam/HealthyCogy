@@ -6,7 +6,7 @@ import './BMI.css'
 const BMI = () => {
   const [BMI, setBMI] = useState()
   const [Img, setImg] = useState('./Img/BMI1.jpeg');
-  //사진 추가 장서연 밥팅
+  //useSate는 초깃값,변경할 값이 필요! useSate(초깃값)
 
   function add(event) {
     event.preventDefault()
@@ -40,7 +40,7 @@ const BMI = () => {
       setBMI(`당신의 bmi 지수는 ${bmi.toFixed(1)}, 비만도는 고도 비만입니다.`)
       return
     }
-  }
+  } //add함수 실행하면서 useSate()의 변경할 값을 지정해줌
   //BMI 계산기 추가
   return (
     <div className="BMIpage">
@@ -50,7 +50,7 @@ const BMI = () => {
           <label className="nab">신장</label>
           <input id="height" type="number"></input>
           <label htmlFor="weight">체중</label>
-          <input id="weight" type="nmber"></input>
+          <input id="weight" type="number"></input>
           <button onClick={add}>계산</button>
         </form>
         <div className='imgresult'><img src={Img}/></div>
