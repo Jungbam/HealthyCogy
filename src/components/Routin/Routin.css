@@ -1,0 +1,12 @@
+.Routin{
+    margin-top: 80px;
+    border: 1px solid black;
+    width: 500px;
+    height: 100%;
+    display: inline-block;
+    
+}
+p{
+    padding: 0;
+    margin: 0;
+}
