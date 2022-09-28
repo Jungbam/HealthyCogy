@@ -3,6 +3,7 @@ import Food from '../../Food/Food'
 import BMI from '../../BMI/BMI'
 import './HeadeLine.css'
 import HeadeLineList from './HeadLineList/HeadLineList'
+import MyStroage from '../../MyStroage/MyStroage'
 
 const HeadeLine = (props) => {
   const onClickedBMIHandler = (e) => {
@@ -24,7 +25,7 @@ const HeadeLine = (props) => {
     props.changePage(ExPage)
   }
   const onClickedMyPageHandler = (e) => {
-    const MyPage = <p>This is Mine</p>
+    const MyPage = <MyStroage/>
     props.changePage(MyPage)
   }
   return (

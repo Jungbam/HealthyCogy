@@ -6,9 +6,8 @@ import moment from 'moment';
 
 
 function Calendarp() {
-    const DayBtn = document.getElementsByClassName('react-calendar__tile react-calendar__month-view__days__day')
     
-  const [value, onChange] = useState(new Date());
+    const [value, onChange] = useState(new Date());
 
   return (
     <div className='Calendar'>
