@@ -8,6 +8,9 @@ import '../Calendarp/Calendarp.css'
 
 const Container1=()=>{
     const [value, onChange] = useState(new Date());
+    console.log(value)
+    const day = [
+    ]
     return <div className="Container1">
         <Calendar className="r" onChange={onChange} value={value} />
       <div className="text-gray-500 mt-4">
