@@ -1,0 +1,25 @@
+.CalendarContainer{
+    margin-top: 90px;
+    border: 1px solid black;
+    width: 500px;
+    height: 600px;
+    display: inline-block;
+    
+}
+.react-calendar{
+    width: 100%;
+    
+}
+.mt-4{
+    padding: 10px;
+}
+li{
+    list-style-type: none;
+}
+h3{
+    padding: 10px;
+}
+.water li{
+    padding-right: 10px;
+    display:inline;
+}
