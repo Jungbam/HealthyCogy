@@ -5,6 +5,10 @@ import classes from './InputModal.module.css'
 
 const InputModal = (props) => {
   const userId = props.userObj
+  
+  console.log(props)
+  
+  
 
   const [inputRoutin, setInputRoutin] = useState('')
   const [inputEx, setInputEx] = useState('')
@@ -20,30 +24,31 @@ const InputModal = (props) => {
 
   const addHandler = (event) => {
     event.preventDefault()
-    console.log(dbService.collection('userId'))
-    dbService.collection('userId').add({
+    dbService.collection(userId).add({
+      day : props.date,
       routin: routinInput.value,
       ex: exInput.value,
     })
+    props.aaa()
   }
   return (
     <div>
       <div className={classes.backdrop} />
       <div className={classes.modal}>
         <header className={classes.header}>
-          <h2>추가할 운동루틴</h2>
+          <h2>리스트</h2>
         </header>
         <form className={classes.content}>
-          <label htmlFor="routin">운동루틴</label>
+          <label htmlFor="part">운동</label>
           <input
             type="text"
             value={inputRoutin}
             id="routin"
             onChange={routinChangeHandler}
           />
-          <label htmlFor="ex">운동횟수</label>
+          <label htmlFor="food">식단</label>
           <input
-            type="number"
+            type="text"
             value={inputEx}
             id="ex"
             onChange={exChangeHandler}

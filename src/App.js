@@ -21,6 +21,7 @@ function App() {
       setInit(true)
     })
   }, [])
+  
   return (
     <div className="App">
       <MainContainer isLoggedIn={isLoggedIn} />

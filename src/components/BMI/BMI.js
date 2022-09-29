@@ -11,8 +11,8 @@ const BMI = () => {
     const height = document.getElementById('height').value
     const weight = document.getElementById('weight').value
     let bmi = +weight / (+height / 100) ** 2
-    console.log(weight)
-    console.log(bmi)
+   
+    
     if (+bmi < 18.5) {
       setImg('./Img/BMI1.png')
       setBMI(`당신의 bmi 지수는 ${bmi.toFixed(1)}, 비만도는 저체중입니다.`)

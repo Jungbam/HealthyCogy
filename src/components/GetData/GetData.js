@@ -8,7 +8,6 @@ const GetData = (props) => {
   useEffect(() => {
     //실시간으로 DB에서 받아오기.
     dbService.collection('userId').onSnapshot((snapshot) => {
-      console.log(snapshot.docsdoc)
       const dataArray = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -40,6 +39,6 @@ const GetData = (props) => {
         </div>
       ))}
     </div>
-  )
+  ) //값은 data에 있음(console로 부르고 ) 캘린더 날짜를 받아와 그 날짜에 맞는 값을 찍어라
 }
 export default GetData

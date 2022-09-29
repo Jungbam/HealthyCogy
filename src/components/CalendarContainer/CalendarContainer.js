@@ -1,68 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react'
 import Calendar from 'react-calendar';
+import { authService } from '/Users/seoyeon/Desktop/diet/HealthyCogy/src/fbase.js' //경로!!!
 import 'react-calendar/dist/Calendar.css'; // css import
 import moment from 'moment';
 import './CalendarContainer.css'
+import InputModal from "../InputModal/InputModal";
 
 // import '../CalendarSection/CalendarSection.css'
 
 
 const CalendarContainer=()=>{
     const [value, onChange] = useState(new Date());
-    console.log(value)
-    const userItem = [{
-      userID : '123',
-      createDay : moment(value).format("YYYY년 MM월 DD일"),
-      routin : [
-        {part : '하체', ex: '레그익스프레스'},
-        {part : '상체', ex: '크런치'}
-      ],
-      food : [
-        {part : '아침', ex : '토마토'},
-        {part : '점심', ex : '샐러드'},
-        {part : '저녁', ex : '쉐이크'}
-      ],
-      water : [
-        'O' , 'X'
-      ]
-    // },{
-    //   userID : '124',
-    //   createDay : moment(value).format("YYYY년 MM월 DD일"),
-    //   routin : [
-    //     {part : '하체', ex: '레그익스프레스'},
-    //     {part : '상체', ex: '크런치'}
-    //   ],
-    //   food : [
-    //     {part : '아침', ex : '토마토'},
-    //     {part : '점심', ex : '샐러드'},
-    //     {part : '저녁', ex : '닭가슴살'}
-    //   ], water : [
-    //     'O' , 'X'
-    //   ]
-    }
-  ]
-  console.log(userItem[0])
-  console.log(userItem[1])
+    const [init, setInit] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [userObj, setUserObj] = useState(null)
+
+  useEffect(() => {
+    authService.onAuthStateChanged((user) => {
+      if (user) {
+        setIsLoggedIn(true)
+        setUserObj(user.uid)
+      } else {
+        setIsLoggedIn(false)
+      }
+      setInit(true)
+      
+    })
+  }, [])
+   
+    
+    //모달창 부르기 
+      const [page,setPage] = useState('');
+    
+      function a(){
+        setPage('')
+      }
+  
+
+     
+
+      function add(){
+        setPage(<InputModal aaa={a} userObj={userObj} date={value}/>)
+      }
+
+      
+
+    
+        
     return (
     <div className="CalendarContainer">
-        <Calendar onChange={onChange} value={value} />
-      <div className="text-gray-500 mt-4">
-        {userItem .map((item)=>(<div key={Math.random()}>
-          {/* <h1>{item.userID}의 식단</h1> */}
-          <h3>+ 운동</h3>
-          <ul>{item.routin.map((routinitem)=>(<li key={Math.random()}>
-           <input type='checkbox'/> {routinitem.part} : {routinitem.ex}
-          </li>))}</ul>
-          <h3>+ 식단</h3>
-          <ul>{item.food.map((fooditem)=>(<li key={Math.random()}>
-          <input type='checkbox'/> {fooditem.part} : {fooditem.ex}
-          </li>))}</ul>
-          <h3>+ 물 섭취</h3>
-          <ul className="water">{item.water.map((wateritem)=>(<li key={Math.random()}>
-           <input type='checkbox'/> {wateritem}
-          </li>))}</ul>
-        </div>))}
-         </div> 
+     
+        <Calendar onChange={add} value={value} onClickDay={add}/>
+        <div>{page}</div>
+        {/* 1. getdata 불러오기 
+            2. getdata userid(props)를 넘겨준다.
+            3. getdata가 없을 때 하나의 그림이 나오도록 코딩(getdata의 필드값이 없을 때)*/}
     </div>
     )
 } // {} -> () 43번 
