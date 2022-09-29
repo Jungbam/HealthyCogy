@@ -1,12 +1,12 @@
 import React from 'react'
+import { dbService } from '../../fbase'
 import Intro from '../Intro/Intro'
-import Footer from '../Footer'
 
-const MainContainer = () => {
+const MainContainer = (props) => {
+  console.log(props.isLoggedIn)
   return (
     <div className="main-container">
-      <Intro />
-      <Footer />
+      <Intro isLoggedIn={props.isLoggedIn} />
     </div>
   )
 }

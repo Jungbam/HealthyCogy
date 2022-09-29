@@ -9,7 +9,6 @@ import './Intro.css'
 const Intro = (props) => {
   const [isTip, setIsTip] = useState(false)
   const plusBoxHandler = () => {
-    console.log('hi')
     setIsTip(true)
   }
   const seo = 'https://www.tving.com/onboarding'
@@ -32,14 +31,17 @@ const Intro = (props) => {
       <ul className="content-container">
         <div>
           <h2>"맞춤 다이어트 플랫폼"</h2>
-          <span>다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가 도와드립니다..</span>
+          <span>
+            다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
+            도와드립니다..
+          </span>
           {/* <p>
             개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
             플랫폼을 통해 ..{' '}
           </p> */}
           <div className="chucheon-container">
-            <Chucheon pageNum={seo} imgSet={seo2} text={seo3}/>
-            <Chucheon pageNum={seo} imgSet={seo4} text={seo5}/>
+            <Chucheon pageNum={seo} imgSet={seo2} text={seo3} />
+            <Chucheon pageNum={seo} imgSet={seo4} text={seo5} />
             <Chucheon pageNum={seo} imgSet={seo1} text={seo6} />
           </div>
         </div>
@@ -55,10 +57,9 @@ const Intro = (props) => {
   const changePageHandler = (newPage) => {
     setPage(newPage)
   }
-
   return (
-    <div className='pBox'>
-      <HeadeLine changePage={changePageHandler} />
+    <div className="pBox">
+      <HeadeLine changePage={changePageHandler} isLoggedIn={props.isLoggedIn} />
       <main>
         {mainPage}
         <div className="fixedContent">
