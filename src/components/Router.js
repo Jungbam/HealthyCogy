@@ -4,7 +4,6 @@ import Auth from './Routes/Auth'
 import MainContainer from './MainContent/MainContainer'
 
 const Router = (props) => {
-  console.log(props.isLoggedIn)
   return (
     <BrowserRouter>
       <Routes>

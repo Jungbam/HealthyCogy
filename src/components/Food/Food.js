@@ -9,7 +9,6 @@ const Food = (props) => {
   )
   const onChangeHandler = (event) => {
     const howMeal = event.target.value
-    console.log(howMeal)
     if (howMeal === '3') {
       setMealImg(
         <div className="enterContainer">

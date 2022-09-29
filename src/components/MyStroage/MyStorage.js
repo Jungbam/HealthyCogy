@@ -2,7 +2,7 @@ import React from 'react'
 import CalendarContainer from '../CalendarContainer/CalendarContainer'
 import './MyStorage.css'
 
-const MyStorage = () => {
+const MyStorage = (props) => {
   return (
     <div className="MyStorage">
       <CalendarContainer />
