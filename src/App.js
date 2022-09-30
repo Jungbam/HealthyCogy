@@ -9,7 +9,7 @@ import InputModal from './components/InputModal/InputModal'
 function App() {
   const [init, setInit] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userObj, setUserObj] = useState(null)
+  const [userObj, setUserObj] = useState('')
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -21,13 +21,11 @@ function App() {
       setInit(true)
     })
   }, [])
-  
+
   return (
     <div className="App">
       <MainContainer isLoggedIn={isLoggedIn} />
       <Footer />
-      {/* <GetData userObj={userObj} /> */}
-      {/* <InputModal userObj={userObj} /> */}
     </div>
   )
 }
