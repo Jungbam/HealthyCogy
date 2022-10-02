@@ -1,0 +1,6 @@
+.BoardContainer {
+    margin-top: 90px;
+    border: 1px solid black;
+    width: 500px;
+    height: 600px;
+  }
