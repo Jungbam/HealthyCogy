@@ -17,7 +17,6 @@ const InputModal = (props) => {
   const exChangeHandler = (e) => {
     setInputEx(e.target.value)
   }
-
   const addHandler = async (event) => {
     event.preventDefault()
     const createdId = userId + Math.random()

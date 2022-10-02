@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { authService } from '../../fbase'
-import HeadeLine from '../Intro/HeadeLine/HeadeLine'
+import HeadeLine from '../HeadeLine/HeadeLine'
 
 const Auth = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [newAccount, setNewAccount] = useState(true)
+
   const onSubmit = async (event) => {
     event.preventDefault()
     try {
