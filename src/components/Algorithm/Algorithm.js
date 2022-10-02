@@ -7,3 +7,4 @@ const Algorithm = () =>{
     </div>
 }
 export default Algorithm
+//추천 영상 컴포넌트
