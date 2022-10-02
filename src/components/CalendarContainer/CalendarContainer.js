@@ -5,6 +5,8 @@ import 'react-calendar/dist/Calendar.css' // css import
 import './CalendarContainer.css'
 import InputModal from '../InputModal/InputModal'
 import GetData from '../GetData/GetData'
+import Weekdays from 'react-calendar/dist/umd/MonthView/Weekdays'
+import WeekRoutin from '../WeekRoutin/WeekRoutin'
 
 const CalendarContainer = () => {
   const [date, setDate] = useState(new Date())
@@ -48,6 +50,10 @@ const CalendarContainer = () => {
         setPage={setPage}
         shutDownHandler={shutDownHandler}
       />
+       <WeekRoutin  userObj={userObj}
+        dayValue={date}
+        setPage={setPage}
+        shutDownHandler={shutDownHandler} />
 
       {/* 1. getdata 불러오기 
             2. getdata userid(props)를 넘겨준다.
