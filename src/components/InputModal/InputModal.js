@@ -7,8 +7,6 @@ const InputModal = (props) => {
   const userId = props.userObj
   const dateId = props.date
 
-  // console.log(dateId)
-
   const [inputRoutin, setInputRoutin] = useState('')
   const [inputEx, setInputEx] = useState('')
   const routinChangeHandler = (e) => {
