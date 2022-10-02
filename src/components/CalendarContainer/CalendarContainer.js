@@ -11,6 +11,7 @@ const CalendarContainer = () => {
   const [init, setInit] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userObj, setUserObj] = useState('')
+
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -22,7 +23,6 @@ const CalendarContainer = () => {
       setInit(true)
     })
   }, [])
-
   //모달창 부르기
   const [page, setPage] = useState('')
 
@@ -48,6 +48,7 @@ const CalendarContainer = () => {
         setPage={setPage}
         shutDownHandler={shutDownHandler}
       />
+
       {/* 1. getdata 불러오기 
             2. getdata userid(props)를 넘겨준다.
             3. getdata가 없을 때 하나의 그림이 나오도록 코딩(getdata의 필드값이 없을 때)*/}
