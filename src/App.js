@@ -5,9 +5,8 @@ import WeekRoutin from './components/WeekRoutin/WeekRoutin'
 function App() {
   return (
     <div className="App">
-      <WeekRoutin dayValue={new Date()} />
-      {/* <Router /> */}
-      {console.log(new Date())}
+     
+      <Router />
     </div>
   )
 }
