@@ -26,6 +26,7 @@ const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
             setPage={setPage}
             shutDownHandler={shutDownHandler}
           />
+          <button>기본루틴</button>
         </div>
         //내가 뽑고 싶은 것을 컴퍼넌트로.
       ))}
