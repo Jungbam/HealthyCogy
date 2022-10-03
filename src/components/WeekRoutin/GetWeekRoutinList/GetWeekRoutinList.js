@@ -5,12 +5,11 @@ import { deleteDoc, doc } from '@firebase/firestore'
 import { dbService } from '../../../fbase'
 import EditModal from '../../GetData/EditModal/EditModal'
 
-const GetWeekRoutinList = ({ userObj, date}) => {
+const GetWeekRoutinList = ({ userObj, date }) => {
   const userId = userObj
   const dateId = dayjs(date).format('YY-MM-DD')
   const dayNumber = dayjs(new Date(date)).get('day')
   const [data, setData] = useState([])
-
 
   useEffect(() => {
     //실시간으로 DB에서 받아오기.
@@ -35,12 +34,6 @@ const GetWeekRoutinList = ({ userObj, date}) => {
       await dbService.collection('healthycogy').doc(docId.createdId).delete()
     }
   }
-  // if (ok) {
-  //   await dbService
-  //     .collection('healthycogy')
-  //     .doc(EditDoc.createdId)
-  //     .update({ routin: inputRoutin, ex: inputEx })
-  // }
 
   const dayArray = [
     '일요일',

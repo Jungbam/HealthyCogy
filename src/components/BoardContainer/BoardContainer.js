@@ -1,12 +1,14 @@
-import React from "react";
-import Algorithm from "../Algorithm/Algorithm";
-import ImgBoard from "../ImgBoard/ImgBoard";
+import React from 'react'
 import './BoardContainer.css'
+import ImgBoard from './ImgBoard/ImgBoard'
+import RoutinVideo from './RoutinVideo/RoutinVideo'
 
-const BoardContainer = () =>{
-    return <div className="BoardContainer">
-        <ImgBoard/>
-        <Algorithm />
+const BoardContainer = (props) => {
+  return (
+    <div className="BoardContainer">
+      <ImgBoard userObj={props.userObj} date={props.date} />
+      <RoutinVideo userObj={props.userObj} date={props.date} />
     </div>
+  )
 }
 export default BoardContainer

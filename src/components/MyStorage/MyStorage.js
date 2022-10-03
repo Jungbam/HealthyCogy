@@ -32,7 +32,7 @@ const MyStorage = (props) => {
         isLoggedIn={isLoggedIn}
         userObj={userObj}
         setDate={setDate}
-      /> 
+      />
       {/* 달력 코드 */}
       <WeekContainer
         date={date}
@@ -41,7 +41,12 @@ const MyStorage = (props) => {
         userObj={userObj}
       />
       {/* 운동 루틴 추천, 하루 식단  */}
-      <BoardContainer />
+      <BoardContainer
+        date={date}
+        init={init}
+        isLoggedIn={isLoggedIn}
+        userObj={userObj}
+      />
       {/* 게시판, 영상 알고리즘 */}
     </div>
   )

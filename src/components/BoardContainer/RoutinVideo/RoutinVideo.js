@@ -1,22 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import ReactPlayer from 'react-player'
-import styled from 'styled-components'
 import { dbService } from '../../../fbase'
 
+import './RoutinVideo.css'
+import dayjs from 'dayjs'
+
 // const SLIDE_NUMBER_VALUE = 4
-const RoutinVideo = (routin) => {
+const RoutinVideo = ({ userObj, date }) => {
+  const userId = userObj
+  const dateId = dayjs(date).format('YY-MM-DD')
   const [videoArray, setVideoArray] = useState([])
-  const routinValue = 'aerobicexercise'
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  }
+  const [data, setData] = useState([])
+
   useEffect(() => {
-    dbService.collection('Routin').onSnapshot((snapshot) => {
+    //실시간으로 DB에서 받아오기.
+    dbService.collection('healthycogy').onSnapshot((snapshot) => {
+      const dataArray = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }))
+      const selectedUserArray = dataArray.filter((data) => {
+        return data.user === userId
+      })
+      const outputArray = selectedUserArray.filter((data) => {
+        return data.date == dateId
+      })
+      setData(outputArray)
+      const routinValue = { ...outputArray[0] }
+      getroutinVideo(routinValue.routin)
+    })
+  }, [userId, dateId])
+
+  const getroutinVideo = async (routinInput) => {
+    await dbService.collection('Routin').onSnapshot((snapshot) => {
+      const routinValue = routinInput
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
       }))
@@ -28,7 +45,14 @@ const RoutinVideo = (routin) => {
       })
       setVideoArray(resultArray)
     })
-  }, [routin])
+  }
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
 
   // const MaxRandom = videoArray1.length
   // const randomIndex = () => {
@@ -52,7 +76,7 @@ const RoutinVideo = (routin) => {
   // }
 
   return (
-    <Wrap>
+    <div className="RoutinVideoContainer">
       <h2> 일일 추천 운동 영상</h2>
       <Slider {...settings}>
         {videoArray.map((urlPath) => (
@@ -68,13 +92,7 @@ const RoutinVideo = (routin) => {
           />
         ))}
       </Slider>
-    </Wrap>
+    </div>
   )
 }
 export default RoutinVideo
-
-const Wrap = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  object-fit: cover;
-`
