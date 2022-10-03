@@ -5,7 +5,7 @@ import { deleteDoc, doc } from '@firebase/firestore'
 import { dbService } from '../../../fbase'
 import EditModal from '../../GetData/EditModal/EditModal'
 
-const GetWeekRoutinList = ({ userObj, date, setPage, shutDownHandler }) => {
+const GetWeekRoutinList = ({ userObj, date}) => {
   const userId = userObj
   const dateId = dayjs(date).format('YY-MM-DD')
   const dayNumber = dayjs(new Date(date)).get('day')

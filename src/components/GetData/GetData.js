@@ -25,7 +25,6 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
       setData(outputArray)
     })
   }, [date])
-
   const deleteHandler = async (docId) => {
     const ok = window.confirm('진짜로 지우게?')
     if (ok) {

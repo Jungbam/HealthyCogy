@@ -47,17 +47,13 @@ const RoutinVideo = (routin) => {
       'https://www.youtube.com/watch?v=cIzEoosVsUg',
     ],
   }
-  const randomIndex = () => {
-    const randomNums = []
-    for (let i = 0; i < SLIDE_NUMBER_VALUE; i++) {
-      const randomNum = Math.floor(Math.random() * 10)
-      !randomNums.find(randomNum) ? randomNums.push(randomNum) : i--
-    }
-    return randomNums
-  }
-  const randomNumArray = randomIndex()
   const playArray = [...videoArray[routin1]]
+
+<<<<<<< HEAD
   console.log(randomNumArray)
+=======
+  // console.log(playArray)
+>>>>>>> bedce864114cb3b828693fb61f85d9588cd17e8b
   return (
     <Wrap>
       <h2> "데이터 받아서 팔" 추천 루틴 영상</h2>
