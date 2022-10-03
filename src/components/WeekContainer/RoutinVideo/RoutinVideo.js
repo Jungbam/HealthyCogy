@@ -7,7 +7,7 @@ import { dbService } from '../../../fbase'
 // const SLIDE_NUMBER_VALUE = 4
 const RoutinVideo = (routin) => {
   const [videoArray, setVideoArray] = useState([])
-  const routin1 = 'aerobicexercise'
+  const routinValue = 'aerobicexercise'
   const settings = {
     dots: true,
     infinite: true,
@@ -21,7 +21,7 @@ const RoutinVideo = (routin) => {
         ...doc.data(),
       }))
       const selectedRoutinArray = dataArray.filter((data) => {
-        return data.routin === routin1
+        return data.routin === routinValue
       })
       const resultArray = selectedRoutinArray.map((data) => {
         return data.url
@@ -45,7 +45,7 @@ const RoutinVideo = (routin) => {
   //   return randomNums
   // }
   // const randomNumArray = randomIndex()
-  // const playArray = [...videoArray[routin1]]
+  // const playArray = [...videoArray[routinValue]]
   // const resultArray = []
   // for (let i of randomNumArray) {
   //   resultArray.push(playArray[i])
