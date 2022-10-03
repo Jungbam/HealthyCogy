@@ -9,7 +9,8 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
   const userId = userObj
   const dateId = dayjs(date).format('YY-MM-DD')
   const [data, setData] = useState([])
-
+  
+  console.log(data)
   useEffect(() => {
     //실시간으로 DB에서 받아오기.
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
@@ -41,7 +42,10 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
       {data.map((data) => (
         <div key={Math.random()}>
           <div onClick={deleteHandler.bind(null, data)}>
-            {data.routin} : {data.ex}
+            운동 :{data.routin} <br/>
+            아침 : {data.breakfast} <br/> 
+            점심 : {data.lunch} <br/>
+            저녁 : {data.dinner}
           </div>
           <button onClick={editCallHandler.bind(null, data)}>수정</button>
         </div>
