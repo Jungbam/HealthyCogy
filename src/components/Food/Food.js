@@ -27,9 +27,9 @@ const Food = ({userObj,date}) =>{
     return <div className="Food">
         <h3>+ 식단</h3>
         <ul>
-            <li className="diet"><p>아침 : {data.map((data)=>((data.ex)))}</p><input className="kcal" type='number'/></li>
-            <li className="diet"><p>점심 : {}</p></li>
-            <li className="diet"><p>저녁 : {}</p></li>
+            <li className="diet"><p>아침 : {data.map((data)=>((data.breakfast)))}</p><input className="kcal" type='number'/></li>
+            <li className="diet"><p>점심 : {data.map((data)=>((data.lunch)))}</p><input className="kcal" type='number'/></li>
+            <li className="diet"><p>저녁 : {data.map((data)=>((data.dinner)))}</p><input className="kcal" type='number'/></li>
         </ul>
         <div>total : {}</div> 
     </div>

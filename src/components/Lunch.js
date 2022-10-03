@@ -1,7 +1,8 @@
 import React from "react";
 import './TodoItem.css'
 
-function TodoItem (props){
+function Lunch (props){
+    
 
     return(
         <div className="todoItem">
@@ -9,4 +10,4 @@ function TodoItem (props){
         </div>
     )
 }
-export default TodoItem
+export default Lunch

@@ -8,20 +8,39 @@ const InputModal = (props) => {
   const userId = props.userObj
   const dateId = props.date
   const [inputRoutin, setInputRoutin] = useState('')
-  const [inputEx, setInputEx] = useState('')
-  const [todolist,setTodolist] = useState([])
+  const [breakfast, setBreakfast] = useState('')
+  const [breakfastlist,setBreakfastlist] = useState([])
+  const [lunch, setLunch] = useState('')
+  const [lunchlist,setLunchlist] = useState([])
+  const [dinner, setDinner] = useState('')
+  const [dinnerlist,setDinnerlist] = useState([])
 
-  const addItem =() =>{
-    setTodolist([...todolist,inputEx])
+
+  const addItembreakfast =() =>{
+    setBreakfastlist([...breakfastlist,breakfast])
   }
+  const addItemlunch =() =>{
+    setLunchlist([...lunchlist,lunch])
+  }
+  const addItemdinner =() =>{
+    setDinnerlist([...dinnerlist,dinner])
+  }
+  
 
-console.log(todolist)
   const routinChangeHandler = (e) => {
     setInputRoutin(e.target.value)
   }
-  const exChangeHandler = (e) => {
-    setInputEx(e.target.value)
+  const breakfastChangeHandler = (e) => {
+    setBreakfast(e.target.value)
+    
   }
+  const lunchChangeHandler= (e) => {
+    setLunch(e.target.value)
+  }
+  const dinnerChangeHandler= (e) =>{
+    setDinner(e.target.value)
+  }
+
   const addHandler = async (event) => {
     event.preventDefault()
     const createdId = userId + Math.random()
@@ -33,7 +52,9 @@ console.log(todolist)
         user: userId,
         date: dayjs(dateId).format('YY-MM-DD'),
         routin: inputRoutin,
-        ex: inputEx,
+        breakfast: breakfastlist,
+        lunch : lunchlist,
+        dinner : dinnerlist
       })
     props.shutDown()
   }
@@ -52,39 +73,30 @@ console.log(todolist)
             id="routin"
             onChange={routinChangeHandler}
           />
-          <label htmlFor="food">식단</label>
-          {/* 1. 인풋창과 추가버튼이 있다.
-          2. 추가버튼을 누르면 아래 추가한 영역이 생긴다.
-          3. 추가한 영역에 삭제 버튼이 있다. 누르면 삭제가 된다. */}
+          <label htmlFor="food">아침</label>
           <input
             type="text"
-            value={inputEx}
+            value={breakfast}
             id="ex"
-            onChange={exChangeHandler}
-          /><button onClick={addItem}>추가</button>
-          <TodoBoard todolist={todolist}/>
+            onChange={breakfastChangeHandler}
+          /><button onClick={addItembreakfast}>아침추가</button>
+          <TodoBoard list={breakfastlist}/>
           <label htmlFor="food">점심</label>
-          {/* 1. 인풋창과 추가버튼이 있다.
-          2. 추가버튼을 누르면 아래 추가한 영역이 생긴다.
-          3. 추가한 영역에 삭제 버튼이 있다. 누르면 삭제가 된다. */}
           <input
             type="text"
-            value={inputEx}
+            value={lunch}
             id="ex"
-            onChange={exChangeHandler}
-          /><button onClick={addItem}>추가</button>
-          <TodoBoard todolist={todolist}/>
+            onChange={lunchChangeHandler}
+          /><button onClick={addItemlunch}>점심추가</button>
+          <TodoBoard list={lunchlist}/>
           <label htmlFor="food">저녁</label>
-          {/* 1. 인풋창과 추가버튼이 있다.
-          2. 추가버튼을 누르면 아래 추가한 영역이 생긴다.
-          3. 추가한 영역에 삭제 버튼이 있다. 누르면 삭제가 된다. */}
           <input
             type="text"
-            value={inputEx}
+            value={dinner}
             id="ex"
-            onChange={exChangeHandler}
-          /><button onClick={addItem}>추가</button>
-          <TodoBoard todolist={todolist}/>
+            onChange={dinnerChangeHandler}
+          /><button onClick={addItemdinner}>저녁추가</button>
+          <TodoBoard list={dinnerlist}/>
           <button className={classes.button} onClick={addHandler}>
             등록
           </button>
