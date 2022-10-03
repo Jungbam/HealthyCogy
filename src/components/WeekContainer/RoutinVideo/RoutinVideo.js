@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import ReactPlayer from 'react-player'
 import styled from 'styled-components'
 
+const SLIDE_NUMBER_VALUE = 3
 const RoutinVideo = (routin) => {
   const routin1 = 'arm'
   // 루틴은 팔-하체-
@@ -46,9 +47,17 @@ const RoutinVideo = (routin) => {
       'https://www.youtube.com/watch?v=cIzEoosVsUg',
     ],
   }
-
+  const randomIndex = () => {
+    const randomNums = []
+    for (let i = 0; i < SLIDE_NUMBER_VALUE; i++) {
+      const randomNum = Math.floor(Math.random() * 10)
+      !randomNums.find(randomNum) ? randomNums.push(randomNum) : i--
+    }
+    return randomNums
+  }
+  const randomNumArray = randomIndex()
   const playArray = [...videoArray[routin1]]
-  console.log(playArray)
+  console.log(randomNumArray)
   return (
     <Wrap>
       <h2> "데이터 받아서 팔" 추천 루틴 영상</h2>
@@ -58,7 +67,7 @@ const RoutinVideo = (routin) => {
             key={Math.random()}
             className="player"
             url={urlPath}
-            width="450px"
+            width="90%"
             heigth="400px"
             playing={true}
             muted={true}
@@ -73,15 +82,7 @@ const RoutinVideo = (routin) => {
 export default RoutinVideo
 
 const Wrap = styled.div`
-  margin: 5% auto;
+  margin: 0 auto;
   width: 100%;
-  .slick-prev:before {
-    opaicty: 1; // 기존에 숨어있던 화살표 버튼이 보이게
-    color: black; // 버튼 색은 검은색으로
-    left: 0;
-  }
-  .slick-next:before {
-    opacity: 1;
-    color: black;
-  }
+  object-fit: cover;
 `
