@@ -47,6 +47,21 @@ const RoutinVideo = (routin) => {
       'https://www.youtube.com/watch?v=cIzEoosVsUg',
     ],
   }
+  const randomIndex = () => {
+    const randomNums = []
+    let count = 0
+    for (let i = 0; count < SLIDE_NUMBER_VALUE; i++) {
+      const randomNum = Math.floor(Math.random() * videoArray[routin1].length)
+      if (!randomNums.includes(randomNum)) {
+        randomNums.push(randomNum)
+        count++
+      } else {
+      }
+    }
+    return randomNums
+  }
+  const randomNumArray = randomIndex()
+  console.log(randomNumArray)
   const playArray = [...videoArray[routin1]]
 
   return (
