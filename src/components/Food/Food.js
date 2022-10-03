@@ -23,7 +23,7 @@ const Food = ({userObj,date}) =>{
           setData(outputArray)
         })
       }, [date])
-      console.log(data)
+      
     return <div className="Food">
         <h3>+ 식단</h3>
         <ul>

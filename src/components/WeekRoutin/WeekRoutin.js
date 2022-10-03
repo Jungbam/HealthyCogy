@@ -16,7 +16,6 @@ const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
     const resultDay = inputDay.add(i, 'day')
     dayCalculationArray.push(resultDay)
   }
-  console.log(dayCalculationArray)
   return (
     <div className="WeekRoutin">
       {dayCalculationArray.map((date) => (
