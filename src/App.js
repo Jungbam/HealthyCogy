@@ -5,11 +5,12 @@ import RoutinVideo from './components/WeekContainer/RoutinVideo/RoutinVideo'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import MyDietProcess from './components/MyDietProcess/MyDietProcess'
 function App() {
   return (
     <div className="App">
-      {/* <RoutinVideo /> */}
-      <Router />
+      {/* <Router /> */}
+      <MyDietProcess />
     </div>
   )
 }
