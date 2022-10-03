@@ -14,7 +14,13 @@ const InputModal = (props) => {
   const [lunchlist,setLunchlist] = useState([])
   const [dinner, setDinner] = useState('')
   const [dinnerlist,setDinnerlist] = useState([])
+  const selectList = ["lowerbody", "back", "chest", "shoulder","arm","aerobicexercise"];
 
+  const handleSelect = (e) => {
+    setInputRoutin(e.target.value);
+  };
+
+console.log(inputRoutin)
 
   const addItembreakfast =() =>{
     setBreakfastlist([...breakfastlist,breakfast])
@@ -67,12 +73,19 @@ const InputModal = (props) => {
         </header>
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
-          <input key={Math.round()}
+          <select onChange={handleSelect} value={inputRoutin}>
+          {selectList.map((item) => (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          ))}
+          </select>
+          {/* <input key={Math.round()}
             type="text"
             value={inputRoutin}
             id="routin"
             onChange={routinChangeHandler}
-          />
+          /> */}
           <label htmlFor="food">아침</label>
           <input
             type="text"
