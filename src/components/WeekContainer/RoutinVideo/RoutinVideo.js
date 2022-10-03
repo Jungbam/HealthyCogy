@@ -48,7 +48,7 @@ const RoutinVideo = (routin) => {
   }
 
   const playArray = [...videoArray[routin1]]
-  console.log(playArray)
+  // console.log(playArray)
   return (
     <Wrap>
       <h2> "데이터 받아서 팔" 추천 루틴 영상</h2>
