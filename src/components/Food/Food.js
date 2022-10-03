@@ -7,7 +7,7 @@ const Food = ({userObj,date}) =>{
     const userId = userObj
     const dateId = dayjs(date).format('YY-MM-DD')
     const [data, setData] = useState([])
-    
+   
     useEffect(() => {
         //실시간으로 DB에서 받아오기.
         dbService.collection('healthycogy').onSnapshot((snapshot) => {
