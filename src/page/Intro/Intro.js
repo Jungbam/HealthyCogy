@@ -15,8 +15,8 @@ const Intro = (props) => {
   const seo4 = './Img/Checklist.jpg'
   const seo1 = './Img/9kta_1h59_211101.jpg'
   const seo3 = '원하는 끼수를 정하면 유명 연예인 다이어트 식단을 볼 수 있어요!!'
-  const seo5 = '변하는 인바디를 한눈에 보기 쉽게 기록해봐요!'
-  const seo6 = '식단, 운동 등 달력에 체크리스트로 기록해봐요!'
+  const seo5 = '매일 변하는 몸을 한눈에 보기 쉽게 사진으로 기록해봐요!'
+  const seo6 = '식단, 운동 등 달력에 기록해봐요!'
   const sliderHandler = () => {
     setIsTip(false)
   }
@@ -32,7 +32,7 @@ const Intro = (props) => {
           <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
           <span>
             다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
-            도와드립니다..
+            도와드립니다😀
           </span>
           {/* <p>
             개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
