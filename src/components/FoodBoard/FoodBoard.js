@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import { dbService } from "../../fbase";
-import './Food.css'
+import './FoodBoard.css'
 
-const Food = ({userObj,date}) =>{
+const FoodBoard = ({userObj,date}) =>{
     const userId = userObj
     const dateId = dayjs(date).format('YY-MM-DD')
     const [data, setData] = useState([])
@@ -59,4 +59,4 @@ const Food = ({userObj,date}) =>{
         
     </div>
 }//total 계산하기
-export default Food
+export default FoodBoard

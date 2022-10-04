@@ -1,5 +1,5 @@
 import React from 'react'
-import Food from '../Food/Food'
+import FoodBoard from '../FoodBoard/FoodBoard'
 import WeekRoutin from '../WeekRoutin/WeekRoutin/WeekRoutin'
 import './WeekContainer.css'
 
@@ -13,7 +13,7 @@ const WeekContainer = ({ userObj, date, setPage, shutDownHandler }) => {
         setPage={setPage}
         shutDownHandler={shutDownHandler}
       />
-      <Food
+      <FoodBoard
         userObj={userObj}
         date={date}
         setPage={setPage}
