@@ -20,10 +20,12 @@
   color: white;
 }
 .headerDiv ul {
+  margin-top: 10px;
+  margin-right: 10px;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   list-style: none;
 }
 .headerDiv li {
@@ -36,17 +38,28 @@
 #page_logo:active {
   font-family: 'ImcreSoojin';
 }
-#page_logo h1 {
+#page_logo{
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+  font-family: 'ImcreSoojin';
+}
+/* #page_logo h1 {
   color: white;
   padding: 10px;
   text-decoration: none;
   font-family: 'ImcreSoojin';
   /* font-family: 'Oleo Script', sans-serif; */
-  font-size: 50px;
+  /* font-size: 50px;
   text-align: right;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px rgb(0, 0, 0);
-}
+} */ 
 .navItems {
   padding: 15px;
+}
+.logoutBtn{
+  background-color: darkgrey;
+  width: 50px;
+  height: 20px;
 }

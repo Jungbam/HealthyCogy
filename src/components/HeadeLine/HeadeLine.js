@@ -12,13 +12,13 @@ const HeadeLine = (props) => {
   }
   return (
     <div className="headerDiv">
-      <NavLink to="/">
-        <h1 id="page_logo">헬시코기</h1>
+      <NavLink to="/" style={{ textDecoration: "none" }}>
+        <h1 id="page_logo">헬시코기</h1> 
       </NavLink>
       <nav className="navItems">
         <ul>
           <li>
-            <NavLink
+            <NavLink  style={{ textDecoration: "none" ,color:'white'}}
               to="/bmi"
               className={(isActive) => (isActive ? 'selected' : 'not')}
             >
@@ -26,7 +26,7 @@ const HeadeLine = (props) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink  style={{ textDecoration: "none",color:'white' }}
               to="/food"
               className={(isActive) => (isActive ? 'selected' : 'not')}
             >
@@ -34,7 +34,7 @@ const HeadeLine = (props) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
+            <NavLink  style={{ textDecoration: "none" ,color:'white'}}
               to="/Mystorage"
               className={(isActive) => (isActive ? 'selected' : 'not')}
             >
@@ -42,10 +42,11 @@ const HeadeLine = (props) => {
             </NavLink>
           </li>
 
-          <button onClick={logoutHandler}>로그아웃</button>
+          <button className='logoutBtn' onClick={logoutHandler}>로그아웃</button>
         </ul>
       </nav>
     </div>
   )
 }
 export default HeadeLine
+//logo 디자인 완료!, nav 디자인(햄버거).. 
