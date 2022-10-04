@@ -40,10 +40,12 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
       {data.map((data) => (
         <div key={Math.random()}>
           <div onClick={deleteHandler.bind(null, data)}>
-            운동 :{data.routin} <br />
-            아침 : {data.breakfast} <br />
-            점심 : {data.lunch} <br />
-            저녁 : {data.dinner}
+            <ul>
+            <li><span>+ 운동</span><br/>{data.routin} </li>
+            <li><span>+ 식단</span><br/>아침 : {data.breakfast}</li>
+            <li>점심 : {data.lunch}</li>
+            <li>저녁 : {data.dinner}</li>
+            </ul>
           </div>
           <button onClick={editCallHandler.bind(null, data)}>수정</button>
         </div>

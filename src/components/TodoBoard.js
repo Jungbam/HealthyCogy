@@ -12,6 +12,3 @@ function TodoBoard({ list }) {
   )
 }
 export default TodoBoard
-
-{
-}
