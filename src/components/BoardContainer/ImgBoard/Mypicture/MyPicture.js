@@ -23,7 +23,6 @@ const MyPicture = ({ userObj, date }) => {
       })
       const resultArray = outputArray.map((data) => data.url)
       setData(resultArray)
-      console.log(resultArray)
     })
   }, [userId, dateId])
 

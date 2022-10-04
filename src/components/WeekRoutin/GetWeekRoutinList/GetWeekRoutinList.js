@@ -18,7 +18,6 @@ const GetWeekRoutinList = ({ userObj, date }) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
       }))
-      console.log(data)
       const selectedUserArray = dataArray.filter((data) => {
         return data.user === userId
       })
@@ -29,8 +28,6 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     })
   }, [date])
 
-  
-
   const dayArray = [
     '일요일',
     '월요일',
@@ -40,12 +37,11 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     '금요일',
     '토요일',
   ]
-
+  console.log(data)
   return (
     <div className={classes.dataBox}>
       {data.map((data) => (
         <div key={Math.random()}>
-          {console.log(data)}
           <div>
             {dayArray[dayNumber]} : {!data ? '쉬는 날' : data.routin}
           </div>
