@@ -1,11 +1,8 @@
 import React from 'react'
 
 function TodoBoard({ list }) {
-  // console.log(breakfastlist) [음식,음식]
-
   return (
     <div>
-      <p>todolist</p>
       {list.map((item) => (
         <div key={Math.random()}>
           <div>{item}</div>
@@ -17,5 +14,4 @@ function TodoBoard({ list }) {
 export default TodoBoard
 
 {
-  /* <BreakFast item={item}/> */
 }

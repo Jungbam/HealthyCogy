@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
-import { dbService } from '../../fbase'
-import GetData from '../GetData/GetData'
-import GetWeekRoutinList from './GetWeekRoutinList/GetWeekRoutinList'
 import './WeekRoutin.css'
+import GetWeekRoutinList from '../GetWeekRoutinList/GetWeekRoutinList'
 
 const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
   const dayCalculationArray = [] //클릭한 날짜 일주일간 배열 생성
