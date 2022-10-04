@@ -8,7 +8,7 @@ function TodoBoard({ list }) {
       <p>todolist</p>
       {list.map((item) => (
         <div key={Math.random()}>
-          <div>{item}</div>
+          <div >{item}</div>
         </div>
       ))}
     </div>

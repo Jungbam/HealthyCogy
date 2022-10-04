@@ -4,6 +4,7 @@ import { dbService } from '../../fbase'
 import GetData from '../GetData/GetData'
 import GetWeekRoutinList from './GetWeekRoutinList/GetWeekRoutinList'
 import './WeekRoutin.css'
+import Dropdown from '../Dropdown/Dropdown'
 
 const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
   const dayCalculationArray = [] //클릭한 날짜 일주일간 배열 생성
@@ -27,6 +28,10 @@ const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
             shutDownHandler={shutDownHandler}
           />
           <button className="routinBtn">기본루틴</button>
+          {/* <Dropdown  userObj={userObj}
+            date={date}
+            setPage={setPage}
+            shutDownHandler={shutDownHandler}/> */}
         </div>
         //내가 뽑고 싶은 것을 컴퍼넌트로.
       ))}

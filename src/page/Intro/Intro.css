@@ -21,7 +21,11 @@
   background-size: 500px 100%;
   opacity: 50%;
 }
-
+h2{
+  font-family: 'ImcreSoojin';
+  margin-bottom: 10px;
+  
+}
 .chucheon-container {
   margin: 0 auto;
   width: 100%;
@@ -45,13 +49,14 @@
 }
 .plusBox {
   width: 3rem;
-  height: 10rem;
+  height: 1rem;
 }
 .introH2 {
   margin-top: 100px;
   padding-bottom: 20px;
   font-size: 30px;
   width: 100%;
+
 }
 .info{
   font-family: 'ImcreSoojin';

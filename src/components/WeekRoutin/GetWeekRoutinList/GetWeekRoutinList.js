@@ -28,12 +28,7 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     })
   }, [date])
 
-  const deleteHandler = async (docId) => {
-    const ok = window.confirm('진짜로 지우게?')
-    if (ok) {
-      await dbService.collection('healthycogy').doc(docId.createdId).delete()
-    }
-  }
+  
 
   const dayArray = [
     '일요일',
@@ -49,7 +44,7 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     <div className={classes.dataBox}>
       {data.map((data) => (
         <div key={Math.random()}>
-          <div onClick={deleteHandler.bind(null, data)}>
+          <div> 
             {dayArray[dayNumber]} : {!data ? '쉬는 날' : data.routin}
           </div>
           {/* <button onClick={editCallHandler.bind(null, data)}>수정</button> */}

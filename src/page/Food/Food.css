@@ -4,9 +4,10 @@
 }
 .main-container {
   min-height: 800px;
+  
 }
 .dd {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 .enterContainer {
   margin-top: 10rem;
@@ -41,7 +42,7 @@
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 7rem 0 0 0;
+  margin: 5rem 0 0 0;
   object-fit: fill;
 }
 .imgsic {

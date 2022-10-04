@@ -7,7 +7,6 @@ const Dropdown = ()=> {
   <input id="dropdown" type="checkbox" />
   <label className="dropdownLabel" for="dropdown">
     <div>CSS</div>
-    <FaAngleDown className="caretIcon" />
   </label>
   <div className="content">
     <ul>

@@ -50,7 +50,7 @@ const RequireLogin = () => {
         <ul>
           <li className="containerBox">
             <form onSubmit={onSubmit}>
-              <input
+              <input className='email'
                 name="email"
                 type="email"
                 placeholder="Email"
@@ -58,7 +58,7 @@ const RequireLogin = () => {
                 value={email}
                 onChange={onChange}
               ></input>
-              <input
+              <input className='password'
                 name="password"
                 type="password"
                 placeholder="password"
@@ -68,7 +68,7 @@ const RequireLogin = () => {
               ></input>
               <input type="submit" />
             </form>
-            <button onClick={onSocialHandler}>구글로 로그인</button>
+            <button className='google' onClick={onSocialHandler}>구글로 로그인</button>
           </li>
         </ul>
       </nav>
