@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { dbService } from '../../../fbase'
+import './Dropdown.css'
+
 
 const Dropdown = ({ data }) => {
   const routin = data.routin
   const [basicRoutinArray, setBasicRoutinArray] = useState([])
-
+  const [isOpen, setMenu] = useState(false); 
   useEffect(() => {
     const basicRoutindbRef = dbService.collection('basicRoutin')
     basicRoutindbRef.get().then((doc) => {
@@ -16,22 +18,21 @@ const Dropdown = ({ data }) => {
     })
   }, [])
 
-  console.log(basicRoutinArray)
+  const toggleMenu = () => {
+    setMenu(isOpen => !isOpen); // on,off 개념 boolean
+}
+console.log(basicRoutinArray)
   //데이터 받아서 basicRoutinArray에 넣어놓음.
 
   return (
-    <div class="dropdown">
-      <button type="button" class="dropdown-toggle">
-        {/* 드롭다운이 되면 클래스가 .dropdown-menu.show가 되면 됩니다.
-      useState 쓰면 되겠죠? */}
-        기본루틴을 보시려면 클릭하세요.
-      </button>
-      <ul class="dropdown-menu">
-        {/* 여기에 map함수로 li-button으로 만들어서 불러오세요. 
-        버튼을 누르면 위쪽에 button-toggle이 값이 바뀌어야겠죠?
-        버튼 클래스명은 dropdown-option입니다.*/}
-      </ul>
-    </div>
+    <div className="dropdown">
+    <button type="button" className="dropdown-toggle" onClick={()=>toggleMenu()}>
+      기본루틴을 보시려면 클릭하세요.
+    </button>
+    <ul className={isOpen ? "dropdown-menu" : "dropdown-menu.show"}>
+      {basicRoutinArray.map((data)=>(<li><button>{data}</button></li>))}
+    </ul>
+  </div>
   )
 }
 export default Dropdown

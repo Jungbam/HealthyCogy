@@ -7,7 +7,7 @@ import TodoBoard from '../TodoBoard'
 const InputModal = (props) => {
   const userId = props.userObj
   const dateId = props.date
-  const [inputRoutin, setInputRoutin] = useState('')
+  const [inputRoutin, setInputRoutin] = useState(null)
   const [breakfast, setBreakfast] = useState('')
   const [breakfastlist, setBreakfastlist] = useState([])
   const [lunch, setLunch] = useState('')
@@ -56,7 +56,7 @@ const InputModal = (props) => {
         createdId,
         user: userId,
         date: dayjs(dateId).format('YY-MM-DD'),
-        routin: inputRoutin,
+        routin: inputRoutin ? inputRoutin : 'Breaktime',
         breakfast: breakfastlist,
         lunch: lunchlist,
         dinner: dinnerlist,
