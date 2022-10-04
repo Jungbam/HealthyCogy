@@ -5,8 +5,6 @@ import 'react-calendar/dist/Calendar.css' // css import
 import './CalendarContainer.css'
 import InputModal from '../InputModal/InputModal'
 import GetData from '../GetData/GetData'
-import Weekdays from 'react-calendar/dist/umd/MonthView/Weekdays'
-import WeekRoutin from '../WeekRoutin/WeekRoutin'
 
 const CalendarContainer = ({ date, init, isLogedin, userObj, setDate }) => {
   //모달창 부르기

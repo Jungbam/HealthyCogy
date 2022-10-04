@@ -4,6 +4,7 @@ import classes from '../../GetData/GetData.module.css'
 import { deleteDoc, doc } from '@firebase/firestore'
 import { dbService } from '../../../fbase'
 import EditModal from '../../GetData/EditModal/EditModal'
+import Dropdown from '../Dropdown/Dropdown'
 
 const GetWeekRoutinList = ({ userObj, date }) => {
   const userId = userObj
@@ -42,12 +43,13 @@ const GetWeekRoutinList = ({ userObj, date }) => {
 
   return (
     <div className={classes.dataBox}>
-      {data.map((data) => (
+      {data.map((date) => (
         <div key={Math.random()}>
-          <div> 
-            {dayArray[dayNumber]} : {!data ? '쉬는 날' : data.routin}
+          {console.log(date)}
+          <div onClick={deleteHandler.bind(null, data)}>
+            {dayArray[dayNumber]} : {!date ? '쉬는 날' : date.routin}
           </div>
-          {/* <button onClick={editCallHandler.bind(null, data)}>수정</button> */}
+          <Dropdown data={date} />
         </div>
       ))}
     </div>
