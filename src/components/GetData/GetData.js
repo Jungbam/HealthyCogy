@@ -41,16 +41,24 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
         <div key={Math.random()}>
           <div onClick={deleteHandler.bind(null, data)}>
             <ul>
-            <li><span>+ 운동</span><br/>{data.routin} </li>
-            <li><span>+ 식단</span><br/>아침 : {data.breakfast}</li>
-            <li>점심 : {data.lunch}</li>
-            <li>저녁 : {data.dinner}</li>
+              <li>
+                <span>+ 운동</span>
+                <br />
+                {data.routin}{' '}
+              </li>
+              <li>
+                <span>+ 식단</span>
+                <br />
+                아침 : {data.breakfast}
+              </li>
+              <li>점심 : {data.lunch}</li>
+              <li>저녁 : {data.dinner}</li>
             </ul>
           </div>
           <button onClick={editCallHandler.bind(null, data)}>수정</button>
         </div>
       ))}
     </div>
-  ) //값은 data에 있음(console로 부르고 ) 캘린더 날짜를 받아와 그 날짜에 맞는 값을 찍어라
+  )
 }
 export default GetData
