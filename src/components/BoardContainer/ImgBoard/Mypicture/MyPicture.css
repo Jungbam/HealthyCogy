@@ -1,0 +1,13 @@
+.imgBox {
+  width: 30%;
+  height: 200px;
+  overflow: hidden;
+}
+.mypicture {
+  width: 100px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* <div className="imgBox" key={index}>
+          <img className="mypicture"src={url} /> */

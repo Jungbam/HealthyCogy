@@ -29,7 +29,7 @@ const Intro = (props) => {
 
       <ul className="content-container">
         <div>
-          <h2>"맞춤 다이어트 플랫폼"</h2>
+          <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
           <span>
             다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
             도와드립니다..

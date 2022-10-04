@@ -9,41 +9,40 @@ const InputModal = (props) => {
   const dateId = props.date
   const [inputRoutin, setInputRoutin] = useState('')
   const [breakfast, setBreakfast] = useState('')
-  const [breakfastlist,setBreakfastlist] = useState([])
+  const [breakfastlist, setBreakfastlist] = useState([])
   const [lunch, setLunch] = useState('')
-  const [lunchlist,setLunchlist] = useState([])
+  const [lunchlist, setLunchlist] = useState([])
   const [dinner, setDinner] = useState('')
-  const [dinnerlist,setDinnerlist] = useState([])
-  const selectList = ["lowerbody", "back", "chest", "shoulder","arm","aerobicexercise"];
+  const [dinnerlist, setDinnerlist] = useState([])
+
+  const selectList = [
+    'lowerbody',
+    'back',
+    'chest',
+    'shoulder',
+    'arm',
+    'aerobicexercise',
+  ]
 
   const handleSelect = (e) => {
-    setInputRoutin(e.target.value);
-  };
-
-console.log(inputRoutin)
-
-  const addItembreakfast =() =>{
-    setBreakfastlist([...breakfastlist,breakfast])
-  }
-  const addItemlunch =() =>{
-    setLunchlist([...lunchlist,lunch])
-  }
-  const addItemdinner =() =>{
-    setDinnerlist([...dinnerlist,dinner])
-  }
-  
-
-  const routinChangeHandler = (e) => {
     setInputRoutin(e.target.value)
+  }
+  const addItembreakfast = () => {
+    setBreakfastlist([...breakfastlist, breakfast])
+  }
+  const addItemlunch = () => {
+    setLunchlist([...lunchlist, lunch])
+  }
+  const addItemdinner = () => {
+    setDinnerlist([...dinnerlist, dinner])
   }
   const breakfastChangeHandler = (e) => {
     setBreakfast(e.target.value)
-    
   }
-  const lunchChangeHandler= (e) => {
+  const lunchChangeHandler = (e) => {
     setLunch(e.target.value)
   }
-  const dinnerChangeHandler= (e) =>{
+  const dinnerChangeHandler = (e) => {
     setDinner(e.target.value)
   }
 
@@ -59,8 +58,8 @@ console.log(inputRoutin)
         date: dayjs(dateId).format('YY-MM-DD'),
         routin: inputRoutin,
         breakfast: breakfastlist,
-        lunch : lunchlist,
-        dinner : dinnerlist
+        lunch: lunchlist,
+        dinner: dinnerlist,
       })
     props.shutDown()
   }
@@ -74,42 +73,39 @@ console.log(inputRoutin)
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
           <select onChange={handleSelect} value={inputRoutin}>
-          {selectList.map((item) => (
-            <option value={item} key={item}>
-              {item}
-            </option>
-          ))}
+            {selectList.map((item) => (
+              <option value={item} key={item}>
+                {item}
+              </option>
+            ))}
           </select>
-          {/* <input key={Math.round()}
-            type="text"
-            value={inputRoutin}
-            id="routin"
-            onChange={routinChangeHandler}
-          /> */}
           <label htmlFor="food">아침</label>
           <input
             type="text"
             value={breakfast}
             id="ex"
             onChange={breakfastChangeHandler}
-          /><button onClick={addItembreakfast}>아침추가</button>
-          <TodoBoard list={breakfastlist}/>
+          />
+          <button onClick={addItembreakfast}>아침추가</button>
+          <TodoBoard list={breakfastlist} />
           <label htmlFor="food">점심</label>
           <input
             type="text"
             value={lunch}
             id="ex"
             onChange={lunchChangeHandler}
-          /><button onClick={addItemlunch}>점심추가</button>
-          <TodoBoard list={lunchlist}/>
+          />
+          <button onClick={addItemlunch}>점심추가</button>
+          <TodoBoard list={lunchlist} />
           <label htmlFor="food">저녁</label>
           <input
             type="text"
             value={dinner}
             id="ex"
             onChange={dinnerChangeHandler}
-          /><button onClick={addItemdinner}>저녁추가</button>
-          <TodoBoard list={dinnerlist}/>
+          />
+          <button onClick={addItemdinner}>저녁추가</button>
+          <TodoBoard list={dinnerlist} />
           <button className={classes.button} onClick={addHandler}>
             등록
           </button>
