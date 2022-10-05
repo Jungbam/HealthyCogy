@@ -21,8 +21,8 @@
 }
 .headerDiv ul {
   margin-right: 10px;
+  flex-direction: column;
   width: 100%;
-  display: flex;
   align-items: center;
   list-style: none;
 }
@@ -46,14 +46,16 @@
   width: 30px;
   height: 30px;
   border-radius: 15px;
+  margin-top: 6px;
 }
 .navItems {
-  padding: 15px;
+  padding: 20px;
   font-family: 'ImcreSoojin';
   text-align: right;
 }
 .logoutBtn {
   font: inherit;
+  
   margin-left: 0.5rem;
   background-color: rgb(143, 236, 218);
   width: 70px;
@@ -65,23 +67,17 @@
 .ss{
   color: bisque;
 }
-*{
-  margin:0;
-  padding:0;
 
-}
 
 input[id="icon"] {
   display:none;
 } 
 
-body{
-  height:5000px;
-}
+
 
 input[id="icon"] + label{
   position: relative;
-  display:block;
+  display:inline;
   width:20px;
   height:10px;
   cursor:pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */
@@ -90,10 +86,10 @@ input[id="icon"] + label{
 input[id="icon"] + label > span {
   position: absolute;
   display:block;
-  width:100%;
+  width:30px;
   height:5px;
   border-radius:30px;
-  background:pink;
+  background:white;
   transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
   z-index:2;
 
@@ -101,6 +97,7 @@ input[id="icon"] + label > span {
 
 input[id="icon"] + label > span:nth-child(1) {
   top:0px;
+
 }
 
 input[id="icon"] + label > span:nth-child(2) {
@@ -132,6 +129,7 @@ input[id="icon"]:checked + label > span:nth-child(3) {
   width:300px;
   height:100%;
   background:#333;
+  opacity: 80%;
   top:0px;
   padding:60px 25px 25px 25px;
   box-sizing:border-box;
