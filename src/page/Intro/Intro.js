@@ -50,7 +50,7 @@ const Intro = (props) => {
             개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
             플랫폼을 통해 ..{' '}
           </p> */}
-          <div className="chucheon-container">
+          <div className="chucheon1-container">
             <Chucheon  imgSet={seo2} text={seo3} />
             <Chucheon  imgSet={seo4} text={seo5} />
             <Chucheon  imgSet={seo1} text={seo6} />
