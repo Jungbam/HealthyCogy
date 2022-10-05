@@ -37,7 +37,7 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     '금요일',
     '토요일',
   ]
-  console.log(data)
+
   return (
     <div className={classes.dataBox}>
       {data.map((data) => (

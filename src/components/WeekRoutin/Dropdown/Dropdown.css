@@ -1,6 +1,5 @@
 .dropdown {
   position: relative;
-  z-index: 1;
   width: 300px;
   margin-bottom: 8px;
 }
@@ -35,7 +34,6 @@
   max-height: 0;
   overflow: hidden;
   background-color: #fff;
-  border: 1px solid transparent;
   border-radius: 6px;
   transition: border-color 200ms ease-in, padding 200ms ease-in,
     max-height 200ms ease-in, box-shadow 200ms ease-in;
@@ -46,6 +44,7 @@
   max-height: 280px;
   border-color: rgba(224, 226, 231, 0.5);
   box-shadow: 0 4px 9px 0 rgba(63, 65, 80, 0.1);
+  z-index: 20;
 }
 
 .dropdown-option {
