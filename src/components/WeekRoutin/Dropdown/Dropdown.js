@@ -11,7 +11,6 @@ const Dropdown = ({ data, userId, dateId }) => {
   const [routinName, setRoutinName] = useState('휴식')
   const [inputResultArray, setInputResultArray] = useState([])
 
-  // console.log(userId, dateId)
   useEffect(() => {
     switch (routin) {
       case 'chest':
@@ -53,7 +52,6 @@ const Dropdown = ({ data, userId, dateId }) => {
     const IndexNumber = event.target.dataset.index
     const inputNewValue = event.target.value
     basicRoutinArray.splice(IndexNumber, 1, inputNewValue)
-    console.log(basicRoutinArray)
     setInputResultArray(basicRoutinArray)
   }
   // const deleteEditMyroutin = (event) => {
@@ -77,7 +75,7 @@ const Dropdown = ({ data, userId, dateId }) => {
   }
   //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
 
-  console.log(basicRoutinArray)
+  // console.log(basicRoutinArray)
   return (
     <div className="dropdown">
       <button type="button" onClick={toggleMenu}>

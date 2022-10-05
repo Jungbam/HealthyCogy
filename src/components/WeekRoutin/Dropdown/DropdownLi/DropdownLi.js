@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 const DropdownLi = ({ index, data, editMyRoutin, deleteEditMyroutin }) => {
   const [inputValue, setInputValue] = useState('')
   const onChangevalue = (e) => {
-    console.log('')
     setInputValue(e.target.value)
     editMyRoutin(e)
   }
