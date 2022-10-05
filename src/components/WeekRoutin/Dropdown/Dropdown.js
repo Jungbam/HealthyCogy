@@ -4,8 +4,35 @@ import './Dropdown.css'
 
 const Dropdown = ({ data }) => {
   const routin = data.routin
-  const [basicRoutinArray, setBasicRoutinArray] = useState([])
-  const [isOpen, setMenu] = useState(false)
+  const [basicRoutinArray, setBasicRoutinArray] = useState([3])
+  const [showing, setShowing] = useState(false)
+  const [routinName, setRoutinName] = useState('휴식')
+
+  useEffect(() => {
+    switch (routin) {
+      case 'chest':
+        setRoutinName('가슴')
+        break
+      case 'arm':
+        setRoutinName('팔')
+        break
+      case 'back':
+        setRoutinName('등')
+        break
+      case 'lowerbody':
+        setRoutinName('하체')
+        break
+      case 'shoulder':
+        setRoutinName('어깨')
+        break
+      case 'aerobicexercise':
+        setRoutinName('유산소')
+        break
+      case 'Breaktime':
+        setRoutinName('휴식')
+        break
+    }
+  }, [])
   useEffect(() => {
     const basicRoutindbRef = dbService.collection('basicRoutin')
     basicRoutindbRef.get().then((doc) => {
@@ -16,27 +43,23 @@ const Dropdown = ({ data }) => {
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
   }, [])
-
   const toggleMenu = () => {
-    setMenu((isOpen) => !isOpen) // on,off 개념 boolean
+    setShowing(!showing) // on,off 개념 boolean
   }
-  //데이터 받아서 basicRoutinArray에 넣어놓음.
 
   return (
     <div className="dropdown">
-      <button
-        type="button"
-        className="dropdown-toggle"
-        onClick={() => toggleMenu()}
-      >
-        기본루틴을 보시려면 클릭하세요.
+      <button type="button" onClick={toggleMenu}>
+        {routinName} 루틴
       </button>
-      <ul className={!isOpen ? 'dropdown-menu' : 'dropdown-menu.show'}>
-        {basicRoutinArray.map((data, index) => (
-          <li key={index}>
-            <button>{data}</button>
-          </li>
-        ))}
+      <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
+        {Array.isArray(basicRoutinArray)
+          ? basicRoutinArray.map((data, index) => (
+              <li key={index} className="dropdown-option">
+                <button>{data}</button>
+              </li>
+            ))
+          : '배열이 아닙니다.'}
       </ul>
     </div>
   )
