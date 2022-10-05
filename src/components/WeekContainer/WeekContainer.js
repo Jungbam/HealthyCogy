@@ -3,21 +3,11 @@ import FoodBoard from '../FoodBoard/FoodBoard'
 import WeekRoutin from '../WeekRoutin/WeekRoutin/WeekRoutin'
 import './WeekContainer.css'
 
-const WeekContainer = ({ userObj, date, setPage, shutDownHandler }) => {
+const WeekContainer = ({ userObj, date }) => {
   return (
     <div className="WeekContainer">
-      <WeekRoutin
-        userObj={userObj}
-        dayValue={date}
-        setPage={setPage}
-        shutDownHandler={shutDownHandler}
-      />
-      <FoodBoard
-        userObj={userObj}
-        date={date}
-        setPage={setPage}
-        shutDownHandler={shutDownHandler}
-      />
+      <WeekRoutin userObj={userObj} dayValue={date} />
+      <FoodBoard userObj={userObj} date={date} />
     </div>
   )
 }

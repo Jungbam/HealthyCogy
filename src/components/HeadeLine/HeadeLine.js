@@ -4,7 +4,6 @@ import { authService, firebaseInstance } from '../../fbase'
 import { NavLink } from 'react-router-dom'
 
 const HeadeLine = (props) => {
-  console.log(props.user)
   const logoutHandler = () => {
     authService.signOut()
   }
