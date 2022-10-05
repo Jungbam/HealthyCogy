@@ -10,23 +10,25 @@ import MyStorage from './MyStorage/MyStorage'
 import RequireLogin from './RequireLogin/RequireLogin'
 
 const Router = (props) => {
-  const [init, setInit] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userObj, setUserObj] = useState('')
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true)
-        setUserObj(user.uid)
+        setUserObj(user)
       } else {
         setIsLoggedIn(false)
       }
-      setInit(true)
     })
   }, [])
   return (
     <BrowserRouter>
-      {isLoggedIn ? <HeadeLine isLoggedIn={isLoggedIn} /> : <RequireLogin />}
+      {isLoggedIn ? (
+        <HeadeLine user={userObj} isLoggedIn={isLoggedIn} />
+      ) : (
+        <RequireLogin />
+      )}
       <Routes>
         <Route path="/" element={<Intro isLoggedIn={isLoggedIn} />} />
         <Route path="/bmi" element={<BMI />} />

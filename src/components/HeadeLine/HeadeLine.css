@@ -37,28 +37,28 @@
 #page_logo:active {
   font-family: 'ImcreSoojin';
 }
-#page_logo{
+#page_logo {
   font-size: 50px;
   color: white;
   text-decoration: none;
   font-family: 'ImcreSoojin';
 }
-/* #page_logo h1 {
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-family: 'ImcreSoojin';
-  /* font-family: 'Oleo Script', sans-serif; */
-  /* font-size: 50px;
-  text-align: right;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0);
-} */ 
+.userProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
 .navItems {
   padding: 15px;
+  font-family: 'ImcreSoojin';
 }
-.logoutBtn{
-  background-color: darkgrey;
+.logoutBtn {
+  font: inherit;
+  margin-left: 0.5rem;
+  background-color: rgb(143, 236, 218);
   width: 70px;
   height: 20px;
+  border-color: rgb(108, 218, 246);
+  border-radius: 6px;
+  box-shadow: 1px 1px 6px white;
 }
