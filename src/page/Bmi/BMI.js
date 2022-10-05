@@ -41,7 +41,7 @@ const BMI = () => {
   return (
     <div className="BMIpage">
       <div className="cal">
-        <h2>BMI 계산기</h2>
+        <h2 className='title'>BMI 계산기</h2>
         <form>
           <label className="nab">신장</label>
           <input id="height" type="number"></input>
