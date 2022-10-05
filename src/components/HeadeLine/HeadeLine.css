@@ -30,7 +30,7 @@
 .headerDiv li {
   color: white;
   padding: 5px;
-  margin: 5px;
+  margin: 1px;
   text-align: right;
   border-radius: 5px;
 }
@@ -51,6 +51,7 @@
 .navItems {
   padding: 15px;
   font-family: 'ImcreSoojin';
+  text-align: right;
 }
 .logoutBtn {
   font: inherit;

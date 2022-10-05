@@ -14,6 +14,7 @@ const HeadeLine = (props) => {
         <h1 id="page_logo">헬시코기</h1>
       </NavLink>
       <nav className="navItems">
+        <p>{props.user.displayName}님 반갑습니다.</p>
         <ul>
           <li>
             <NavLink
