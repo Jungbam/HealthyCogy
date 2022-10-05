@@ -10,14 +10,13 @@ const MyPicture = ({ userObj, date }) => {
   const [beforeWeekData, setBeforeWeekData] = useState([])
   const dayjsDateId = dayjs(date)
   const beforedateEl = dayjsDateId.add(-7, 'day')
-  console.log(beforedateEl)
+
   useEffect(() => {
     //실시간으로 DB에서 받아오기.
     dbService.collection('image').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
       }))
-      console.log(dataArray)
       const selectedUserArray = dataArray.filter((data) => {
         return data.user === userId
       })
@@ -34,9 +33,7 @@ const MyPicture = ({ userObj, date }) => {
       setBeforeWeekData(beforeWeekPictureData)
     })
   }, [userId, dateId])
-  console.log(data)
-  console.log(beforeWeekData)
-  console.log(data.length)
+
   return (
     <div className="mypictureContainer">
       {beforeWeekData.length === 1 ? (
