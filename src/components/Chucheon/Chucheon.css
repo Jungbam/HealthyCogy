@@ -6,6 +6,7 @@
   overflow: hidden;
   margin: 2rem;
   box-sizing: border-box;
+  text-align: center;
 }
 .container img {
   width: 250px;
@@ -29,4 +30,7 @@
 .content {
   display: flex;
   justify-content: space-around;
+}
+img {
+  width: 100%;
 }

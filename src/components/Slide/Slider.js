@@ -7,7 +7,8 @@ const TOTAL_SLIDES = 2 // 전체 슬라이드 개수(총3개. 배열로 계산)
 export default function Slider(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideRef = useRef(null)
-  const img = './Img/rec.png'
+  // const img = './Img/rec.png'
+  const img = ['./Img/tip.png','./Img/tip1.png','./Img/tip2.png','./Img/tip3.png','./Img/tip4.png','./Img/tip5.png','./Img/tip6.png','./Img/tip7.png']
 
   // Next 버튼 클릭 시
   const NextSlide = () => {
@@ -28,7 +29,7 @@ export default function Slider(props) {
       setCurrentSlide(currentSlide - 1)
     }
   }
-
+ 
   useEffect(() => {
     slideRef.current.style.transition = 'all 0.5s ease-in-out'
     slideRef.current.style.transform = `translateX(-${currentSlide}00%)` // 백틱을 사용하여 슬라이드로 이동하는 에니메이션을 만듭니다.
@@ -41,9 +42,16 @@ export default function Slider(props) {
       </Text>
 
       <SliderContainer ref={slideRef}>
-        <Slide img={img} />
-        <Slide img={img} />
-        <Slide img={img} />
+        {/* {img.map((item)=>(<Slide>{item}</Slide>))} */}
+        <Slide img={img[0]} />
+        <Slide img={img[0]} />
+        {/* <Slide img={img[2]} />
+        <Slide img={img[3]} />
+        <Slide img={img[4]} />
+        <Slide img={img[5]} />
+        <Slide img={img[6]} />
+        <Slide img={img[7]} /> */}
+        
       </SliderContainer>
       <Center>
         <Button onClick={PrevSlide}>Prev</Button>
