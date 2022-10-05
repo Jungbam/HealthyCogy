@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Calendar from 'react-calendar'
-import { authService } from '../../fbase' //경로!!!
-import 'react-calendar/dist/Calendar.css' // css import
+import 'react-calendar/dist/Calendar.css'
 import './CalendarContainer.css'
 import InputModal from '../InputModal/InputModal'
 import GetData from '../GetData/GetData'
@@ -14,7 +13,6 @@ const CalendarContainer = ({ date, userObj, setDate }) => {
     setPage('')
   }
   function onChange(date) {
-    console.log(date)
     setDate(date)
   }
   const callInputHandler = () => {
@@ -24,7 +22,7 @@ const CalendarContainer = ({ date, userObj, setDate }) => {
   }
   const month = new Date(date).getMonth() + 1
   const day = new Date(date).getDate()
-  console.log(day)
+
   return (
     <div className="CalendarContainer">
       <Calendar calendarType="US" onChange={onChange} value={date} />

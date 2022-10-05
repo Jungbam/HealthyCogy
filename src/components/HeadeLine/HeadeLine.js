@@ -14,46 +14,46 @@ const HeadeLine = (props) => {
       </NavLink>
       <nav className="navItems">
         <p>{props.user.displayName}님 반갑습니다.</p>
-        <input type="checkbox" id="icon"/>
-            <label for="icon"> 
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div id="header">
-        <ul>
-          <li>
-            <NavLink
-              style={{ textDecoration: 'none', color: 'white' }}
-              to="/bmi"
-            >
-              BMI계산기
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              style={{ textDecoration: 'none', color: 'white' }}
-              to="/food"
-            >
-              식단추천
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              style={{ textDecoration: 'none', color: 'white' }}
-              to="/Mystorage"
-            >
-              MyStorage
-            </NavLink>
-          </li>
+        <input type="checkbox" id="icon" />
+        <label htmlFor="icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div id="header">
+          <ul>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none', color: 'white' }}
+                to="/bmi"
+              >
+                BMI계산기
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none', color: 'white' }}
+                to="/food"
+              >
+                식단추천
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none', color: 'white' }}
+                to="/Mystorage"
+              >
+                MyStorage
+              </NavLink>
+            </li>
           </ul>
-          </div>
-          <img className="userProfile" src={props.user.photoURL}></img>
-          <NavLink to="/" style={{ textDecoration: 'none' }}>
-            <button className="logoutBtn" onClick={logoutHandler}>
-              로그아웃
-            </button>
-          </NavLink>
+        </div>
+        <img className="userProfile" src={props.user.photoURL}></img>
+        <NavLink to="/" style={{ textDecoration: 'none' }}>
+          <button className="logoutBtn" onClick={logoutHandler}>
+            로그아웃
+          </button>
+        </NavLink>
       </nav>
     </div>
   )

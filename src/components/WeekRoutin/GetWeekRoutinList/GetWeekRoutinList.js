@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
 import classes from '../../GetData/GetData.module.css'
-import { deleteDoc, doc } from '@firebase/firestore'
 import { dbService } from '../../../fbase'
-import EditModal from '../../GetData/EditModal/EditModal'
 import Dropdown from '../Dropdown/Dropdown'
 
 const GetWeekRoutinList = ({ userObj, date }) => {
@@ -13,7 +11,6 @@ const GetWeekRoutinList = ({ userObj, date }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    //실시간으로 DB에서 받아오기.
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -45,7 +42,7 @@ const GetWeekRoutinList = ({ userObj, date }) => {
           <div>
             {dayArray[dayNumber]} : {!data ? '쉬는 날' : data.routin}
           </div>
-          <Dropdown data={data} />
+          <Dropdown data={data} userId={userId} dateId={dateId} />
         </div>
       ))}
     </div>

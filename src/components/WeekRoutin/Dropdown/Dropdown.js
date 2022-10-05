@@ -1,13 +1,17 @@
+import dayjs from 'dayjs'
 import React, { useEffect, useState } from 'react'
 import { dbService } from '../../../fbase'
 import './Dropdown.css'
+import DropdownLi from './DropdownLi/DropdownLi'
 
-const Dropdown = ({ data }) => {
+const Dropdown = ({ data, userId, dateId }) => {
   const routin = data.routin
-  const [basicRoutinArray, setBasicRoutinArray] = useState([3])
+  const [basicRoutinArray, setBasicRoutinArray] = useState([])
   const [showing, setShowing] = useState(false)
   const [routinName, setRoutinName] = useState('휴식')
+  const [inputResultArray, setInputResultArray] = useState([])
 
+  // console.log(userId, dateId)
   useEffect(() => {
     switch (routin) {
       case 'chest':
@@ -32,8 +36,6 @@ const Dropdown = ({ data }) => {
         setRoutinName('휴식')
         break
     }
-  }, [])
-  useEffect(() => {
     const basicRoutindbRef = dbService.collection('basicRoutin')
     basicRoutindbRef.get().then((doc) => {
       const dataArray = doc.docs.map((doc) => ({
@@ -43,10 +45,39 @@ const Dropdown = ({ data }) => {
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
   }, [])
+
   const toggleMenu = () => {
     setShowing(!showing) // on,off 개념 boolean
   }
+  const editMyRoutin = (event) => {
+    const IndexNumber = event.target.dataset.index
+    const inputNewValue = event.target.value
+    basicRoutinArray.splice(IndexNumber, 1, inputNewValue)
+    console.log(basicRoutinArray)
+    setInputResultArray(basicRoutinArray)
+  }
+  // const deleteEditMyroutin = (event) => {
+  //   console.log('in')
+  //   const IndexNumber = event.target.dataset.index
+  //   basicRoutinArray.slice(IndexNumber, IndexNumber + 1)
+  //   setInputResultArray(basicRoutinArray)
+  // }
+  const routinInputHandler = async () => {
+    const createdId = userId + dateId
+    await dbService
+      .collection('MyRoutin')
+      .doc(createdId)
+      .set({
+        createdId,
+        user: userId,
+        date: dateId,
+        routin: inputResultArray,
+      })
+      .then(alert('루틴이 등록되었습니다.'))
+  }
+  //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
 
+  console.log(basicRoutinArray)
   return (
     <div className="dropdown">
       <button type="button" onClick={toggleMenu}>
@@ -55,11 +86,16 @@ const Dropdown = ({ data }) => {
       <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
         {Array.isArray(basicRoutinArray)
           ? basicRoutinArray.map((data, index) => (
-              <li key={index} className="dropdown-option">
-                <button>{data}</button>
-              </li>
+              <DropdownLi
+                key={index}
+                index={index}
+                data={data}
+                editMyRoutin={editMyRoutin}
+                // deleteEditMyroutin={deleteEditMyroutin}
+              />
             ))
           : '배열이 아닙니다.'}
+        <button onClick={routinInputHandler}>나의 루틴으로 등록</button>
       </ul>
     </div>
   )
