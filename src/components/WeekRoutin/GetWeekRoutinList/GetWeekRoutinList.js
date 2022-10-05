@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
-import classes from '../../GetData/GetData.module.css'
+import './GetWeekRoutinList.css'
 import { dbService } from '../../../fbase'
 import Dropdown from '../Dropdown/Dropdown'
 
@@ -36,16 +36,16 @@ const GetWeekRoutinList = ({ userObj, date }) => {
   ]
 
   return (
-    <div className={classes.dataBox}>
-      {console.log(data)}
+    <div className="dataBox">
       {data.length === 0 ? (
-        <div>
+        //데이터가 비면 내려가는 user가 없음.
+        <div className="dataBox">
           <div>{dayArray[dayNumber]} : 쉬는 날</div>
           <Dropdown data={false} userId={userId} dateId={dateId} />
         </div>
       ) : (
         data.map((data, index) => (
-          <div key={index}>
+          <div key={index} className="dataBox">
             <div>
               {dayArray[dayNumber]} : {data.routin}
             </div>

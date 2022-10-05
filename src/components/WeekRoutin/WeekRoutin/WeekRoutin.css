@@ -1,7 +1,9 @@
 .WeekRoutin {
-  width: 200px;
-  height: 400px;
-  display: inline;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .GetData_dataBox__fmUyq {
   height: 30px;

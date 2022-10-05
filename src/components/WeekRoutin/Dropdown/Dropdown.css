@@ -1,4 +1,10 @@
+.dropdownBox {
+  display: flex;
+  margin: 0.5rem auto;
+  justify-content: center;
+}
 .dropdown {
+  margin: 0 auto;
   position: relative;
   width: 300px;
   margin-bottom: 8px;
@@ -38,7 +44,7 @@
   transition: border-color 200ms ease-in, padding 200ms ease-in,
     max-height 200ms ease-in, box-shadow 200ms ease-in;
 }
-.dropdown-menu p {
+.dropdown-menu span {
   text-align: right;
   margin-right: 3rem;
   cursor: pointer;

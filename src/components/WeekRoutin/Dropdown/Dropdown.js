@@ -82,25 +82,27 @@ const Dropdown = ({ data, userId, dateId }) => {
   }
   // console.log(basicRoutinArray)
   return (
-    <div className="dropdown">
-      <button type="button" onClick={toggleMenu}>
-        {routinName} 루틴
-      </button>
-      <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
-        <p onClick={closeDropdownHandler}>X</p>
-        {Array.isArray(basicRoutinArray)
-          ? basicRoutinArray.map((data, index) => (
-              <DropdownLi
-                key={index}
-                index={index}
-                data={data}
-                editMyRoutin={editMyRoutin}
-                // deleteEditMyroutin={deleteEditMyroutin}
-              />
-            ))
-          : '배열이 아닙니다.'}
-        <button onClick={routinInputHandler}>나의 루틴으로 등록</button>
-      </ul>
+    <div className="dropdownBox">
+      <div className="dropdown">
+        <button type="button" onClick={toggleMenu}>
+          {routinName} 루틴 보기
+        </button>
+        <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
+          <span onClick={closeDropdownHandler}>X</span>
+          {Array.isArray(basicRoutinArray)
+            ? basicRoutinArray.map((data, index) => (
+                <DropdownLi
+                  key={index}
+                  index={index}
+                  data={data}
+                  editMyRoutin={editMyRoutin}
+                  // deleteEditMyroutin={deleteEditMyroutin}
+                />
+              ))
+            : '배열이 아닙니다.'}
+          <button onClick={routinInputHandler}>나의 루틴으로 등록</button>
+        </ul>
+      </div>
     </div>
   )
 }
