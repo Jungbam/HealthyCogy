@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { dbService } from '../../fbase'
 import dayjs from 'dayjs'
 import classes from './InputModal.module.css'
-import TodoBoard from '../TodoBoard'
+import FoodItems from './FoodItems'
 
 const InputModal = (props) => {
   const userId = props.userObj
@@ -87,7 +87,7 @@ const InputModal = (props) => {
             onChange={breakfastChangeHandler}
           />
           <button onClick={addItembreakfast}>아침추가</button>
-          <TodoBoard list={breakfastlist} />
+          <FoodItems list={breakfastlist} />
           <label htmlFor="food">점심</label>
           <input
             type="text"
@@ -96,7 +96,7 @@ const InputModal = (props) => {
             onChange={lunchChangeHandler}
           />
           <button onClick={addItemlunch}>점심추가</button>
-          <TodoBoard list={lunchlist} />
+          <FoodItems list={lunchlist} />
           <label htmlFor="food">저녁</label>
           <input
             type="text"
@@ -105,7 +105,7 @@ const InputModal = (props) => {
             onChange={dinnerChangeHandler}
           />
           <button onClick={addItemdinner}>저녁추가</button>
-          <TodoBoard list={dinnerlist} />
+          <FoodItems list={dinnerlist} />
           <button className={classes.button} onClick={addHandler}>
             등록
           </button>
