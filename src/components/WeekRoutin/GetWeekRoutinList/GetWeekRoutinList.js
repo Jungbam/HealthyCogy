@@ -39,7 +39,10 @@ const GetWeekRoutinList = ({ userObj, date }) => {
     <div className={classes.dataBox}>
       {console.log(data)}
       {data.length === 0 ? (
-        <div>{dayArray[dayNumber]} : 쉬는 날</div>
+        <div>
+          <div>{dayArray[dayNumber]} : 쉬는 날</div>
+          <Dropdown data={false} userId={userId} dateId={dateId} />
+        </div>
       ) : (
         data.map((data, index) => (
           <div key={index}>

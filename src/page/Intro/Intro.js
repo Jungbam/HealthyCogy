@@ -22,12 +22,13 @@ const Intro = (props) => {
     }
   `
 
-  const seo2 = './Img/120.jpg'
-  const seo4 = './Img/Checklist.jpg'
-  const seo1 = './Img/9kta_1h59_211101.jpg'
-  const seo3 = '원하는 끼수를 정하면 유명 연예인 다이어트 식단을 볼 수 있어요!!'
-  const seo5 = '매일 변하는 몸을 한눈에 보기 쉽게 사진으로 기록해봐요!'
-  const seo6 = '식단, 운동 등 달력에 기록해봐요!'
+  const introMiddle2 = './Img/120.jpg'
+  const introMiddle4 = './Img/Checklist.jpg'
+  const introMiddle1 = './Img/9kta_1h59_211101.jpg'
+  const introMiddle3 =
+    '원하는 끼수를 정하면 유명 연예인 다이어트 식단을 볼 수 있어요!!'
+  const introMiddle5 = '매일 변하는 몸을 한눈에 보기 쉽게 사진으로 기록해봐요!'
+  const introMiddle6 = '식단, 운동 등 달력에 기록해봐요!'
   const sliderHandler = () => {
     setIsTip(false)
   }
@@ -50,9 +51,9 @@ const Intro = (props) => {
             플랫폼을 통해 ..{' '}
           </p> */}
             <div className="chucheon1-container">
-              <Chucheon imgSet={seo2} text={seo3} />
-              <Chucheon imgSet={seo4} text={seo5} />
-              <Chucheon imgSet={seo1} text={seo6} />
+              <Chucheon imgSet={introMiddle2} text={introMiddle3} />
+              <Chucheon imgSet={introMiddle4} text={introMiddle5} />
+              <Chucheon imgSet={introMiddle1} text={introMiddle6} />
             </div>
           </div>
         </ul>
@@ -67,7 +68,7 @@ const Intro = (props) => {
             <Slider onCLickFn={sliderHandler} />
           ) : (
             <div className="plusBox" onClick={plusBoxHandler}>
-              ⭐️
+              ⭐️꿀팁
             </div>
           )}
         </div>

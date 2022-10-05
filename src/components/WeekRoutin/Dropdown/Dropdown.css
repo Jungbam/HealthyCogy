@@ -38,6 +38,11 @@
   transition: border-color 200ms ease-in, padding 200ms ease-in,
     max-height 200ms ease-in, box-shadow 200ms ease-in;
 }
+.dropdown-menu p {
+  text-align: right;
+  margin-right: 3rem;
+  cursor: pointer;
+}
 
 .dropdown-menu.show {
   padding: 8px 0;

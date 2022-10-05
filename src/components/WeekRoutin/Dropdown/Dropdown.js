@@ -1,11 +1,10 @@
-import dayjs from 'dayjs'
 import React, { useEffect, useState } from 'react'
 import { dbService } from '../../../fbase'
 import './Dropdown.css'
 import DropdownLi from './DropdownLi/DropdownLi'
 
 const Dropdown = ({ data, userId, dateId }) => {
-  const routin = data.routin
+  const routin = data ? data.routin : 'Breaktime'
   const [basicRoutinArray, setBasicRoutinArray] = useState([])
   const [showing, setShowing] = useState(false)
   const [routinName, setRoutinName] = useState('휴식')
@@ -74,7 +73,13 @@ const Dropdown = ({ data, userId, dateId }) => {
       .then(alert('루틴이 등록되었습니다.'))
   }
   //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
-
+  const closeDropdownHandler = () => {
+    if (window.confirm('등록없이 닫으시겠습니까?')) {
+      setShowing(false)
+    } else {
+      alert('원하시는 루틴을 등록해주세요.')
+    }
+  }
   // console.log(basicRoutinArray)
   return (
     <div className="dropdown">
@@ -82,6 +87,7 @@ const Dropdown = ({ data, userId, dateId }) => {
         {routinName} 루틴
       </button>
       <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
+        <p onClick={closeDropdownHandler}>X</p>
         {Array.isArray(basicRoutinArray)
           ? basicRoutinArray.map((data, index) => (
               <DropdownLi
