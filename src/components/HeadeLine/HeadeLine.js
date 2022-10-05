@@ -14,6 +14,13 @@ const HeadeLine = (props) => {
       </NavLink>
       <nav className="navItems">
         <p>{props.user.displayName}님 반갑습니다.</p>
+        <input type="checkbox" id="icon"/>
+            <label for="icon"> 
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div id="header">
         <ul>
           <li>
             <NavLink
@@ -39,13 +46,14 @@ const HeadeLine = (props) => {
               MyStorage
             </NavLink>
           </li>
+          </ul>
+          </div>
           <img className="userProfile" src={props.user.photoURL}></img>
           <NavLink to="/" style={{ textDecoration: 'none' }}>
             <button className="logoutBtn" onClick={logoutHandler}>
               로그아웃
             </button>
           </NavLink>
-        </ul>
       </nav>
     </div>
   )
