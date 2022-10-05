@@ -4,10 +4,9 @@ import './YouCon.css'
 
 export default function YouCon() {
   return (
-    <ul className="chucheon-container">
-      <li>
-        <ReactPlayer
-          className="player"
+    <div className="chucheon-container">
+        <ReactPlayer 
+          className="player col_3 col_m_3"
           url={'https://www.youtube.com/watch?v=N3v_YrlilBY'}
           width="450px"
           heigth="400px"
@@ -15,11 +14,8 @@ export default function YouCon() {
           muted={true}
           controls={true}
         />
-        <h1 style={{ color: 'white' }}>추천영상</h1>
-      </li>
-      <li>
         <ReactPlayer
-          className="player"
+          className="player col_3 col_m_3"
           url={'https://www.youtube.com/watch?v=FCfLAaEePyU'}
           width="450px"
           heigth="400px"
@@ -27,11 +23,8 @@ export default function YouCon() {
           muted={true}
           controls={true}
         />
-        <h1 style={{ color: 'white' }}>추천영상</h1>
-      </li>
-      <li>
         <ReactPlayer
-          className="player"
+          className="player col_3 col_m_3"
           url={'https://www.youtube.com/watch?v=cIzEoosVsUg'}
           width="450px"
           heigth="400px"
@@ -39,8 +32,6 @@ export default function YouCon() {
           muted={true}
           controls={true}
         />
-        <h1 style={{ color: 'white' }}>추천영상</h1>
-      </li>
-    </ul>
+    </div>
   )
 }
