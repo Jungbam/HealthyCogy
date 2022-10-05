@@ -32,8 +32,8 @@ const Dropdown = ({ data }) => {
         기본루틴을 보시려면 클릭하세요.
       </button>
       <ul className={!isOpen ? 'dropdown-menu' : 'dropdown-menu.show'}>
-        {basicRoutinArray.map((data) => (
-          <li>
+        {basicRoutinArray.map((data, index) => (
+          <li key={index}>
             <button>{data}</button>
           </li>
         ))}

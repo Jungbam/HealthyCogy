@@ -24,7 +24,6 @@ const WeekRoutin = ({ dayValue, userObj, setPage, shutDownHandler }) => {
             setPage={setPage}
             shutDownHandler={shutDownHandler}
           />
-          <button className="routinBtn">기본루틴</button>
         </div>
       ))}
     </div>

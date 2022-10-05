@@ -6,13 +6,14 @@ import dayjs from 'dayjs'
 
 const MyDietProcess = ({ userObj, date }) => {
   const userId = userObj
-  const dateId = date
+  const dateId = dayjs(date).format('YY-MM-DD')
   const [progress, setProgress] = useState(0)
 
   const upLoadFiles = (file) => {
     if (!file) return
     const storageRef = ref(storage, `/file/${file.name}`)
     const upLoadTask = uploadBytesResumable(storageRef, file)
+    const createdId = userId + dateId
 
     upLoadTask.on(
       'state_changed',
@@ -25,11 +26,10 @@ const MyDietProcess = ({ userObj, date }) => {
       (error) => console.log(error),
       () => {
         getDownloadURL(upLoadTask.snapshot.ref).then(async (urlvalue) => {
-          const createdId = userId + Math.random()
-          await dbService.collection('image').add({
+          await dbService.collection('image').doc(createdId).set({
             createdId,
             user: userId,
-            date: dayjs(dateId).format('YY-MM-DD'),
+            date: dateId,
             url: urlvalue,
           })
         })
