@@ -16,6 +16,11 @@ const HeadeLine = (props) => {
         <h1 id="page_logo">헬시코기</h1> 
       </NavLink>
       <nav className="navItems">
+        <label for="check_box">
+        <span className='ss'></span>
+        <span></span>
+        <span></span>
+       </label>
         <ul>
           <li>
             <NavLink  style={{ textDecoration: "none" ,color:'white'}}
