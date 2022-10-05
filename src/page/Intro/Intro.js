@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import Chucheon from '../../components/Chucheon/Chucheon'
 import Slider from '../../components/Slide/Slider'
 import YouCon from '../../components/YouCon/YouCon'
+import styled from 'styled-components'
 
 import './Intro.css'
 
@@ -10,6 +12,16 @@ const Intro = (props) => {
   const plusBoxHandler = () => {
     setIsTip(true)
   }
+
+  const Common = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+    }
+`
+ 
   const seo2 = './Img/120.jpg'
   const seo4 = './Img/Checklist.jpg'
   const seo1 = './Img/9kta_1h59_211101.jpg'
@@ -20,12 +32,13 @@ const Intro = (props) => {
     setIsTip(false)
   }
 
-  const [mainPage, setPage] = useState(
-    <main>
+  return (
+    <div className="pBox">
+      {/* <HeadeLine changePage={changePageHandler} isLoggedIn={props.isLoggedIn} /> */}
+      <main>
       <div id="backgroundImg">
         <div className="background-Img"></div>
       </div>
-
       <ul className="content-container">
         <div>
           <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
@@ -50,16 +63,6 @@ const Intro = (props) => {
           <YouCon />
         </div>
       </div>
-    </main>,
-  )
-  const changePageHandler = (newPage) => {
-    setPage(newPage)
-  }
-  return (
-    <div className="pBox">
-      {/* <HeadeLine changePage={changePageHandler} isLoggedIn={props.isLoggedIn} /> */}
-      <main>
-        {mainPage}
         <div className="fixedContent">
           {isTip ? (
             <Slider onCLickFn={sliderHandler} />
