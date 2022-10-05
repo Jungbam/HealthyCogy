@@ -1,11 +1,14 @@
+.mypictureContainer {
+  display: flex;
+}
 .imgBox {
   width: 30%;
   height: 200px;
   overflow: hidden;
 }
 .mypicture {
-  width: 100px;
-  height: 200px;
+  width: 60px;
+  height: 100px;
   object-fit: cover;
 }
 
