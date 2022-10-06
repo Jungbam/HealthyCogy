@@ -6,7 +6,7 @@ export default function YouCon() {
   return (
     <div className="chucheon-container">
         <ReactPlayer 
-          className="player col_3 col_m_3"
+          className="player"
           url={'https://www.youtube.com/watch?v=N3v_YrlilBY'}
           width="450px"
           heigth="400px"
@@ -15,7 +15,7 @@ export default function YouCon() {
           controls={true}
         />
         <ReactPlayer
-          className="player col_3 col_m_3"
+          className="player"
           url={'https://www.youtube.com/watch?v=FCfLAaEePyU'}
           width="450px"
           heigth="400px"
@@ -24,7 +24,7 @@ export default function YouCon() {
           controls={true}
         />
         <ReactPlayer
-          className="player col_3 col_m_3"
+          className="player"
           url={'https://www.youtube.com/watch?v=cIzEoosVsUg'}
           width="450px"
           heigth="400px"

@@ -8,10 +8,10 @@
 }
 
 @media only screen and (max-width:780px){
-  .MyStorage{flex-direction: column; margin: 0 auto;  justify-content: space-around; }
-    .CalendarContainer{margin:0 auto; margin-top: 90px;}
-    .WeekContainer{margin: 0 auto;}
-    .BoardContainer{margin: 0 auto;}
+  .MyStorage{flex-direction: column; margin: 0;  justify-content: space-around; }
+    .CalendarContainer{width: 100%; margin:0 auto; margin-top: 90px;}
+    .WeekContainer{width: 100%; margin: 0 auto;}
+    .BoardContainer{width: 100%; margin: 0 auto;}
   }
   /* @media only screen and (min-width:1200px){
     .MyStorage{flex-direction: row; margin: 0 auto;  justify-content: space-around; }
