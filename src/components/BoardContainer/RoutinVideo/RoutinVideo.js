@@ -65,7 +65,6 @@ const RoutinVideo = ({ userObj, date }) => {
     } else {
     }
   }
-  console.log(randomNums)
   const resultArray = []
   for (let i of randomNums) {
     resultArray.push(videoArray[i])

@@ -40,7 +40,7 @@ const GetWeekRoutinList = ({ userObj, date }) => {
       {data.length === 0 ? (
         //데이터가 비면 내려가는 user가 없음.
         <div className="dataBox">
-          <div>{dayArray[dayNumber]} : 쉬는 날</div>
+          <div>{dayArray[dayNumber]} : Breaktime</div>
           <Dropdown data={false} userId={userId} dateId={dateId} />
         </div>
       ) : (

@@ -8,7 +8,6 @@ const Dropdown = ({ data, userId, dateId }) => {
   const createdId = userId + dateId
   const [basicRoutinArray, setBasicRoutinArray] = useState([])
   const [showing, setShowing] = useState(false)
-  const [routinName, setRoutinName] = useState('휴식')
   const [inputRoutin, setInputRoutin] = useState(routin)
   const [inputResultArray, setInputResultArray] = useState([])
   const [dataExist, setDataExist] = useState('')
@@ -16,29 +15,6 @@ const Dropdown = ({ data, userId, dateId }) => {
   const [init, setInit] = useState(true)
 
   useEffect(() => {
-    switch (routin) {
-      case 'chest':
-        setRoutinName('가슴')
-        break
-      case 'arm':
-        setRoutinName('팔')
-        break
-      case 'back':
-        setRoutinName('등')
-        break
-      case 'lowerbody':
-        setRoutinName('하체')
-        break
-      case 'shoulder':
-        setRoutinName('어깨')
-        break
-      case 'aerobicexercise':
-        setRoutinName('유산소')
-        break
-      case 'Breaktime':
-        setRoutinName('휴식')
-        break
-    }
     const basicRoutindbRef = dbService.collection('basicRoutin')
     basicRoutindbRef.get().then((doc) => {
       const dataArray = doc.docs.map((doc) => ({
@@ -47,6 +23,7 @@ const Dropdown = ({ data, userId, dateId }) => {
       const selectBasicRoutin = dataArray.filter((data) => data.id === routin)
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
+
     //데이터 유무 판단
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
@@ -62,14 +39,18 @@ const Dropdown = ({ data, userId, dateId }) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
       }))
-      const selectedData = dataArray.filter((data) => {
+      const selectedDataRoutin = dataArray.filter((data) => {
         return data.createdId === createdId
       })
-      selectedData.length === 0
-        ? setRoutinDataExist(false)
-        : setRoutinDataExist(selectedData[0].routin)
+      if (selectedDataRoutin.length === 0) {
+        setRoutinDataExist([])
+      } else {
+        // console.log('입력 값', selectedDataRoutin[0].routin)
+        setRoutinDataExist(selectedDataRoutin[0].routin)
+      }
     })
   }, [data, init])
+
   const toggleMenu = () => {
     setShowing(!showing) // on,off 개념 boolean
   }
@@ -94,6 +75,7 @@ const Dropdown = ({ data, userId, dateId }) => {
     basicRoutinArray.splice(IndexNumber, 1)
     setInputResultArray(basicRoutinArray)
   }
+  // console.log('입력완료', routinDataExist)
   const routinInputHandler = async () => {
     await dbService
       .collection('MyRoutin')
@@ -125,23 +107,12 @@ const Dropdown = ({ data, userId, dateId }) => {
               .then(setShowing(false)),
       )
   }
-  //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
   const closeDropdownHandler = () => {
     if (window.confirm('등록없이 닫으시겠습니까?')) {
       setShowing(false)
       setInit(!init)
     }
   }
-
-  const selectList = [
-    'lowerbody',
-    'back',
-    'chest',
-    'shoulder',
-    'arm',
-    'aerobicexercise',
-    'Breaktime',
-  ]
   const selectHandler = (e) => {
     setInputRoutin(e.target.value)
   }
@@ -149,7 +120,7 @@ const Dropdown = ({ data, userId, dateId }) => {
     <div className="dropdownBox">
       <div className="dropdown">
         <button type="button" onClick={toggleMenu}>
-          {routinName} 루틴 보기
+          {dateId} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
           <span className="closedrop" onClick={closeDropdownHandler}>
@@ -158,11 +129,12 @@ const Dropdown = ({ data, userId, dateId }) => {
           <div>
             <strong>오늘의 운동 : </strong>
             <select onChange={selectHandler} value={inputRoutin}>
-              {selectList.map((item, index) => (
-                <option value={item} key={index}>
-                  {item}
-                </option>
-              ))}
+              <option value={'lowerbody' || ''}>lowerbody</option>
+              <option value={'back' || ''}>back</option>
+              <option value={'chest' || ''}>chest</option>
+              <option value={'shoulder' || ''}>shoulder</option>
+              <option value={'lowerbody' || ''}>lowerbody</option>
+              <option value={'Breaktime' || ''}>lowerbody</option>
             </select>
           </div>
           {routinDataExist.length === 0
