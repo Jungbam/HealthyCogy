@@ -40,14 +40,16 @@ const HeadeLine = (props) => {
                 MyStorage
               </NavLink>
             </li>
-          </ul>
-        </div> 
-        <img className="userProfile" src={props.user.photoURL}></img>
+            <li>
+            <img className="userProfile" src={props.user.photoURL}></img>
             <NavLink to="/" style={{ textDecoration: 'none' }}>
               <button className="logoutBtn" onClick={logoutHandler}>
                 로그아웃
               </button>
             </NavLink>
+            </li>
+          </ul>
+        </div> 
         <input type="checkbox" id="icon" />
         <label htmlFor="icon">
           <span></span>
