@@ -5,9 +5,12 @@ import DropdownLi from './DropdownLi/DropdownLi'
 
 const Dropdown = ({ data, userId, dateId }) => {
   const routin = data ? data.routin : 'Breaktime'
+  const createdId = userId + dateId
+  console.log(dateId)
   const [basicRoutinArray, setBasicRoutinArray] = useState([])
   const [showing, setShowing] = useState(false)
   const [routinName, setRoutinName] = useState('휴식')
+  const [inputRoutin, setInputRoutin] = useState(routin)
   const [inputResultArray, setInputResultArray] = useState([])
 
   useEffect(() => {
@@ -42,7 +45,7 @@ const Dropdown = ({ data, userId, dateId }) => {
       const selectBasicRoutin = dataArray.filter((data) => data.id === routin)
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
-  }, [])
+  }, [data, inputRoutin])
 
   const toggleMenu = () => {
     setShowing(!showing) // on,off 개념 boolean
@@ -53,14 +56,19 @@ const Dropdown = ({ data, userId, dateId }) => {
     basicRoutinArray.splice(IndexNumber, 1, inputNewValue)
     setInputResultArray(basicRoutinArray)
   }
-  // const deleteEditMyroutin = (event) => {
-  //   console.log('in')
-  //   const IndexNumber = event.target.dataset.index
-  //   basicRoutinArray.slice(IndexNumber, IndexNumber + 1)
-  //   setInputResultArray(basicRoutinArray)
-  // }
+  // 삭제를 하려면
+  //basciRoutin은 컴포넌트에 그려지는 것들
+  //resultArray는 데이터베이스에 저장되는 것들
+  //삭제하려는 인덱스를 얻어서 => basicRoutin을 삭제 => 컴포넌트에 안그려진다.
+  //resultArray를 basicRoutin으로 입력 => 컴포넌트에 그려진 value값이 db에 저장된다.
+
+  const deleteEditMyroutin = (event) => {
+    console.log('in')
+    const IndexNumber = event.target.dataset.index
+    basicRoutinArray.slice(IndexNumber, IndexNumber + 1)
+    setInputResultArray(basicRoutinArray)
+  }
   const routinInputHandler = async () => {
-    const createdId = userId + dateId
     await dbService
       .collection('MyRoutin')
       .doc(createdId)
@@ -70,15 +78,33 @@ const Dropdown = ({ data, userId, dateId }) => {
         date: dateId,
         routin: inputResultArray,
       })
-      .then(alert('루틴이 등록되었습니다.'))
+      .then(console.log('in'))
+      .then(
+        await dbService
+          .collection('healthycogy')
+          .doc(createdId)
+          .update({ routin: inputRoutin })
+          .then(setShowing(false)),
+      )
   }
   //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
   const closeDropdownHandler = () => {
     if (window.confirm('등록없이 닫으시겠습니까?')) {
       setShowing(false)
-    } else {
-      alert('원하시는 루틴을 등록해주세요.')
     }
+  }
+
+  const selectList = [
+    'lowerbody',
+    'back',
+    'chest',
+    'shoulder',
+    'arm',
+    'aerobicexercise',
+    'Breaktime',
+  ]
+  const selectHandler = (e) => {
+    setInputRoutin(e.target.value)
   }
   // console.log(basicRoutinArray)
   return (
@@ -88,7 +114,19 @@ const Dropdown = ({ data, userId, dateId }) => {
           {routinName} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
-          <span onClick={closeDropdownHandler}>X</span>
+          <span className="closedrop" onClick={closeDropdownHandler}>
+            X
+          </span>
+          <div>
+            <strong>오늘의 운동 : </strong>
+            <select onChange={selectHandler} value={inputRoutin}>
+              {selectList.map((item, index) => (
+                <option value={item} key={index}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
           {Array.isArray(basicRoutinArray)
             ? basicRoutinArray.map((data, index) => (
                 <DropdownLi
@@ -96,7 +134,7 @@ const Dropdown = ({ data, userId, dateId }) => {
                   index={index}
                   data={data}
                   editMyRoutin={editMyRoutin}
-                  // deleteEditMyroutin={deleteEditMyroutin}
+                  deleteEditMyroutin={deleteEditMyroutin}
                 />
               ))
             : '배열이 아닙니다.'}
