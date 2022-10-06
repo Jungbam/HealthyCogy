@@ -12,6 +12,8 @@ const Dropdown = ({ data, userId, dateId }) => {
   const [inputRoutin, setInputRoutin] = useState(routin)
   const [inputResultArray, setInputResultArray] = useState([])
   const [dataExist, setDataExist] = useState('')
+  const [routinDataExist, setRoutinDataExist] = useState([])
+  const [init, setInit] = useState(true)
 
   useEffect(() => {
     switch (routin) {
@@ -45,7 +47,7 @@ const Dropdown = ({ data, userId, dateId }) => {
       const selectBasicRoutin = dataArray.filter((data) => data.id === routin)
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
-    //작업
+    //데이터 유무 판단
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -55,15 +57,31 @@ const Dropdown = ({ data, userId, dateId }) => {
       })
       setDataExist(selectedData)
     })
-  }, [data, inputRoutin])
+    //나의 루틴이 있는지 확인
+    dbService.collection('MyRoutin').onSnapshot((snapshot) => {
+      const dataArray = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }))
+      const selectedData = dataArray.filter((data) => {
+        return data.createdId === createdId
+      })
+      selectedData.length === 0
+        ? setRoutinDataExist(false)
+        : setRoutinDataExist(selectedData[0].routin)
+    })
+  }, [data, init])
   const toggleMenu = () => {
     setShowing(!showing) // on,off 개념 boolean
   }
   const editMyRoutin = (event) => {
     const IndexNumber = event.target.dataset.index
     const inputNewValue = event.target.value
-    basicRoutinArray.splice(IndexNumber, 1, inputNewValue)
-    setInputResultArray(basicRoutinArray)
+    const editedBasicRoutinArray = basicRoutinArray.splice(
+      IndexNumber,
+      1,
+      inputNewValue,
+    )
+    setInputResultArray(editedBasicRoutinArray)
   }
   // 삭제를 하려면
   //basciRoutin은 컴포넌트에 그려지는 것들
@@ -72,11 +90,12 @@ const Dropdown = ({ data, userId, dateId }) => {
   //resultArray를 basicRoutin으로 입력 => 컴포넌트에 그려진 value값이 db에 저장된다.
 
   const deleteEditMyroutin = (event) => {
-    console.log('in')
     const IndexNumber = event.target.dataset.index
-    basicRoutinArray.slice(IndexNumber, IndexNumber + 1)
+    basicRoutinArray.splice(IndexNumber, 1)
     setInputResultArray(basicRoutinArray)
+    // console.log(basicRoutinArray, '베이직')
   }
+  // console.log(inputResultArray, '결과')
   const routinInputHandler = async () => {
     await dbService
       .collection('MyRoutin')
@@ -87,7 +106,6 @@ const Dropdown = ({ data, userId, dateId }) => {
         date: dateId,
         routin: inputResultArray,
       })
-      .then(console.log('in'))
       .then(
         dataExist.length === 0
           ? await dbService
@@ -113,6 +131,7 @@ const Dropdown = ({ data, userId, dateId }) => {
   const closeDropdownHandler = () => {
     if (window.confirm('등록없이 닫으시겠습니까?')) {
       setShowing(false)
+      setInit(!init)
     }
   }
 
@@ -128,7 +147,7 @@ const Dropdown = ({ data, userId, dateId }) => {
   const selectHandler = (e) => {
     setInputRoutin(e.target.value)
   }
-  // console.log(basicRoutinArray)
+  console.log(routinDataExist)
   return (
     <div className="dropdownBox">
       <div className="dropdown">
@@ -149,8 +168,18 @@ const Dropdown = ({ data, userId, dateId }) => {
               ))}
             </select>
           </div>
-          {Array.isArray(basicRoutinArray)
+          {routinDataExist.length === 0
             ? basicRoutinArray.map((data, index) => (
+                <DropdownLi
+                  key={index}
+                  index={index}
+                  data={data}
+                  editMyRoutin={editMyRoutin}
+                  deleteEditMyroutin={deleteEditMyroutin}
+                />
+              ))
+            : Array.isArray(routinDataExist)
+            ? routinDataExist.map((data, index) => (
                 <DropdownLi
                   key={index}
                   index={index}
