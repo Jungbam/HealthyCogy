@@ -49,13 +49,13 @@
   margin-top: 6px;
 }
 .navItems {
-  padding: 20px;
+  padding: 10px;
   font-family: 'ImcreSoojin';
   text-align: right;
 }
 .logoutBtn {
   font: inherit;
-  
+  margin-top: -6px;
   margin-left: 0.5rem;
   background-color: rgb(143, 236, 218);
   width: 70px;
@@ -77,7 +77,7 @@ input[id="icon"] {
 
 input[id="icon"] + label{
   position: relative;
-  display:inline;
+  display:inline-block;
   width:20px;
   height:10px;
   cursor:pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */

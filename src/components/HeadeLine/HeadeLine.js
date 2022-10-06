@@ -13,7 +13,13 @@ const HeadeLine = (props) => {
         <h1 id="page_logo">헬시코기</h1>
       </NavLink>
       <nav className="navItems">
-        <p>{props.user.displayName}님 반갑습니다.</p>
+        <p>{props.user.displayName}님 반갑습니다.</p> 
+        <img className="userProfile" src={props.user.photoURL}></img>
+        <NavLink to="/" style={{ textDecoration: 'none' }}>
+          <button className="logoutBtn" onClick={logoutHandler}>
+            로그아웃
+          </button>
+        </NavLink>   
         <input type="checkbox" id="icon" />
         <label htmlFor="icon">
           <span></span>
@@ -48,12 +54,6 @@ const HeadeLine = (props) => {
             </li>
           </ul>
         </div>
-        <img className="userProfile" src={props.user.photoURL}></img>
-        <NavLink to="/" style={{ textDecoration: 'none' }}>
-          <button className="logoutBtn" onClick={logoutHandler}>
-            로그아웃
-          </button>
-        </NavLink>
       </nav>
     </div>
   )
