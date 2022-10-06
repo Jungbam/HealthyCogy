@@ -3,6 +3,7 @@ import 'firebase/storage'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { dbService, storage } from '../../../../fbase'
 import dayjs from 'dayjs'
+import './MyDietProcess.css'
 
 const MyDietProcess = ({ userObj, date }) => {
   const userId = userObj
@@ -43,8 +44,8 @@ const MyDietProcess = ({ userObj, date }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={uploadHandler}>
+    <div className="myDietProcessContainer">
+      <form onSubmit={uploadHandler} className="formContainer">
         <input type="file" className="fileInput"></input>
         <button type="submit">Upload</button>
       </form>

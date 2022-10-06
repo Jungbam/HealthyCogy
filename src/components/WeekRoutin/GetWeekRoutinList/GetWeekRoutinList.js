@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
-import classes from '../../GetData/GetData.module.css'
-import { deleteDoc, doc } from '@firebase/firestore'
+import './GetWeekRoutinList.css'
 import { dbService } from '../../../fbase'
-import EditModal from '../../GetData/EditModal/EditModal'
 import Dropdown from '../Dropdown/Dropdown'
 
 const GetWeekRoutinList = ({ userObj, date }) => {
@@ -13,7 +11,6 @@ const GetWeekRoutinList = ({ userObj, date }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    //실시간으로 DB에서 받아오기.
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -39,15 +36,23 @@ const GetWeekRoutinList = ({ userObj, date }) => {
   ]
 
   return (
-    <div className={classes.dataBox}>
-      {data.map((data) => (
-        <div key={Math.random()}>
-          <div>
-            {dayArray[dayNumber]} : {!data ? '쉬는 날' : data.routin}
-          </div>
-          <Dropdown data={data} />
+    <div className="dataBox">
+      {data.length === 0 ? (
+        //데이터가 비면 내려가는 user가 없음.
+        <div className="dataBox">
+          <div>{dayArray[dayNumber]} : 쉬는 날</div>
+          <Dropdown data={false} userId={userId} dateId={dateId} />
         </div>
-      ))}
+      ) : (
+        data.map((data, index) => (
+          <div key={index} className="dataBox">
+            <div>
+              {dayArray[dayNumber]} : {data.routin}
+            </div>
+            <Dropdown data={data} userId={userId} dateId={dateId} />
+          </div>
+        ))
+      )}
     </div>
   )
 }

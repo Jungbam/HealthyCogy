@@ -46,7 +46,6 @@ const RoutinVideo = ({ userObj, date }) => {
       setVideoArray(resultArray)
     })
   }
-  console.log(data)
   const settings = {
     dots: true,
     infinite: true,

@@ -1,5 +1,6 @@
 .mypictureContainer {
   display: flex;
+  justify-content: space-around;
 }
 .imgBox {
   width: 30%;

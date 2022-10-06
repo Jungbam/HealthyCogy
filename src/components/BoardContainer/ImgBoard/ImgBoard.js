@@ -6,8 +6,8 @@ import MyPicture from './Mypicture/MyPicture'
 const ImgBoard = (props) => {
   return (
     <div className="ImgBoard">
-      <MyDietProcess userObj={props.userObj} date={props.date} />
       <MyPicture userObj={props.userObj} date={props.date} />
+      <MyDietProcess userObj={props.userObj} date={props.date} />
     </div>
   )
 }
