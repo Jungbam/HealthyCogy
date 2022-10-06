@@ -93,9 +93,7 @@ const Dropdown = ({ data, userId, dateId }) => {
     const IndexNumber = event.target.dataset.index
     basicRoutinArray.splice(IndexNumber, 1)
     setInputResultArray(basicRoutinArray)
-    // console.log(basicRoutinArray, '베이직')
   }
-  // console.log(inputResultArray, '결과')
   const routinInputHandler = async () => {
     await dbService
       .collection('MyRoutin')
@@ -147,7 +145,6 @@ const Dropdown = ({ data, userId, dateId }) => {
   const selectHandler = (e) => {
     setInputRoutin(e.target.value)
   }
-  console.log(routinDataExist)
   return (
     <div className="dropdownBox">
       <div className="dropdown">

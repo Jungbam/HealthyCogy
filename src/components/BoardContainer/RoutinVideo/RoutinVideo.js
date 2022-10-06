@@ -6,7 +6,7 @@ import { dbService } from '../../../fbase'
 import './RoutinVideo.css'
 import dayjs from 'dayjs'
 
-// const SLIDE_NUMBER_VALUE = 4
+const SLIDE_NUMBER_VALUE = 4
 const RoutinVideo = ({ userObj, date }) => {
   const userId = userObj
   const dateId = dayjs(date).format('YY-MM-DD')
@@ -29,7 +29,7 @@ const RoutinVideo = ({ userObj, date }) => {
       const routinValue = { ...outputArray[0] }
       getroutinVideo(routinValue.routin)
     })
-  }, [userId, dateId])
+  }, [dateId])
 
   const getroutinVideo = async (routinInput) => {
     await dbService.collection('Routin').onSnapshot((snapshot) => {
@@ -53,33 +53,29 @@ const RoutinVideo = ({ userObj, date }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
+  //작업
 
-  // const MaxRandom = videoArray1.length
-  // const randomIndex = () => {
-  //   const randomNums = []
-  //   let count = 0
-  //   for (let i = 0; count < SLIDE_NUMBER_VALUE; i++) {
-  //     const randomNum = Math.floor(Math.random() * 7)
-  //     if (!randomNums.includes(randomNum)) {
-  //       randomNums.push(randomNum)
-  //       count++
-  //     } else {
-  //     }
-  //   }
-  //   return randomNums
-  // }
-  // const randomNumArray = randomIndex()
-  // const playArray = [...videoArray[routinValue]]
-  // const resultArray = []
-  // for (let i of randomNumArray) {
-  //   resultArray.push(playArray[i])
-  // }
-
+  const randomNums = []
+  let count = 0
+  for (let i = 0; count < SLIDE_NUMBER_VALUE; i++) {
+    const randomNum = Math.floor(Math.random() * 7)
+    if (!randomNums.includes(randomNum)) {
+      randomNums.push(randomNum)
+      count++
+    } else {
+    }
+  }
+  console.log(randomNums)
+  const resultArray = []
+  for (let i of randomNums) {
+    resultArray.push(videoArray[i])
+  }
+  //작업
   return (
     <div className="RoutinVideoContainer">
       <h2> 일일 추천 운동 영상</h2>
       <Slider {...settings}>
-        {videoArray.map((urlPath) => (
+        {resultArray.map((urlPath) => (
           <ReactPlayer
             key={Math.random()}
             className="player"
