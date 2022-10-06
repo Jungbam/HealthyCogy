@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.formContainer {
+  height: 50%;
+  padding: 0.5rem;
+  border: 1px solid blue;
+}
+.formContainer input {
+  font: inherit;
+}
+.myDietProcessContainer {
+  height: 20%;
+}

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import React, { useEffect, useState } from 'react'
 import { dbService } from '../../../../fbase'
+import './MyPicture.css'
 
 const MyPicture = ({ userObj, date }) => {
   const userId = userObj
