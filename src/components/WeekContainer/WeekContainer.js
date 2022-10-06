@@ -5,7 +5,7 @@ import './WeekContainer.css'
 
 const WeekContainer = ({ userObj, date }) => {
   return (
-    <div className="WeekContainer col_4 col_s_4">
+    <div className="WeekContainer">
       <WeekRoutin userObj={userObj} dayValue={date} />
       <FoodBoard userObj={userObj} date={date} />
     </div>

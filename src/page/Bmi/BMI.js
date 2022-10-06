@@ -12,7 +12,7 @@ const BMI = () => {
     let bmi = +weight / (+height / 100) ** 2
 
     if (+bmi < 18.5) {
-      setImg('./Img/BMI1.png')
+      setImg('./Img/Bmi.png')
       setBMI(`당신의 bmi 지수는 ${bmi.toFixed(1)}, 비만도는 저체중입니다.`)
       return
     } else if (+bmi >= 18.5 && +bmi < 23) {
