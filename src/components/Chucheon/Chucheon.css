@@ -1,6 +1,5 @@
 .container {
   /* display: flex; */
-  max-width: 100%;
   text-align: center;
   border-radius: 8px;
   overflow: hidden;
@@ -9,9 +8,12 @@
 }
 .container img {
   width: 250px;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
   border-radius: 50%;
+}
+.containerimg{
+ margin: 0 auto;
 }
 .food_items h2 {
   margin-bottom: 2rem;
@@ -19,8 +21,12 @@
 .food_items .text {
   padding: 1.5rem;
 }
+.containertext{
+  display: flex;
+
+}
 .text {
-  /* float: left; */
+  float: left;
   border-radius: 8px;
   overflow: hidden;
   padding: 10%;
@@ -29,24 +35,16 @@
   display: flex;
   justify-content: space-around;
 }
-img {
-  width: 100%;
-}
+
 /* pc 버전 */
 @media only screen and (min-width:300px){
-.col_s_1{width:8.33%}.col_s_2{width:16.66%}.col_s_3{width:25%}.col_s_4{width:33.33%}.col_s_5{width:41.66%}.col_s_6{width:50%}.col_s_7{width:58.33%}
-        .col_s_8{width:66.66%}.col_s_9{width:75%}.col_s_10{width:83.33%}.col_s_11{width:91.66%}.col_s_12{width:100%}
 }
 
 /* 테블릿 버전        */
 @media only screen and (min-width:780px){
-.col_m_1{width:8.33%}.col_m_2{width:16.66%}.col_m_3{width:25%}.col_m_4{width:33.33%}.col_m_5{width:41.66%}.col_m_6{width:50%}.col_m_7{width:58.33%}
-.col_m_8{width:66.66%}.col_m_9{width:75%}.col_m_10{width:83.33%}.col_m_11{width:91.66%}.col_m_12{width:100%}
 }
 
 /* 스마트폰 버전 */
 @media only screen and (min-width:1200px){
   /* 데스크톱 CSS*/
-  .col_1{width:8.33%}.col_2{width:16.66%}.col_3{width:25%}.col_4{width:33.33%}.col_5{width:41.66%}.col_6{width:50%}.col_7{width:58.33%}.col_8{width:66.66%}.col_9{width:75%}.col_10{width:83.33%}.col_11{width:91.66%}.col_12{width:100%}
 }
-[class*="col_"]{float:left;}

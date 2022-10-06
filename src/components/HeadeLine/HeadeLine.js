@@ -40,6 +40,8 @@ const HeadeLine = (props) => {
                 MyStorage
               </NavLink>
             </li>
+            <li>
+            </li>
           </ul>
         </div> 
         <img className="userProfile" src={props.user.photoURL}></img>
