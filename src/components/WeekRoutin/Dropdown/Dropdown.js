@@ -6,12 +6,12 @@ import DropdownLi from './DropdownLi/DropdownLi'
 const Dropdown = ({ data, userId, dateId }) => {
   const routin = data ? data.routin : 'Breaktime'
   const createdId = userId + dateId
-  console.log(dateId)
   const [basicRoutinArray, setBasicRoutinArray] = useState([])
   const [showing, setShowing] = useState(false)
   const [routinName, setRoutinName] = useState('휴식')
   const [inputRoutin, setInputRoutin] = useState(routin)
   const [inputResultArray, setInputResultArray] = useState([])
+  const [dataExist, setDataExist] = useState('')
 
   useEffect(() => {
     switch (routin) {
@@ -45,8 +45,17 @@ const Dropdown = ({ data, userId, dateId }) => {
       const selectBasicRoutin = dataArray.filter((data) => data.id === routin)
       setBasicRoutinArray(selectBasicRoutin[0].routin)
     })
+    //작업
+    dbService.collection('healthycogy').onSnapshot((snapshot) => {
+      const dataArray = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }))
+      const selectedData = dataArray.filter((data) => {
+        return data.createdId === createdId
+      })
+      setDataExist(selectedData)
+    })
   }, [data, inputRoutin])
-
   const toggleMenu = () => {
     setShowing(!showing) // on,off 개념 boolean
   }
@@ -80,11 +89,24 @@ const Dropdown = ({ data, userId, dateId }) => {
       })
       .then(console.log('in'))
       .then(
-        await dbService
-          .collection('healthycogy')
-          .doc(createdId)
-          .update({ routin: inputRoutin })
-          .then(setShowing(false)),
+        dataExist.length === 0
+          ? await dbService
+              .collection('healthycogy')
+              .doc(createdId)
+              .set({
+                createdId,
+                user: userId,
+                date: dateId,
+                routin: inputRoutin ? inputRoutin : 'Breaktime',
+                breakfast: ['식단을 넣어주세요.'],
+                lunch: ['식단을 넣어주세요.'],
+                dinner: ['식단을 넣어주세요.'],
+              })
+          : await dbService
+              .collection('healthycogy')
+              .doc(createdId)
+              .update({ routin: inputRoutin })
+              .then(setShowing(false)),
       )
   }
   //unshift() - 배열을 오른쪽으로 이동 / 첫번째에 추가
