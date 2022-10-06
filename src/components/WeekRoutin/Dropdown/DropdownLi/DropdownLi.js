@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
 const DropdownLi = ({ index, data, editMyRoutin, deleteEditMyroutin }) => {
   const [inputValue, setInputValue] = useState('')
   const onChangevalue = (e) => {
     setInputValue(e.target.value)
     editMyRoutin(e)
   }
-
+  const dleteHandler = (e) => {
+    deleteEditMyroutin(e)
+  }
   return (
     <li key={index} className="dropdown-option">
       <input
@@ -16,7 +17,9 @@ const DropdownLi = ({ index, data, editMyRoutin, deleteEditMyroutin }) => {
         placeholder={data}
         data-index={index}
       />
-      <button onClick={deleteEditMyroutin}>제외</button>
+      <button onClick={dleteHandler} data-index={index}>
+        제외
+      </button>
     </li>
   )
 }

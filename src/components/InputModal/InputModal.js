@@ -45,17 +45,17 @@ const InputModal = (props) => {
   const dinnerChangeHandler = (e) => {
     setDinner(e.target.value)
   }
-
+  const dateIdValue = dayjs(dateId).format('YY-MM-DD')
   const addHandler = async (event) => {
     event.preventDefault()
-    const createdId = userId + Math.random()
+    const createdId = userId + dateIdValue
     await dbService
       .collection('healthycogy')
       .doc(createdId)
       .set({
         createdId,
         user: userId,
-        date: dayjs(dateId).format('YY-MM-DD'),
+        date: dateIdValue,
         routin: inputRoutin ? inputRoutin : 'Breaktime',
         breakfast: breakfastlist,
         lunch: lunchlist,
@@ -73,8 +73,8 @@ const InputModal = (props) => {
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
           <select onChange={handleSelect} value={inputRoutin}>
-            {selectList.map((item) => (
-              <option value={item} key={item}>
+            {selectList.map((item, index) => (
+              <option value={item} key={index}>
                 {item}
               </option>
             ))}
