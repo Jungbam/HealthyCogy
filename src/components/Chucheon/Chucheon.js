@@ -3,7 +3,7 @@ import './Chucheon.css'
 
 const Chucheon = (props) => {
   return (
-    <div className="container col_3 col_m_3">
+    <div className="container col_3 col_m_3 col_s_3">
       <a href={props.pageNum}>
         <img src={props.imgSet} />
       </a>

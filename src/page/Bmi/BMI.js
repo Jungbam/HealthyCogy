@@ -3,7 +3,7 @@ import './BMI.css'
 
 const BMI = () => {
   const [BMI, setBMI] = useState()
-  const [Img, setImg] = useState('./Img/BMI1.jpeg')
+  const [Img, setImg] = useState('./Img/BMI1.png')
 
   function add(event) {
     event.preventDefault()

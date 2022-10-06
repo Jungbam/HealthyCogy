@@ -21,7 +21,6 @@
 }
 .headerDiv ul {
   margin-right: 10px;
-  flex-direction: column;
   width: 100%;
   align-items: center;
   list-style: none;
@@ -55,6 +54,7 @@
 }
 .logoutBtn {
   font: inherit;
+  font-size: 15px;
   margin-top: -6px;
   margin-left: 0.5rem;
   background-color: rgb(143, 236, 218);
@@ -64,17 +64,11 @@
   border-radius: 6px;
   box-shadow: 1px 1px 6px white;
 }
-.ss{
-  color: bisque;
-}
-
-
 input[id="icon"] {
   display:none;
+  padding: 0;
+  margin: 0;
 } 
-
-
-
 input[id="icon"] + label{
   position: relative;
   display:inline-block;
@@ -89,7 +83,7 @@ input[id="icon"] + label > span {
   width:30px;
   height:5px;
   border-radius:30px;
-  background:white;
+  background:pink;
   transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
   z-index:2;
 
@@ -146,9 +140,15 @@ input[id="icon"]:checked + label > span:nth-child(3) {
   color: white;
 
 }
-
-
-
+.header1{
+  display: inline;
+}
+@media only screen and (min-width:1200px){
+  input[id="icon"] + label > span{display: none;}
+}
+@media only screen and (max-width:780px){
+.header1{display: none;}
+}
 
 
 
