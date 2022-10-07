@@ -119,7 +119,7 @@ const Dropdown = ({ data, userId, dateId }) => {
   return (
     <div className="dropdownBox">
       <div className="dropdown">
-        <button type="button" onClick={toggleMenu}>
+        <button className='routinBtn' type="button" onClick={toggleMenu}>
           {dateId} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
