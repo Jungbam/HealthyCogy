@@ -41,7 +41,7 @@ const Intro = (props) => {
         </div>
           <div className='info'>
             <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
-            <span className="info">
+            <span className="info1">
               다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
               도와드립니다😀
             </span>
@@ -57,7 +57,7 @@ const Intro = (props) => {
           </div>
         <div>
           <div id="section3">
-            <h2>다이어트에 대한 정보/꿀팁</h2>
+            <h2 className='dietinfo'>다이어트에 대한 정보/꿀팁</h2>
             <YouCon />
           </div>
         </div>

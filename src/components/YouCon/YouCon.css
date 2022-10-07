@@ -1,13 +1,8 @@
 .youtub-container {
   display: flex;
+  width: 100%;
+  text-align: center;
 }
-
-
-/* 테블릿 버전        */
-@media only screen and (min-width:780px){
-}
-
-/* 스마트폰 버전 */
-@media only screen and (min-width:1200px){
-  /* 데스크톱 CSS*/
+.player1 .player2 .player3 {
+  width: 33%;
 }
