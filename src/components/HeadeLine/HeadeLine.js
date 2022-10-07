@@ -41,7 +41,7 @@ const HeadeLine = (props) => {
             </li>
           </ul>
         </div> 
-        <p><strong>{props.user.displayName}</strong>님 반갑습니다.</p>
+        <p className='name'><strong>{props.user.displayName}</strong>님 반갑습니다.</p>
         <div className='aa'>
         <img className="userProfile" src={props.user.photoURL}></img>
             <NavLink to="/" style={{ textDecoration: 'none' }}>

@@ -51,9 +51,9 @@ const FoodBoard = ({userObj,date}) =>{
         <h3>+ 식단</h3> 
         <button onClick={Total}>계산</button> 총 kcal :  {total}
         <ul>
-            <li className="diet"><p>아침 : {data.map((data)=>((data.breakfast)))}</p><input onChange={breakfast} value={brackfastkcal} className="kcal" type='number'/></li>
-            <li className="diet"><p>점심 : {data.map((data)=>((data.lunch)))}</p><input onChange={lunch} value={lunchkcal} className="kcal" type='number'/></li>
-            <li className="diet"><p>저녁 : {data.map((data)=>((data.dinner)))}</p><input onChange={dinner} value={dinnerkcal} className="kcal" type='number'/></li>
+            <li className="diet"><p>☀️아침 : {data.map((data)=>((data.breakfast)))}</p><input onChange={breakfast} value={brackfastkcal} className="kcal" type='number'/></li>
+            <li className="diet"><p>🌤점심 : {data.map((data)=>((data.lunch)))}</p><input onChange={lunch} value={lunchkcal} className="kcal" type='number'/></li>
+            <li className="diet"><p>🌙저녁 : {data.map((data)=>((data.dinner)))}</p><input onChange={dinner} value={dinnerkcal} className="kcal" type='number'/></li>
         </ul>
        
        
