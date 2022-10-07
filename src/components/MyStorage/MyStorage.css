@@ -7,25 +7,66 @@
   font-family: 'ImcreSoojin';
 }
 
-@media only screen and (max-width:700px){
-  .MyStorage{flex-direction: column; margin: 0;  justify-content: space-around; }
-    .CalendarContainer{width: 100%; margin:0 auto; margin-top: 90px;}
-    .WeekContainer{width: 100%; margin: 0 auto;}
-    .BoardContainer{width: 100%; margin: 0 auto;}
+@media only screen and (max-width: 700px) {
+  .MyStorage {
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-around;
   }
-  @media only screen and (min-width:700px){
-    .MyStorage{flex-direction: row; margin: 0 auto;  justify-content: space-around; }
-    .CalendarContainer{width: 45%; margin:0 auto; margin-top: 90px;}
-    .WeekContainer{width: 30%; margin: 0 auto;margin-top: 90px;}
-    .BoardContainer{width: 35%; margin: 0 auto;margin-top: 90px;}
-    .dropdown{width: 100%;}
-    .imgclick{font-size: 14px; width: 200px;}
-    .progress{font-size: 13px;}
-    .input{font-size: 20px;}
-    .dummyText{font-size: 15px;}
+  .CalendarContainer {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 90px;
   }
-  @media only screen and (min-width:1040px){
-    .dummyText{font-size: 20px;}
-
+  .WeekContainer {
+    width: 100%;
+    margin: 0 auto;
   }
-
+  .BoardContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .MyStorage {
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  .CalendarContainer {
+    width: 45%;
+    margin: 0 auto;
+    margin-top: 90px;
+  }
+  .WeekContainer {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 90px;
+  }
+  .BoardContainer {
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 90px;
+  }
+  .dropdown {
+    width: 100%;
+  }
+  .imgclick {
+    font-size: 14px;
+    width: 200px;
+  }
+  .progress {
+    font-size: 13px;
+  }
+  .input {
+    font-size: 20px;
+  }
+  .dummyText {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 1040px) {
+  .dummyText {
+    font-size: 20px;
+  }
+}
