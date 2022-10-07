@@ -10,7 +10,7 @@
   font-style: normal;
 }
 .headerDiv {
-  display: flex;
+  /* display: flex; */
   position: fixed;
   z-index: 200;
   width: 100%;
@@ -140,6 +140,10 @@ input[id="icon"]:checked + label > span:nth-child(3) {
 }
 .header1{
   margin-top: 20px;
+}
+.header1 ul{
+  display: flex;
+
 }
 @media only screen and (min-width:900px){
   input[id="icon"] + label > span{display: none;}

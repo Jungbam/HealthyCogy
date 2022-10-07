@@ -18,8 +18,10 @@
   width: 400px;
 }
 .progress{
+  margin-top: 10px;
   font-size: 20px;
 }
 .box1{
   display: flex;
+  padding: 10px 0;
 }
