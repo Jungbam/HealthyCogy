@@ -8,10 +8,18 @@
   overflow: hidden;
 }
 .mypicture {
-  width: 60px;
-  height: 100px;
+  margin: 0 auto;
+  width: 100px;
+  height: 150px;
   object-fit: cover;
 }
-
-/* <div className="imgBox" key={index}>
-          <img className="mypicture"src={url} /> */
+.dummyImg {
+  margin: 0 auto;
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.dummyText {
+  margin-top: 2rem;
+}
