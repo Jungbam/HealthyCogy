@@ -45,6 +45,7 @@ const MyDietProcess = ({ userObj, date }) => {
 
   return (
     <div className="myDietProcessContainer">
+      <h2>기록할 이미지를 선택하세요^ㅡ^</h2>
       <form onSubmit={uploadHandler} className="formContainer">
         <input type="file" className="fileInput"></input>
         <button type="submit">Upload</button>
