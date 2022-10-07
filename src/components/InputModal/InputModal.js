@@ -15,15 +15,6 @@ const InputModal = (props) => {
   const [dinner, setDinner] = useState('')
   const [dinnerlist, setDinnerlist] = useState([])
 
-  const selectList = [
-    'lowerbody',
-    'back',
-    'chest',
-    'shoulder',
-    'arm',
-    'aerobicexercise',
-  ]
-
   const handleSelect = (e) => {
     setInputRoutin(e.target.value)
   }
@@ -47,6 +38,7 @@ const InputModal = (props) => {
   }
   const dateIdValue = dayjs(dateId).format('YY-MM-DD')
   const addHandler = async (event) => {
+    console.log(breakfastlist.length)
     event.preventDefault()
     const createdId = userId + dateIdValue
     await dbService
@@ -57,12 +49,14 @@ const InputModal = (props) => {
         user: userId,
         date: dateIdValue,
         routin: inputRoutin ? inputRoutin : 'Breaktime',
-        breakfast: breakfastlist,
-        lunch: lunchlist,
-        dinner: dinnerlist,
+        breakfast:
+          breakfastlist.length === 0 ? ['식단을 넣어주세요.'] : breakfastlist,
+        lunch: lunchlist.length === 0 ? ['식단을 넣어주세요.'] : lunchlist,
+        dinner: dinnerlist.length === 0 ? ['식단을 넣어주세요.'] : dinnerlist,
       })
     props.shutDown()
   }
+
   return (
     <div>
       <div className={classes.backdrop} onClick={props.shutDown} />
@@ -72,12 +66,14 @@ const InputModal = (props) => {
         </header>
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
+          value || ''
           <select onChange={handleSelect} value={inputRoutin}>
-            {selectList.map((item, index) => (
-              <option value={item} key={index}>
-                {item}
-              </option>
-            ))}
+            <option value="lowerbody">lowerbody</option>
+            <option value="back">back</option>
+            <option value="chest">chest</option>
+            <option value="shoulder">shoulder</option>
+            <option value="lowerbody">lowerbody</option>
+            <option value="Breaktime">lowerbody</option>
           </select>
           <label htmlFor="food">아침</label>
           <input

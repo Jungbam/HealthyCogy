@@ -5,7 +5,7 @@ const DropdownLi = ({ index, data, editMyRoutin, deleteEditMyroutin }) => {
     setInputValue(e.target.value)
     editMyRoutin(e)
   }
-  const dleteHandler = (e) => {
+  const deleteHandler = (e) => {
     deleteEditMyroutin(e)
   }
   return (
@@ -17,7 +17,7 @@ const DropdownLi = ({ index, data, editMyRoutin, deleteEditMyroutin }) => {
         placeholder={data}
         data-index={index}
       />
-      <button onClick={dleteHandler} data-index={index}>
+      <button onClick={deleteHandler} data-index={index}>
         제외
       </button>
     </li>
