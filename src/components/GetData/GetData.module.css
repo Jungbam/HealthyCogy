@@ -20,7 +20,11 @@ span {
 .diaryContainer {
   color: rgb(28, 255, 164);
   text-decoration: wavy;
-  padding: 5rem;
+  padding: 3rem;
   width: 80%;
   height: 80%;
+}
+.input{
+  margin: 0 auto;
+  font-size: 20px;
 }
