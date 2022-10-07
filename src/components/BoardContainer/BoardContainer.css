@@ -1,4 +1,5 @@
 .BoardContainer {
+  position: relative;
   margin-top: 90px;
   border: 1px solid black;
   width: 600px;
