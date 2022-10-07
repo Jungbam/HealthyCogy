@@ -66,8 +66,12 @@ h2{
   .chucheon-container{flex-direction: row;}
   .container{width: 50%;}
 }
-@media only screen and (max-width:500px){
+@media only screen and (max-width:780px){
   .chucheon-container{flex-direction: column;}
   .container{margin: 0 auto;}
+  .info{padding: 10px;}
+  .player1{display: none;}
+  .youtub-container{padding: 0 auto;}
+
 }
 

@@ -18,7 +18,7 @@
 .inmydiary {
   font-family: 'ImcreSoojin';
   padding: 0.5rem;
-  width: 500px;
+  width: 100%;
   border: none;
   background: linear-gradient(45deg, rgb(243, 249, 198), rgb(244, 228, 126));
 }
