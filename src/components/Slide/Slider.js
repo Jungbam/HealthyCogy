@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Slide from './Slide'
 
-const TOTAL_SLIDES = 6 // 전체 슬라이드 개수(총3개. 배열로 계산)
+const TOTAL_SLIDES = 2 // 전체 슬라이드 개수(총3개. 배열로 계산)
 // 깃 확인
 export default function Slider(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
