@@ -3,9 +3,10 @@
   justify-content: space-around;
 }
 .imgBox {
-  width: 30%;
+  width: 50%;
   height: 200px;
   overflow: hidden;
+  font-size: 40px;
 }
 .mypicture {
   margin: 0 auto;
@@ -22,4 +23,5 @@
 }
 .dummyText {
   margin-top: 2rem;
+  font-size: 20px;
 }

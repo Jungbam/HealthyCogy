@@ -44,13 +44,13 @@ export default function Slider(props) {
       <SliderContainer ref={slideRef}>
         {/* {img.map((item)=>(<Slide>{item}</Slide>))} */}
         <Slide img={img[0]} />
-        <Slide img={img[0]} />
-        {/* <Slide img={img[2]} />
+        <Slide img={img[1]} />
+        <Slide img={img[2]} />
         <Slide img={img[3]} />
         <Slide img={img[4]} />
         <Slide img={img[5]} />
         <Slide img={img[6]} />
-        <Slide img={img[7]} /> */}
+        <Slide img={img[7]} />
         
       </SliderContainer>
       <Center>
