@@ -3,7 +3,7 @@
   padding: 0;
 }
 .formContainer {
-  width: 100%;
+  width: 70%;
   height: 50%;
   border: 1px solid blue;
 }
@@ -12,4 +12,9 @@
 }
 .myDietProcessContainer {
   height: 20%;
+  display: flex;
+  font-size:15px ;
+}
+.imgclick{
+  width: 400px;
 }

@@ -9,28 +9,30 @@
   font-weight: normal;
   font-style: normal;
 }
+.pBox{
+  font-family: 'ImcreSoojin';
+}
 #backgroundImg {
   padding-top: 80px;
   width: 100%;
+
 }
 .background-Img {
-  width: 100%;
+  /* width: 300px; */
   height: 450px;
   background-image: url('https://cdn.canceranswer.co.kr/news/photo/202110/3190_5012_427.jpg');
   background-repeat: repeat-x;
   background-size: 500px 100%;
   opacity: 50%;
 }
-h2{
-  font-family: 'ImcreSoojin';
-  margin-bottom: 10px;
+.dietinfo{
+  margin: 0 auto;
   
 }
 .chucheon-container {
   margin: 0 auto;
   display: flex;
   width: 100%;
-  font-family: 'ImcreSoojin';
   justify-content: space-around;
 }
 .content-container {
@@ -58,20 +60,36 @@ h2{
   width: 100%;
 
 }
-.info{
-  font-family: 'ImcreSoojin';
-
+#section3{
+  width: 100%;
+  text-align: center;
+}
+.info1{
+  font-size: 20px;
+}
+.diteinfo{
+  margin: 0 auto;
 }
 @media only screen and (min-width:780px){
   .chucheon-container{flex-direction: row;}
   .container{width: 50%;}
+  .container img{width: 200px; height: 200px;}
+  .container{margin: 0 auto;}
+  .containerimg{width: 200px;}
+
+
 }
 @media only screen and (max-width:780px){
-  .chucheon-container{flex-direction: column;}
+  .chucheon-container{flex-direction: row;}
+  .container img{width: 100px; height: 100px;}
   .container{margin: 0 auto;}
-  .info{padding: 10px;}
+  .info1{padding: 10px; margin: 0 auto;}
   .player1{display: none;}
-  .youtub-container{padding: 0 auto;}
+  .player2{width: 50%;}
+  .player3{width: 50%;}
+  .containerimg{width: 100px;}
+  .text{font-size: 15px;}
+
 
 }
 

@@ -42,12 +42,12 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
           <div onClick={deleteHandler.bind(null, data)}>
             <ul>
               <li>
-                <span>+ 운동</span>
+                <span className='list'>+ 운동</span>
                 <br />
                 {data.routin}{' '}
               </li>
               <li>
-                <span>+ 식단</span>
+                <span  className='list'>+ 식단</span>
                 <br />
                 아침 : {data.breakfast}
               </li>
