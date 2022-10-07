@@ -39,14 +39,16 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
   return (
     <div className={classes.dataBox}>
       <TipWindow>
-        <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
-        <p>이렇게 저렇게 사용해~</p>
+        <h2>달력에서</h2>
+        <h2> 정보가져오기</h2>
+        <hr></hr>
+        <p>원하는 해당 일자를 클릭하면 내 기록을 볼 수 있어요.</p>
       </TipWindow>
       {data.length === 0 ? (
         <div className={classes.diaryContainer}>
-          <h1 className='input'>내용을 입력해주세요.</h1>
+          <h1 className="input">내용을 입력해주세요.</h1>
           <br></br>
-          <h2 className='input'>
+          <h2 className="input">
             기록하고 싶은 해당 일자를 누르고 △ 입력하기 버튼을 누르면 입력할 수
             있어요.
           </h2>
@@ -57,7 +59,7 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
             <div onClick={deleteHandler.bind(null, data)}>
               <ul>
                 <li>
-                  <span >+ 운동</span>
+                  <span>+ 운동</span>
                   <br />
                   {data.routin}{' '}
                 </li>
