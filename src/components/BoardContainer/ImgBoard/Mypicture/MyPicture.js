@@ -50,11 +50,11 @@ const MyPicture = ({ userObj, date }) => {
       )}
       {data.length === 1 ? (
         <div className="imgBox">
-          <h2>오늘의 내모습</h2>
+          <h2 className="dummyText">오늘의 내모습</h2>
           <img className="mypicture" src={data} />
         </div>
       ) : (
-        <div>
+        <div className="imgBox">
           <h2 className="dummyText">오늘의 당신의 뱃살을 올려주세요.</h2>
           <img src="./Img/bodycheckafter.png" className="dummyImg"></img>
         </div>

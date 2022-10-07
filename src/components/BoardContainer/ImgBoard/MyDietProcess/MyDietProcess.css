@@ -5,7 +5,6 @@
 .formContainer {
   width: 70%;
   height: 50%;
-  border: 1px solid blue;
 }
 .formContainer input {
   font: inherit;
@@ -17,4 +16,7 @@
 }
 .imgclick{
   width: 400px;
+}
+.progress{
+  font-size: 20px;
 }

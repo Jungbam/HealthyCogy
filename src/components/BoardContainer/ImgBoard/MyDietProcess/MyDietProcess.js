@@ -50,7 +50,7 @@ const MyDietProcess = ({ userObj, date }) => {
         <input type="file" className="fileInput"></input>
         <button type="submit">Upload</button>
       </form>
-      <h3>진행률 : {progress}%</h3>
+      <h3 className='progress'>진행률 : {progress}%</h3>
     </div>
   )
 }
