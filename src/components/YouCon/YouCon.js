@@ -8,7 +8,7 @@ export default function YouCon() {
         <ReactPlayer 
           className="player1"
           url={'https://www.youtube.com/watch?v=N3v_YrlilBY'}
-          heigth="400px"
+          heigth="300px"
           playing={true}
           muted={true}
           controls={true}
@@ -16,7 +16,7 @@ export default function YouCon() {
         <ReactPlayer
           className="player2"
           url={'https://www.youtube.com/watch?v=FCfLAaEePyU'}
-          heigth="400px"
+          heigth="300px"
           playing={true}
           muted={true}
           controls={true}
@@ -24,7 +24,7 @@ export default function YouCon() {
         <ReactPlayer
           className="player3"
           url={'https://www.youtube.com/watch?v=cIzEoosVsUg'}
-          heigth="400px"
+          heigth="300px"
           playing={true}
           muted={true}
           controls={true}
