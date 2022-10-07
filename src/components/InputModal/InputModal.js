@@ -82,7 +82,7 @@ const InputModal = (props) => {
             id="ex"
             onChange={breakfastChangeHandler}
           />
-          <button onClick={addItembreakfast}>아침추가</button>
+          <button onClick={addItembreakfast}>➕</button>
           <FoodItems list={breakfastlist} />
           <label htmlFor="food">점심</label>
           <input
@@ -91,7 +91,7 @@ const InputModal = (props) => {
             id="ex"
             onChange={lunchChangeHandler}
           />
-          <button onClick={addItemlunch}>점심추가</button>
+          <button onClick={addItemlunch}>➕</button>
           <FoodItems list={lunchlist} />
           <label htmlFor="food">저녁</label>
           <input
@@ -100,7 +100,7 @@ const InputModal = (props) => {
             id="ex"
             onChange={dinnerChangeHandler}
           />
-          <button onClick={addItemdinner}>저녁추가</button>
+          <button onClick={addItemdinner}>➕</button>
           <FoodItems list={dinnerlist} />
           <button className={classes.button} onClick={addHandler}>
             등록

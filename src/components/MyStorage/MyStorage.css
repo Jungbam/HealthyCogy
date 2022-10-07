@@ -13,7 +13,7 @@
     .WeekContainer{width: 100%; margin: 0 auto;}
     .BoardContainer{width: 100%; margin: 0 auto;}
   }
-  /* @media only screen and (min-width:1200px){
+  @media only screen and (min-width:780px){
     .MyStorage{flex-direction: row; margin: 0 auto;  justify-content: space-around; }
  
-  } */
+  }

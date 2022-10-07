@@ -51,6 +51,7 @@
 .password {
   margin-right: 10px;
 }
+
 .containerBox {
   display: flex;
   font-family: 'ImcreSoojin';
@@ -66,3 +67,8 @@
   margin-left: auto;
   border-radius: 10px;
 }
+@media only screen and (max-width:780px){
+  .logininfo{font-size: 14px;}
+  #page_logo a{font-size: 35px;}
+  }
+  

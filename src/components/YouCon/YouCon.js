@@ -4,9 +4,9 @@ import './YouCon.css'
 
 export default function YouCon() {
   return (
-    <div className="chucheon-container">
+    <div className="youtub-container">
         <ReactPlayer 
-          className="player"
+          className="player1"
           url={'https://www.youtube.com/watch?v=N3v_YrlilBY'}
           width="450px"
           heigth="400px"
@@ -15,7 +15,7 @@ export default function YouCon() {
           controls={true}
         />
         <ReactPlayer
-          className="player"
+          className="player2"
           url={'https://www.youtube.com/watch?v=FCfLAaEePyU'}
           width="450px"
           heigth="400px"
@@ -24,7 +24,7 @@ export default function YouCon() {
           controls={true}
         />
         <ReactPlayer
-          className="player"
+          className="player3"
           url={'https://www.youtube.com/watch?v=cIzEoosVsUg'}
           width="450px"
           heigth="400px"

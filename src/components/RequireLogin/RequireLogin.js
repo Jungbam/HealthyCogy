@@ -14,7 +14,7 @@ const RequireLogin = () => {
       </div>
       <nav>
         <div className="containerBox">
-          <label htmlFor="googleLogin">
+          <label className='logininfo' htmlFor="googleLogin">
             구글ID로 로그인해서 나만의 다이어트 다이어리를 관리해봐요.
           </label>
           <button className="google" id="googleLogin" onClick={onSocialHandler}>

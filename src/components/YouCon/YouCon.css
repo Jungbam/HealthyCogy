@@ -1,12 +1,10 @@
-.chucheon-container {
-  list-style: none;
- 
+.youtub-container {
+  display: flex;
 }
 
 
 /* 테블릿 버전        */
 @media only screen and (min-width:780px){
-  .chucheon-container{display: none;}
 }
 
 /* 스마트폰 버전 */
