@@ -14,7 +14,12 @@ const RoutinVideo = ({ userObj, date }) => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    //실시간으로 DB에서 받아오기.
+    function isEmptyObj(obj) {
+      if (obj.constructor === Object && Object.keys(obj).length === 0) {
+        return true
+      }
+      return false
+    }
     dbService.collection('healthycogy').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -27,11 +32,13 @@ const RoutinVideo = ({ userObj, date }) => {
       })
       setData(outputArray)
       const routinValue = { ...outputArray[0] }
-      getroutinVideo(routinValue.routin)
+      isEmptyObj(routinValue)
+        ? getBasicRoutinVideo()
+        : getRoutinVideo(routinValue.routin)
     })
   }, [dateId])
 
-  const getroutinVideo = async (routinInput) => {
+  const getRoutinVideo = async (routinInput) => {
     await dbService.collection('Routin').onSnapshot((snapshot) => {
       const routinValue = routinInput
       const dataArray = snapshot.docs.map((doc) => ({
@@ -46,6 +53,22 @@ const RoutinVideo = ({ userObj, date }) => {
       setVideoArray(resultArray)
     })
   }
+  //기본영상 뽑기
+  const getBasicRoutinVideo = async () => {
+    await dbService.collection('Routin').onSnapshot((snapshot) => {
+      const dataArray = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }))
+      const selectedRoutinArray = dataArray.filter((data) => {
+        return data.routin === 'basic'
+      })
+      const resultArray = selectedRoutinArray.map((data) => {
+        return data.url
+      })
+      console.log(resultArray)
+      setVideoArray(resultArray)
+    })
+  }
   const settings = {
     dots: true,
     infinite: true,
@@ -53,7 +76,8 @@ const RoutinVideo = ({ userObj, date }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
-  //작업
+  if (videoArray.length === 0) {
+  }
 
   const randomNums = []
   let count = 0
@@ -69,7 +93,6 @@ const RoutinVideo = ({ userObj, date }) => {
   for (let i of randomNums) {
     resultArray.push(videoArray[i])
   }
-  //작업
   return (
     <div className="RoutinVideoContainer">
       <h2> 일일 추천 운동 영상</h2>

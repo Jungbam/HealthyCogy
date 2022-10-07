@@ -37,27 +37,39 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
 
   return (
     <div className={classes.dataBox}>
-      {data.map((data) => (
-        <div key={Math.random()}>
-          <div onClick={deleteHandler.bind(null, data)}>
-            <ul>
-              <li>
-                <span>+ 운동</span>
-                <br />
-                {data.routin}{' '}
-              </li>
-              <li>
-                <span>+ 식단</span>
-                <br />
-                아침 : {data.breakfast}
-              </li>
-              <li>점심 : {data.lunch}</li>
-              <li>저녁 : {data.dinner}</li>
-            </ul>
-          </div>
-          <button onClick={editCallHandler.bind(null, data)}>수정</button>
+      {console.log(data)}
+      {data.length === 0 ? (
+        <div className={classes.diaryContainer}>
+          <h1>내용을 입력해주세요.</h1>
+          <br></br>
+          <h2>
+            기록하고 싶은 해당 일자를 누르고 △ 입력하기 버튼을 누르면 입력할 수
+            있어요.
+          </h2>
         </div>
-      ))}
+      ) : (
+        data.map((data) => (
+          <div key={Math.random()}>
+            <div onClick={deleteHandler.bind(null, data)}>
+              <ul>
+                <li>
+                  <span>+ 운동</span>
+                  <br />
+                  {data.routin}{' '}
+                </li>
+                <li>
+                  <span>+ 식단</span>
+                  <br />
+                  아침 : {data.breakfast}
+                </li>
+                <li>점심 : {data.lunch}</li>
+                <li>저녁 : {data.dinner}</li>
+              </ul>
+            </div>
+            <button onClick={editCallHandler.bind(null, data)}>수정</button>
+          </div>
+        ))
+      )}
     </div>
   )
 }

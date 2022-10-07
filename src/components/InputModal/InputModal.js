@@ -68,12 +68,12 @@ const InputModal = (props) => {
           <label htmlFor="part">운동</label>
           value || ''
           <select onChange={handleSelect} value={inputRoutin}>
-            <option value="lowerbody">lowerbody</option>
-            <option value="back">back</option>
-            <option value="chest">chest</option>
-            <option value="shoulder">shoulder</option>
-            <option value="lowerbody">lowerbody</option>
-            <option value="Breaktime">lowerbody</option>
+            <option value={'lowerbody' || ''}>lowerbody</option>
+            <option value={'back' || ''}>back</option>
+            <option value={'chest' || ''}>chest</option>
+            <option value={'shoulder' || ''}>shoulder</option>
+            <option value={'arm' || ''}>arm</option>
+            <option value={'Breaktime' || ''}>Breaktime</option>
           </select>
           <div>
           <label htmlFor="food">아침</label>
