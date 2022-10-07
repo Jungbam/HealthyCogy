@@ -119,7 +119,7 @@ const Dropdown = ({ data, userId, dateId }) => {
   return (
     <div className="dropdownBox">
       <div className="dropdown">
-        <button className='routinBtn' type="button" onClick={toggleMenu}>
+        <button className="routinBtn" type="button" onClick={toggleMenu}>
           {dateId} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
@@ -133,8 +133,8 @@ const Dropdown = ({ data, userId, dateId }) => {
               <option value={'back' || ''}>back</option>
               <option value={'chest' || ''}>chest</option>
               <option value={'shoulder' || ''}>shoulder</option>
-              <option value={'lowerbody' || ''}>lowerbody</option>
-              <option value={'Breaktime' || ''}>lowerbody</option>
+              <option value={'arm' || ''}>arm</option>
+              <option value={'Breaktime' || ''}>Breaktime</option>
             </select>
           </div>
           {routinDataExist.length === 0
