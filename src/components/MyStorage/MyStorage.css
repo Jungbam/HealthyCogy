@@ -3,17 +3,34 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   font-family: 'ImcreSoojin';
 }
 
-@media only screen and (max-width:780px){
-  .MyStorage{flex-direction: column; margin: 0;  justify-content: space-around; }
-    .CalendarContainer{width: 100%; margin:0 auto; margin-top: 90px;}
-    .WeekContainer{width: 100%; margin: 0 auto;}
-    .BoardContainer{width: 100%; margin: 0 auto;}
+@media only screen and (max-width: 780px) {
+  .MyStorage {
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
   }
-  @media only screen and (min-width:780px){
-    .MyStorage{flex-direction: row; margin: 0 auto;  justify-content: space-around; }
- 
+  .CalendarContainer {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 90px;
   }
+  .WeekContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .BoardContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .MyStorage {
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}

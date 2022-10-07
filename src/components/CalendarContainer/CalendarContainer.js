@@ -5,7 +5,7 @@ import './CalendarContainer.css'
 import InputModal from '../InputModal/InputModal'
 import GetData from '../GetData/GetData'
 
-const CalendarContainer = ({ date, userObj, setDate }) => {
+const CalendarContainer = ({ date, userObj, setDate, setIsSetDate }) => {
   //모달창 부르기
   const [page, setPage] = useState('')
 
@@ -14,6 +14,7 @@ const CalendarContainer = ({ date, userObj, setDate }) => {
   }
   function onChange(date) {
     setDate(date)
+    setIsSetDate(true)
   }
   const callInputHandler = () => {
     setPage(

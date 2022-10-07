@@ -3,6 +3,7 @@ import { dbService } from '../../fbase'
 import dayjs from 'dayjs'
 import classes from './GetData.module.css'
 import EditModal from './EditModal/EditModal'
+import TipWindow from '../TipWindow/TipWindow'
 
 const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
   const userId = userObj
@@ -37,7 +38,10 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
 
   return (
     <div className={classes.dataBox}>
-      {console.log(data)}
+      <TipWindow>
+        <h1>하이하이하이하이하이하이하이하이하이하이하이하이하이</h1>
+        <p>이렇게 저렇게 사용해~</p>
+      </TipWindow>
       {data.length === 0 ? (
         <div className={classes.diaryContainer}>
           <h1>내용을 입력해주세요.</h1>

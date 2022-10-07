@@ -8,6 +8,7 @@ import './MyStorage.css'
 const MyStorage = (props) => {
   const [date, setDate] = useState(new Date())
   const [userObj, setUserObj] = useState('')
+  const [isSetDate, setIsSetDate] = useState(false)
 
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
@@ -21,9 +22,14 @@ const MyStorage = (props) => {
 
   return (
     <div className="MyStorage">
-      <CalendarContainer date={date} userObj={userObj} setDate={setDate} />
+      <CalendarContainer
+        date={date}
+        userObj={userObj}
+        setDate={setDate}
+        setIsSetDate={setIsSetDate}
+      />
       {/* 달력 코드 */}
-      <WeekContainer date={date} userObj={userObj} />
+      {isSetDate ? <WeekContainer date={date} userObj={userObj} /> : <></>}
       {/* 운동 루틴 추천, 하루 식단  */}
       <BoardContainer date={date} userObj={userObj} />
       {/* 게시판, 영상 알고리즘 */}

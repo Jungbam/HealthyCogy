@@ -1,0 +1,23 @@
+.absoluteTip {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 100px;
+  text-align: right;
+}
+.noShowTipBox {
+  font-family: 'ImcreSoojin';
+  display: none;
+}
+.showTipBox {
+  font-family: 'ImcreSoojin';
+  background-color: rgba(242, 216, 150, 0.372);
+  display: block;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px #333;
+}
+.questionTipImg {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
