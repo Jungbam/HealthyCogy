@@ -62,100 +62,104 @@
   border-color: rgb(108, 218, 246);
   border-radius: 6px;
   box-shadow: 1px 1px 6px white;
+  cursor: pointer;
 }
-input[id="icon"] {
-  display:none;
+input[id='icon'] {
+  display: none;
   padding: 0;
   margin: 0;
-} 
-input[id="icon"] + label{
+}
+input[id='icon'] + label {
   position: relative;
-  display:inline-block;
-  width:20px;
-  height:10px;
-  cursor:pointer;  /* 커서를 올려놓을 때 모양이 바뀐다. */
-} 
-
-input[id="icon"] + label > span {
-  position: absolute;
-  display:block;
-  width:30px;
-  height:5px;
-  border-radius:30px;
-  background:pink;
-  transition: all 0.35s;  /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
-  z-index:2;
-
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  cursor: pointer; /* 커서를 올려놓을 때 모양이 바뀐다. */
 }
 
-input[id="icon"] + label > span:nth-child(1) {
+input[id='icon'] + label > span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 5px;
+  border-radius: 30px;
+  background: pink;
+  transition: all 0.35s; /* 진행되는 과정들을 천천히 보여줄 수 있다. 0.35초 동안 진행됨 */
+  z-index: 2;
+}
+
+input[id='icon'] + label > span:nth-child(1) {
   top: 35px;
 }
 
-input[id="icon"] + label > span:nth-child(2) {
+input[id='icon'] + label > span:nth-child(2) {
   top: 160%;
-  transform: translateY(-50%);  /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
+  transform: translateY(
+    -50%
+  ); /* 엘리먼트를 변형할 때 쓴다. 비틀거나 구부리거나 돌릴 때 . 여러가지로 모양을 바꿀 때 */
 }
 
-input[id="icon"] + label > span:nth-child(3) {
-  bottom:0px;
+input[id='icon'] + label > span:nth-child(3) {
+  bottom: 0px;
 }
 
-
-input[id="icon"]:checked + label > span:nth-child(1) {
-  top:50%;
-  transform:translateY(-50%) rotate(45deg);
+input[id='icon']:checked + label > span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 }
 
-input[id="icon"]:checked + label > span:nth-child(2) {
+input[id='icon']:checked + label > span:nth-child(2) {
   opacity: 0;
 }
 
-input[id="icon"]:checked + label > span:nth-child(3) {
-  bottom:50%;
-  transform:translateY(50%) rotate(-45deg);
+input[id='icon']:checked + label > span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
 }
 
 #icon + label + #header {
-  position:fixed;  /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
-  width:300px;
-  height:100%;
-  background:#333;
+  position: fixed; /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+  width: 300px;
+  height: 100%;
+  background: #333;
   opacity: 80%;
-  top:0px;
-  padding:60px 20px 20px 20px;
-  box-sizing:border-box;
-  left:-300px;
-  z-index:1;
+  top: 0px;
+  padding: 60px 20px 20px 20px;
+  box-sizing: border-box;
+  left: -300px;
+  z-index: 1;
   transition: all 0.35s;
 }
 
 #icon:checked + label + #header {
-  left:0px;
+  left: 0px;
 }
 
 #icon:checked + label + #header > ul > li > a {
   color: white;
-
 }
-.header1{
+.header1 {
   margin-top: 20px;
 }
-.header1 ul{
+.header1 ul {
   display: flex;
-
 }
-@media only screen and (min-width:900px){
-  input[id="icon"] + label > span{display: none;}
+@media only screen and (min-width: 900px) {
+  input[id='icon'] + label > span {
+    display: none;
+  }
 }
-@media only screen and (max-width:900px){
-.header1{display: none;}
-
+@media only screen and (max-width: 900px) {
+  .header1 {
+    display: none;
+  }
 }
-@media only screen and (max-width:500px){
-  #page_logo{font-size: 40px;}
+@media only screen and (max-width: 500px) {
+  #page_logo {
+    font-size: 40px;
+  }
 }
-.aa{
+.aa {
   display: flex;
 }
 .name {
@@ -163,11 +167,6 @@ input[id="icon"]:checked + label > span:nth-child(3) {
   margin-top: 35px;
   /* margin-right: -450px */
 }
-strong{
+strong {
   color: salmon;
 }
-
-
-
-
-

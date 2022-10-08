@@ -66,7 +66,6 @@ const InputModal = (props) => {
         </header>
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
-          value || ''
           <select onChange={handleSelect} value={inputRoutin}>
             <option value={'lowerbody' || ''}>lowerbody</option>
             <option value={'back' || ''}>back</option>
@@ -76,36 +75,36 @@ const InputModal = (props) => {
             <option value={'Breaktime' || ''}>Breaktime</option>
           </select>
           <div>
-          <label htmlFor="food">아침</label>
-          <input
-            type="text"
-            value={breakfast}
-            id="ex"
-            onChange={breakfastChangeHandler}
-          />
-          <button onClick={addItembreakfast}>➕</button>
+            <label htmlFor="food">아침</label>
+            <input
+              type="text"
+              value={breakfast}
+              id="ex"
+              onChange={breakfastChangeHandler}
+            />
+            <button onClick={addItembreakfast}>➕</button>
           </div>
           <FoodItems list={breakfastlist} />
           <div>
-          <label htmlFor="food">점심</label>
-          <input
-            type="text"
-            value={lunch}
-            id="ex"
-            onChange={lunchChangeHandler}
-          />
-          <button onClick={addItemlunch}>➕</button>
+            <label htmlFor="food">점심</label>
+            <input
+              type="text"
+              value={lunch}
+              id="ex"
+              onChange={lunchChangeHandler}
+            />
+            <button onClick={addItemlunch}>➕</button>
           </div>
           <FoodItems list={lunchlist} />
           <div>
-          <label htmlFor="food">저녁</label>
-          <input
-            type="text"
-            value={dinner}
-            id="ex"
-            onChange={dinnerChangeHandler}
-          />
-          <button onClick={addItemdinner}>➕</button>
+            <label htmlFor="food">저녁</label>
+            <input
+              type="text"
+              value={dinner}
+              id="ex"
+              onChange={dinnerChangeHandler}
+            />
+            <button onClick={addItemdinner}>➕</button>
           </div>
           <FoodItems list={dinnerlist} />
           <button className={classes.button} onClick={addHandler}>

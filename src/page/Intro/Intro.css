@@ -9,25 +9,26 @@
   font-weight: normal;
   font-style: normal;
 }
-.pBox{
+body {
+  background-color: rgba(201, 201, 201, 0.8);
+}
+.pBox {
+  background-color: rgba(201, 161, 161, 0.313);
   font-family: 'ImcreSoojin';
+  width: 90%;
+  margin: 0 auto;
 }
 #backgroundImg {
   padding-top: 80px;
   width: 100%;
-
 }
 .background-Img {
-  /* width: 300px; */
-  height: 450px;
-  background-image: url('https://src.hidoc.co.kr/image/lib/2022/2/16/1644995225813_0.jpg');
-  background-repeat: repeat-x;
-  background-size: 500px 100%;
-  opacity: 50%;
+  height: 500px;
+  background-image: url('/Img/backImg.png');
+  background-size: cover;
 }
-.dietinfo{
+.dietinfo {
   margin: 0 auto;
-  
 }
 .chucheon-container {
   margin: 0 auto;
@@ -51,46 +52,80 @@
 }
 .plusBox {
   width: 3rem;
-  height: 1rem;
+  height: 4rem;
   font-size: 15px;
 }
 .introH2 {
-  margin-top: 100px;
-  padding-bottom: 20px;
+  padding: 1rem;
   font-size: 30px;
   width: 100%;
-
 }
-#section3{
+#section3 {
   width: 100%;
   text-align: center;
 }
-.info1{
+.info1 {
   font-size: 20px;
 }
-.diteinfo{
+.diteinfo {
   margin: 0 auto;
 }
-@media only screen and (min-width:780px){
-  .chucheon-container{flex-direction: row;}
-  .container{width: 50%;}
-  .container img{width: 200px; height: 200px;}
-  .container{margin: 0 auto;}
-  .containerimg{width: 200px;}
-
-
+button {
+  cursor: pointer;
 }
-@media only screen and (max-width:780px){
-  .chucheon-container{flex-direction: row;}
-  .container img{width: 100px; height: 100px;}
-  .container{margin: 0 auto;}
-  .info1{padding: 10px; margin: 0 auto;}
-  .player1{display: none;}
-  .player2{width: 50%;}
-  .player3{width: 50%;}
-  .containerimg{width: 100px;}
-  .text{font-size: 15px;}
+@media only screen and (min-width: 780px) {
+  .chucheon-container {
+    flex-direction: row;
+  }
 
-
+  .container {
+    width: 50%;
+  }
+  .container img {
+    width: 200px;
+    height: 200px;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  .containerimg {
+    width: 200px;
+  }
 }
-
+@media only screen and (max-width: 780px) {
+  .chucheon-container {
+    flex-direction: row;
+  }
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  .pBox {
+    width: 100%;
+  }
+  .background-Img {
+    background-image: url('/Img/backImgMin.png');
+  }
+  .info1 {
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .player1 {
+    display: none;
+  }
+  .player2 {
+    width: 50%;
+  }
+  .player3 {
+    width: 50%;
+  }
+  .containerimg {
+    width: 100px;
+  }
+  .text {
+    font-size: 15px;
+  }
+}

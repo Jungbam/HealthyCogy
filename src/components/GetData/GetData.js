@@ -42,9 +42,15 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
         <h2>달력에서</h2>
         <h2> 정보가져오기</h2>
         <hr></hr>
-        <p>원하는 해당 일자를 클릭하면 내 기록을 볼 수 있어요.</p>
-        <p>일자를 선택하면 운동루틴 추천이 떠요.</p>
-        <p>운동루틴을 정하면 루틴에 맞는 영상이 플레이됩니다.</p>
+        <ul>
+          <li className="TipLi">
+            원하는 해당 일자를 클릭하면 내 기록을 볼 수 있어요.
+          </li>
+          <li className="TipLi">일자를 선택하면 운동루틴 추천이 떠요.</li>
+          <li className="TipLi">
+            운동루틴을 정하면 루틴에 맞는 영상이 플레이됩니다.
+          </li>
+        </ul>
       </TipWindow>
       {data.length === 0 ? (
         <div className={classes.diaryContainer}>

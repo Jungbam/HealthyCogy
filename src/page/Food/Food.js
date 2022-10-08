@@ -12,31 +12,39 @@ const Food = (props) => {
     if (howMeal === '3') {
       setMealImg(
         <div className="enterContainer">
-          <FoodEnter
-            imgsrc="./Img/soragang.JPG"
-            onClickImg={onClickGangImgHandler}
-          />
-          <FoodEnter
-            imgsrc="./Img/apink.JPG"
-            onClickImg={onClickapinkImgHandler}
-          />
-          <FoodEnter
-            imgsrc="./Img/suji.JPG"
-            onClickImg={onClicksujiImgHandler}
-          />
+          <div className="sicdanContainer">
+            <FoodEnter
+              imgsrc="./Img/soragang.JPG"
+              onClickImg={onClickGangImgHandler}
+            />
+            <h1>강소라의 식단보기</h1>
+          </div>
+          <div className="sicdanContainer">
+            <FoodEnter
+              imgsrc="./Img/apink.JPG"
+              onClickImg={onClickapinkImgHandler}
+            />
+            <h1>에이핑크의 식단보기</h1>
+          </div>
         </div>,
       )
     } else if (howMeal === '4') {
       setMealImg(
         <div className="enterContainer">
-          <FoodEnter
-            imgsrc="./Img/sinyoung.JPG"
-            onClickImg={onClickSinyoungImgHandler}
-          />
-          <FoodEnter
-            imgsrc="./Img/boram.JPG"
-            onClickImg={onClickBoramkImgHandler}
-          />
+          <div className="sicdanContainer">
+            <FoodEnter
+              imgsrc="./Img/sinyoung.JPG"
+              onClickImg={onClickSinyoungImgHandler}
+            />
+            <h1>김신영의 식단보기</h1>
+          </div>
+          <div className="sicdanContainer">
+            <FoodEnter
+              imgsrc="./Img/boram.JPG"
+              onClickImg={onClickBoramkImgHandler}
+            />
+            <h1>박보람의 식단보기</h1>
+          </div>
         </div>,
       )
     } else {
@@ -46,35 +54,46 @@ const Food = (props) => {
   const onClickHandlerThree = () => {
     setMealImg(
       <div className="enterContainer">
-        <FoodEnter
-          imgsrc="./Img/soragang.JPG"
-          onClickImg={onClickGangImgHandler}
-        />
-        <FoodEnter
-          imgsrc="./Img/apink.JPG"
-          onClickImg={onClickapinkImgHandler}
-        />
-        <FoodEnter imgsrc="./Img/suji.JPG" onClickImg={onClicksujiImgHandler} />
+        <div className="sicdanContainer">
+          <FoodEnter
+            imgsrc="./Img/soragang.JPG"
+            onClickImg={onClickGangImgHandler}
+          />
+          <h1>강소라의 식단보기</h1>
+        </div>
+        <div className="sicdanContainer">
+          <FoodEnter
+            imgsrc="./Img/apink.JPG"
+            onClickImg={onClickapinkImgHandler}
+          />
+          <h1>에이핑크의 식단보기</h1>
+        </div>
       </div>,
     )
   }
   const onClickHandlerFive = () => {
     setMealImg(
       <div className="enterContainer">
-        <FoodEnter
-          imgsrc="./Img/sinyoung.JPG"
-          onClickImg={onClickSinyoungImgHandler}
-        />
-        <FoodEnter
-          imgsrc="./Img/boram.JPG"
-          onClickImg={onClickBoramkImgHandler}
-        />
+        <div className="sicdanContainer">
+          <FoodEnter
+            imgsrc="./Img/sinyoung.JPG"
+            onClickImg={onClickSinyoungImgHandler}
+          />
+          <h1>김신영의 식단보기</h1>
+        </div>
+        <div className="sicdanContainer">
+          <FoodEnter
+            imgsrc="./Img/boram.JPG"
+            onClickImg={onClickBoramkImgHandler}
+          />
+          <h1>박보람의 식단보기</h1>
+        </div>
       </div>,
     )
   }
   const onClickGangImgHandler = () => {
     setMealImg(
-      <div className="flexBox">
+      <div className="flexFoodBox">
         <img src="./Img/three.JPG" className="imgsic" />
         <div className="textBox">
           <h2>강소라의 다이어트 식단</h2>
@@ -100,34 +119,8 @@ const Food = (props) => {
   }
   const onClickapinkImgHandler = () => {
     setMealImg(
-      <div className="flexBox">
+      <div className="flexFoodBox">
         <img src="./Img/three-apink.JPG" className="imgsic" />
-        <div className="textBox">
-          <h2>강소라의 다이어트 식단</h2>
-          <div className="textCon">
-            <h3 className="h3-tex">그녀만의 다이어트 규칙 3가지</h3>
-            <h4 className="h4-tex">1. 야식 절대 금지</h4>
-            <h4 className="h4-tex">2. 최대한 움직이기</h4>
-            <h4 className="h4-tex">3. 아침, 점심, 저녁! 세 끼 먹기</h4>
-          </div>
-          <div className="textCon2">
-            <h3 className="h4-tex">
-              발레와 필라테스와 같은 운동들을 통한 부가효과 UP!
-            </h3>
-            <h3 className="h4-tex">호박죽을 통한 이뇨작용과 붓기제거!</h3>
-            <h3 className="h4-tex">
-              호박죽은 피부미용과 노화방지, 변비예방에도 특효약!
-            </h3>
-          </div>
-          <Button onClick={onClickHandlerThree}>뒤로가기</Button>
-        </div>
-      </div>,
-    )
-  }
-  const onClicksujiImgHandler = () => {
-    setMealImg(
-      <div className="flexBox">
-        <img src="./Img/three-suzy.JPG" className="imgsic" />
         <div className="textBox">
           <h2>강소라의 다이어트 식단</h2>
           <div className="textCon">
@@ -152,7 +145,7 @@ const Food = (props) => {
   }
   const onClickSinyoungImgHandler = () => {
     setMealImg(
-      <div className="flexBox">
+      <div className="flexFoodBox">
         <img src="./Img/five-sinyoung.JPG" className="imgsic" />
         <div className="textBox">
           <h2>강소라의 다이어트 식단</h2>
@@ -178,7 +171,7 @@ const Food = (props) => {
   }
   const onClickBoramkImgHandler = () => {
     setMealImg(
-      <div className="flexBox">
+      <div className="flexFoodBox">
         <img src="./Img/five-boram.JPG" className="imgsic" />
         <div className="textBox">
           <h2>강소라의 다이어트 식단</h2>
@@ -204,7 +197,7 @@ const Food = (props) => {
   }
   return (
     <div className="main-container">
-      <div className="dd">
+      <div className="ab">
         <h1 className="main_title">연예인 다이어트 식단</h1>
         <label htmlFor="food-num">식사 횟수 선택 </label>
         <select id="food-num" onChange={onChangeHandler}>

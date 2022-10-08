@@ -3,6 +3,7 @@
   text-align: center;
 }
 .cal {
+  background-color: white;
   padding: 0;
   margin-top: 100px;
   border: 1px solid black;
@@ -24,11 +25,13 @@ form {
   height: 70px;
 }
 .bmiButton {
+  font-family: 'ImcreSoojin';
   display: block;
   margin: 10px auto;
-  width: 3rem;
-  height: 2rem;
-  background-color: gainsboro;
+  padding: 0.5rem;
+  width: 10rem;
+  height: 3rem;
+  background: linear-gradient(30deg, black, white);
   border-radius: 12px;
 }
 
@@ -44,12 +47,12 @@ img {
   margin-top: 30px;
   height: 300px;
 }
-.result{
-  font-size: 20px;
+.result {
+  font-size: 2rem;
+  font-family: 'ImcreSoojin';
 }
-.title{
+.title {
   margin-top: 10px;
   font-size: 30px;
   margin-left: 50px;
-
 }

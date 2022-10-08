@@ -41,12 +41,12 @@ const BMI = () => {
   return (
     <div className="BMIpage">
       <div className="cal">
-        <h2 className='title'>BMI 계산기</h2>
+        <h2 className="title">BMI 계산기</h2>
         <form>
           <label className="nab">신장</label>
           <input id="height" type="number"></input>
           <label htmlFor="weight">체중</label>
-          <input id="weight" type="nmber"></input>
+          <input id="weight" type="number"></input>
           <button className="bmiButton" onClick={add}>
             계산
           </button>

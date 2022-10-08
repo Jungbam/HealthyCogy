@@ -34,12 +34,13 @@ const Intro = (props) => {
   }
 
   return (
-    <div className="pBox">
+    <div>
       <main>
         <div id="backgroundImg">
           <div className="background-Img"></div>
         </div>
-          <div className='info'>
+        <div className="pBox">
+          <div className="info">
             <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
             <span className="info1">
               다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
@@ -55,20 +56,21 @@ const Intro = (props) => {
               <Chucheon imgSet={introMiddle1} text={introMiddle6} />
             </div>
           </div>
-        <div>
-          <div id="section3">
-            <h2 className='dietinfo'>다이어트에 대한 정보/꿀팁</h2>
-            <YouCon />
-          </div>
-        </div>
-        <div className="fixedContent">
-          {isTip ? (
-            <Slider onCLickFn={sliderHandler} />
-          ) : (
-            <div className="plusBox" onClick={plusBoxHandler}>
-              ⭐️꿀팁
+          <div>
+            <div id="section3">
+              <h2 className="dietinfo">다이어트에 대한 정보/꿀팁</h2>
+              <YouCon />
             </div>
-          )}
+          </div>
+          <div className="fixedContent">
+            {isTip ? (
+              <Slider onCLickFn={sliderHandler} />
+            ) : (
+              <div className="plusBox" onClick={plusBoxHandler}>
+                ⭐️꿀팁
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>
