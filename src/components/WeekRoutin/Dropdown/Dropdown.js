@@ -123,9 +123,11 @@ const Dropdown = ({ data, userId, dateId }) => {
           {dateId} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
-          <span className="closedrop" onClick={closeDropdownHandler}>
-            X
-          </span>
+          <p className="closedropParent">
+            <span className="closedrop" onClick={closeDropdownHandler}>
+              X
+            </span>
+          </p>
           <div>
             <strong>오늘의 운동 : </strong>
             <select onChange={selectHandler} value={inputRoutin}>
@@ -158,7 +160,9 @@ const Dropdown = ({ data, userId, dateId }) => {
                 />
               ))
             : '배열이 아닙니다.'}
-          <button onClick={routinInputHandler}>나의 루틴으로 등록</button>
+          <button className="droproutinBtn" onClick={routinInputHandler}>
+            나의 루틴으로 등록
+          </button>
         </ul>
       </div>
     </div>

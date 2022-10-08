@@ -10,7 +10,7 @@
   font-style: normal;
 }
 .headerDiv {
-  /* display: flex; */
+  display: flex;
   position: fixed;
   z-index: 200;
   width: 100%;

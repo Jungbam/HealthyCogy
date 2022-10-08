@@ -29,7 +29,15 @@ const MyStorage = (props) => {
         setIsSetDate={setIsSetDate}
       />
       {/* 달력 코드 */}
-      {isSetDate ? <WeekContainer date={date} userObj={userObj} /> : <></>}
+      {isSetDate ? (
+        <WeekContainer
+          date={date}
+          userObj={userObj}
+          setIsSetDate={setIsSetDate}
+        />
+      ) : (
+        <></>
+      )}
       {/* 운동 루틴 추천, 하루 식단  */}
       <BoardContainer date={date} userObj={userObj} />
       {/* 게시판, 영상 알고리즘 */}

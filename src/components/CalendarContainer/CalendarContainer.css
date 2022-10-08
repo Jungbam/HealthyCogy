@@ -7,12 +7,14 @@
 }
 .CalendarContainer {
   margin-top: 90px;
-  width: 600px;
+  width: 500px;
   height: 720px;
   display: inline-block;
 }
 .react-calendar {
   width: 100%;
+  font: inherit;
+  font-size: 2rem;
 }
 .inmydiary {
   font-family: 'ImcreSoojin';
