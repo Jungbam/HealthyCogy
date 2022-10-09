@@ -47,7 +47,12 @@ const MentoCoumunity = () => {
   return (
     <div className="MentoComunityFullBox">
       {userBoardProps.map((data, index) => (
-        <UserBoard userId={data} mentoId={userObj.uid} key={index} />
+        <UserBoard
+          photoURL={userObj.photoURL}
+          userId={data}
+          mentoId={userObj.uid}
+          key={index}
+        />
       ))}
     </div>
   )

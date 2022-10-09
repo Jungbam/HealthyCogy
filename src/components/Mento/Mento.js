@@ -29,7 +29,10 @@ const Mento = () => {
       const selectedUserArray = dataArray.filter((data) => {
         return data.user === userObj.uid
       })
-      setDataArray(selectedUserArray)
+      const mentoSelectedArray = selectedUserArray.filter((data) => {
+        return data.mento === mentoId
+      })
+      setDataArray(mentoSelectedArray)
     })
     dbService.collection('comunity').onSnapshot((snapshot) => {
       const dataArray = snapshot.docs.map((doc) => ({
@@ -59,7 +62,7 @@ const Mento = () => {
     setMentoringText(e.target.value)
   }
   const enterkey = async () => {
-    const createdAt = new Date.now()
+    const createdAt = Date.now()
     if (window.event.keyCode == 13) {
       await dbService
         .collection('comunity')
@@ -70,6 +73,7 @@ const Mento = () => {
           mento: mentoId,
           text: mentoringText,
           name: userObj.displayName,
+          photoURL: userObj.photoURL,
           touser: '',
         })
         .then(
@@ -81,7 +85,9 @@ const Mento = () => {
       setMentoringText('')
     }
   }
-  // console.log(mentoDataArray)
+
+  // 작업 두개 합치고 -> 날짜별 정렬
+  //console.log(mentoDataArray)
   return (
     <div className="mentoComunityMain">
       {mentoApearSet ? (
@@ -99,13 +105,33 @@ const Mento = () => {
         <div className="mentoComunityMainContents">
           <div className="mentComunityDiv">
             {dataArray.map((data, index) => (
-              <div className="talkBox" key={index}>
+              <div
+                className={
+                  data.user === data.mento ? 'talkBox-left' : 'talkBox-right'
+                }
+                key={index}
+              >
                 <div className="mentoringUserBox">
                   <img
                     className="userMentoringProfile"
-                    src={userObj.photoURL}
+                    src={data.photoURL}
                   ></img>
-                  {/* <h2>{userObj.displayName}</h2> */}
+                </div>
+                <span className="mentoringTextBox">{data.text}</span>
+              </div>
+            ))}
+            {mentoDataArray.map((data, index) => (
+              <div
+                className={
+                  data.user === data.mento ? 'talkBox-left' : 'talkBox-right'
+                }
+                key={index}
+              >
+                <div className="mentoringUserBox">
+                  <img
+                    className="userMentoringProfile"
+                    src={data.photoURL}
+                  ></img>
                 </div>
                 <span className="mentoringTextBox">{data.text}</span>
               </div>

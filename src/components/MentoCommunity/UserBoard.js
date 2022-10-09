@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { dbService } from '../../fbase'
 import './UserBoard.css'
 
-const UserBoard = ({ userId, mentoId }) => {
+const UserBoard = ({ userId, mentoId, photoURL }) => {
   const [dataArray, setDataArray] = useState([])
   const [mentoDataArray, setMentoDataArray] = useState([])
   const [mentoringText, setMentoringText] = useState('')
@@ -43,7 +43,7 @@ const UserBoard = ({ userId, mentoId }) => {
     setMentoringText(e.target.value)
   }
   const enterkey = async () => {
-    const createdAt = new Date.now()
+    const createdAt = Date.now()
     if (window.event.keyCode == 13) {
       console.log('hi')
       await dbService
@@ -55,6 +55,7 @@ const UserBoard = ({ userId, mentoId }) => {
           mento: mentoId,
           touser: userId,
           text: mentoringText,
+          photoURL: photoURL,
           name: mentoId,
         })
       setMentoringText('')
@@ -72,15 +73,7 @@ const UserBoard = ({ userId, mentoId }) => {
     <div className="mentoMentoPageComunityMainContents">
       <div className="mentComunityDiv">
         <h1>{userName}님과의 대화</h1>
-        {dataArray.map((data, index) => (
-          <div
-            className={data.user === mentoId ? 'talkBox-right' : 'talkBox-left'}
-            key={index}
-          >
-            <span className="mentoringTextBox">{data.text}</span>
-          </div>
-        ))}
-        {mentoDataArray.map((data, index) => (
+        {sortedmentoPageArray.map((data, index) => (
           <div
             className={data.user === mentoId ? 'talkBox-right' : 'talkBox-left'}
             key={index}
