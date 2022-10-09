@@ -10,7 +10,7 @@
   font-style: normal;
 }
 body {
-  background-color: rgba(201, 201, 201, 0.8);
+  background: whitesmoke;
 }
 .pBox {
   background-color: rgba(201, 161, 161, 0.313);

@@ -57,6 +57,12 @@
   font-family: 'ImcreSoojin';
   flex-direction: column;
 }
+.requireloginDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .google {
   font: inherit;
   margin-left: 10px;

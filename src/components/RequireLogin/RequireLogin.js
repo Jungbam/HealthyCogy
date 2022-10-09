@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { authService, firebaseInstance } from '../../fbase'
 import './RequireLogin.css'
 
@@ -14,12 +15,36 @@ const RequireLogin = () => {
       </div>
       <nav>
         <div className="containerBox">
-          <label className='logininfo' htmlFor="googleLogin">
-            구글ID로 로그인해서 나만의 다이어트 다이어리를 관리해봐요.
-          </label>
-          <button className="google" id="googleLogin" onClick={onSocialHandler}>
-            로그인
-          </button>
+          <div className="requireloginDiv">
+            <label className="logininfo" htmlFor="googleLogin">
+              구글ID로 로그인해서 나만의 다이어트 다이어리를 관리해봐요.
+            </label>
+            <button
+              className="google"
+              id="googleLogin"
+              onClick={onSocialHandler}
+            >
+              로그인
+            </button>
+          </div>
+          <ul className="requireloginDiv">
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none', color: 'white' }}
+                to="/bmi"
+              >
+                BMI계산기
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={{ textDecoration: 'none', color: 'white' }}
+                to="/food"
+              >
+                식단추천
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
