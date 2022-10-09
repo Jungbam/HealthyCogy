@@ -52,7 +52,7 @@ const BMI = () => {
           </button>
         </form>
         <div className="imgresult">
-          <img src={Img} />
+          <img className="imgEl" src={Img} />
         </div>
         <div className="result">결과 : {BMI}</div>
       </div>

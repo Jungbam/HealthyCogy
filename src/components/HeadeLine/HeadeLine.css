@@ -119,13 +119,13 @@ input[id='icon']:checked + label > span:nth-child(3) {
 }
 
 #icon + label + #header {
-  position: fixed; /* 스크롤을 내리더라도 같은 위치에서 붙어다닌다. */
+  position: fixed;
   width: 300px;
   height: 100%;
   background: #333;
-  opacity: 80%;
+  opacity: 90%;
   top: 0px;
-  padding: 60px 20px 20px 20px;
+  padding: 90px 20px 20px 20px;
   box-sizing: border-box;
   left: -300px;
   z-index: 1;

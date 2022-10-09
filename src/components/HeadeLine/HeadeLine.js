@@ -16,6 +16,18 @@ const HeadeLine = (props) => {
         <nav className="navItems">
           <div className="header1">
             <ul>
+              {props.isMento ? (
+                <li>
+                  <NavLink
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    to="/mentoring"
+                  >
+                    멘토링
+                  </NavLink>
+                </li>
+              ) : (
+                <></>
+              )}
               <li>
                 <NavLink
                   style={{ textDecoration: 'none', color: 'white' }}
@@ -63,6 +75,18 @@ const HeadeLine = (props) => {
           </label>
           <div id="header">
             <ul>
+              {props.isMento ? (
+                <li>
+                  <NavLink
+                    style={{ textDecoration: 'none', color: 'white' }}
+                    to="/mentoring"
+                  >
+                    멘토링
+                  </NavLink>
+                </li>
+              ) : (
+                <></>
+              )}
               <li>
                 <NavLink
                   style={{ textDecoration: 'none', color: 'white' }}

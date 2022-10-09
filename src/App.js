@@ -8,7 +8,7 @@ import Mento from './components/Mento/Mento'
 function App() {
   return (
     <div className="App">
-      {/* <Router /> */}
+      <Router />
       <Mento />
     </div>
   )

@@ -5,6 +5,9 @@
   right: 2rem;
   text-align: right;
 }
+.mentoringUserBox {
+  height: auto;
+}
 .mentoComunityMainContents {
   height: 300px;
   padding: 1rem;
@@ -12,11 +15,16 @@
   border-radius: 12px;
   box-shadow: 0 2px 6px #333;
 }
+.talkBox {
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+}
 .mentComunityDiv {
   height: 85%;
   width: 95%;
   margin: 0 auto;
   border: 1px solid blue;
+  overflow: auto;
 }
 .mentoComunityChatContainer {
   margin: 0 auto;
@@ -28,4 +36,19 @@
   width: 80%;
   margin-top: 1rem;
   margin-right: 1rem;
+}
+.userMentoringProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 0.7rem;
+  margin-right: 5px;
+}
+.mentoringTextBox {
+  background-color: #333;
+  color: white;
+  width: auto;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px blue;
 }
