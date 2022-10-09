@@ -26,6 +26,7 @@ const CalendarContainer = ({ date, userObj, setDate, setIsSetDate }) => {
 
   return (
     <div className="CalendarContainer">
+      <div></div>
       <Calendar calendarType="US" onChange={onChange} value={date} />
       <div>{page}</div>
       <button className="inmydiary" onClick={callInputHandler}>

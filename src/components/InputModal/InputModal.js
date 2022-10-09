@@ -38,7 +38,6 @@ const InputModal = (props) => {
   }
   const dateIdValue = dayjs(dateId).format('YY-MM-DD')
   const addHandler = async (event) => {
-    console.log(breakfastlist.length)
     event.preventDefault()
     const createdId = userId + dateIdValue
     await dbService
