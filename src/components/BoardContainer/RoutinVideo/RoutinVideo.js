@@ -76,8 +76,6 @@ const RoutinVideo = ({ userObj, date }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
   }
-  if (videoArray.length === 0) {
-  }
 
   const randomNums = []
   let count = 0

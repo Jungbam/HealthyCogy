@@ -91,8 +91,11 @@ const Mento = () => {
   return (
     <div className="mentoComunityMain">
       {mentoApearSet ? (
-        <form>
-          <select onChange={onSubmitHandler}>
+        <form className="selectMentoOptionBox">
+          <select
+            onChange={onSubmitHandler}
+            className="selectMentoOptionBoxSelect"
+          >
             <option>상담을 원하는 멘토를 선택해주세요.</option>
             <option value="R1ln1cgK3AcMmG1HbjQVEPKl28d2">호영</option>
             <option value="kBfiEAr4KmhQ82PxCcL42C2JDdB2">서연</option>
@@ -152,7 +155,11 @@ const Mento = () => {
         <></>
       )}
       {isLoggedIn ? (
-        <button onClick={mentoApearHandler}>멘토에게 물어보기(이미지)</button>
+        <img
+          className="callMento"
+          src="/Img/coach.jpg"
+          onClick={mentoApearHandler}
+        />
       ) : (
         <></>
       )}

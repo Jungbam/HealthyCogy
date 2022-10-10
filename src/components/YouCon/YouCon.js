@@ -1,34 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
+import { dbService } from '../../fbase'
 import './YouCon.css'
 
+const SLIDE_NUMBER_VALUE = 3
 export default function YouCon() {
+  const [videoArray, setVideoArray] = useState([])
+
+  useEffect(() => {
+    dbService.collection('Routin').onSnapshot((snapshot) => {
+      const dataArray = snapshot.docs.map((doc) => ({
+        ...doc.data(),
+      }))
+      const selectedRoutinArray = dataArray.filter((data) => {
+        return data.routin === 'basic'
+      })
+      const resultArray = selectedRoutinArray.map((data) => {
+        return data.url
+      })
+      console.log(resultArray)
+      setVideoArray(resultArray)
+    })
+  }, [])
+
+  const randomNums = []
+  let count = 0
+  for (let i = 0; count < SLIDE_NUMBER_VALUE; i++) {
+    const randomNum = Math.floor(Math.random() * 4)
+    if (!randomNums.includes(randomNum)) {
+      randomNums.push(randomNum)
+      count++
+    } else {
+    }
+  }
+  const resultArray = []
+  for (let i of randomNums) {
+    resultArray.push(videoArray[i])
+  }
+  console.log(resultArray)
   return (
     <div className="youtub-container">
-        <ReactPlayer 
-          className="player1"
-          url={'https://www.youtube.com/watch?v=N3v_YrlilBY'}
-          heigth="300px"
-          playing={true}
-          muted={true}
-          controls={true}
-        />
+      {resultArray.map((urlPath) => (
         <ReactPlayer
-          className="player2"
-          url={'https://www.youtube.com/watch?v=FCfLAaEePyU'}
-          heigth="300px"
+          key={Math.random()}
+          className="youConPlayer"
+          url={urlPath}
+          height="300px"
           playing={true}
           muted={true}
           controls={true}
         />
-        <ReactPlayer
-          className="player3"
-          url={'https://www.youtube.com/watch?v=cIzEoosVsUg'}
-          heigth="300px"
-          playing={true}
-          muted={true}
-          controls={true}
-        />
+      ))}
     </div>
   )
 }

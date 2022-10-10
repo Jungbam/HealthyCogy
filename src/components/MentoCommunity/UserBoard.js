@@ -55,7 +55,7 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
           mento: mentoId,
           touser: userId,
           text: mentoringText,
-          photoURL: photoURL,
+          photoURL: '/Img/coach.jpg',
           name: mentoId,
         })
       setMentoringText('')
