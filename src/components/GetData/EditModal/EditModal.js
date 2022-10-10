@@ -25,6 +25,27 @@ const EditModal = (props) => {
     }
     props.shutDownHandler()
   }
+
+  // const dateIdValue = dayjs(dateId).format('YY-MM-DD')
+  // const addHandler = async (event) => {
+  //   event.preventDefault()
+  //   const createdId = userId + dateIdValue
+  //   await dbService
+  //     .collection('healthycogy')
+  //     .doc(createdId)
+  //     .set({
+  //       createdId,
+  //       user: userId,
+  //       date: dateIdValue,
+  //       routin: inputRoutin ? inputRoutin : 'Breaktime',
+  //       breakfast:
+  //         breakfastlist.length === 0 ? ['식단을 넣어주세요.'] : breakfastlist,
+  //       lunch: lunchlist.length === 0 ? ['식단을 넣어주세요.'] : lunchlist,
+  //       dinner: dinnerlist.length === 0 ? ['식단을 넣어주세요.'] : dinnerlist,
+  //     })
+  //   props.shutDown()
+  // }
+
   return (
     <div>
       <div className={classes.backdrop} onClick={props.shutDownHandler} />
