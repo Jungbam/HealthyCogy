@@ -112,7 +112,7 @@ const Food = (props) => {
               호박죽은 피부미용과 노화방지, 변비예방에도 특효약!
             </h3>
           </div>
-          <Button onClick={onClickHandlerThree}>뒤로가기</Button>
+          <button onClick={onClickHandlerThree}>뒤로가기</button>
         </div>
       </div>,
     )
@@ -138,7 +138,7 @@ const Food = (props) => {
               호박죽은 피부미용과 노화방지, 변비예방에도 특효약!
             </h3>
           </div>
-          <Button onClick={onClickHandlerThree}>뒤로가기</Button>
+          <button onClick={onClickHandlerThree}>뒤로가기</button>
         </div>
       </div>,
     )
@@ -164,7 +164,7 @@ const Food = (props) => {
               호박죽은 피부미용과 노화방지, 변비예방에도 특효약!
             </h3>
           </div>
-          <Button onClick={onClickHandlerFive}>뒤로가기</Button>
+          <button onClick={onClickHandlerFive}>뒤로가기</button>
         </div>
       </div>,
     )
@@ -190,7 +190,7 @@ const Food = (props) => {
               호박죽은 피부미용과 노화방지, 변비예방에도 특효약!
             </h3>
           </div>
-          <Button onClick={onClickHandlerFive}>뒤로가기</Button>
+          <button onClick={onClickHandlerFive}>뒤로가기</button>
         </div>
       </div>,
     )
@@ -211,16 +211,3 @@ const Food = (props) => {
   )
 }
 export default Food
-const Button = styled.div`
-  all: unset;
-  padding: 1em 2em;
-  margin: 4em 2em;
-  color: burlywood;
-  border-radius: 10px;
-  border: 1px solid burlywood;
-  cursor: pointer;
-  &:hover {
-    background-color: burlywood;
-    color: #fff;
-  }
-`
