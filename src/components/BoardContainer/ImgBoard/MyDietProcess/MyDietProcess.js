@@ -8,7 +8,7 @@ import './MyDietProcess.css'
 const MyDietProcess = ({ userObj, date }) => {
   const userId = userObj
   const dateId = dayjs(date).format('YY-MM-DD')
-  const [progress, setProgress] = useState(0)
+  // const [progress, setProgress] = useState(0)
 
   const upLoadFiles = (file) => {
     if (!file) return
@@ -19,10 +19,10 @@ const MyDietProcess = ({ userObj, date }) => {
     upLoadTask.on(
       'state_changed',
       (snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
-        )
-        setProgress(prog)
+        // const prog = Math.round(
+        //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
+        // )
+        // setProgress(prog)
       },
       (error) => console.log(error),
       () => {
@@ -46,13 +46,16 @@ const MyDietProcess = ({ userObj, date }) => {
   return (
     <div className="myDietProcessContainer">
       <form onSubmit={uploadHandler} className="formContainer">
-      <h2 className='imgclick'>기록할 이미지를 선택하세요^ㅡ^</h2>
-      <div className='box1'>
-        <input type="file" className="fileInput"></input>
-        <button className='submit' type="submit">Upload</button>
+        <h2 className="imgclick">기록할 이미지를 선택하세요^ㅡ^</h2>
+        <div className="box1">
+          <input type="file" className="fileInput"></input>
+          <button className="submit" type="submit">
+            Upload
+          </button>
         </div>
+        <hr></hr>
       </form>
-      <h3 className='progress'>진행률 : {progress}%</h3>
+      {/* <h3 className='progress'>진행률 : {progress}%</h3> */}
     </div>
   )
 }

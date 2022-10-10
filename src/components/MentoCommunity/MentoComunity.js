@@ -37,10 +37,9 @@ const MentoCoumunity = () => {
       })
       const myMentiIdArray = selectedUserArray.map((data) => data.user)
       const finalArray = myMentiIdArray.filter((data) => data !== userObj.uid)
-      console.log('필터전', myMentiIdArray, '최종', finalArray)
       setUserBoardProps(finalArray)
     })
-    //props로 userId를 내려준다. 그자식이랑 나만 뽑은 데이터 값을 만든다.
+    //props로 userId를 내려준다. 뽑은 데이터 값을 만든다.
   }, [userObj])
 
   console.log(userBoardProps)

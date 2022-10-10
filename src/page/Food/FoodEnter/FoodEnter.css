@@ -4,7 +4,8 @@
   padding: 0;
   overflow: hidden;
   border-radius: 200px;
-  border: 1px solid blue;
+  border: 1px solid white;
+  box-shadow: 0 2px 4px #333;
   cursor: pointer;
 }
 .imgFoodBox img {

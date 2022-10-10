@@ -61,7 +61,7 @@ const Mento = () => {
   const onChangementoringTextHandler = (e) => {
     setMentoringText(e.target.value)
   }
-  const enterkey = async () => {
+  const enterkey = async (e) => {
     const createdAt = Date.now()
     if (window.event.keyCode == 13) {
       await dbService
@@ -84,10 +84,45 @@ const Mento = () => {
         )
       setMentoringText('')
     }
+    e.target.parentNode.previousElementSibling.scrollTo(
+      0,
+      e.target.parentNode.previousElementSibling.scrollHeight,
+    )
+  }
+  const enterClickHandler = async (e) => {
+    const createdAt = Date.now()
+    await dbService
+      .collection('comunity')
+      .doc(userObj.uid + createdAt)
+      .set({
+        createdAt,
+        user: userObj.uid,
+        mento: mentoId,
+        text: mentoringText,
+        name: userObj.displayName,
+        photoURL: userObj.photoURL,
+        touser: '',
+      })
+      .then(
+        await dbService.collection('mentomatch').doc(userObj.uid).set({
+          user: userObj.uid,
+          mento: mentoId,
+        }),
+      )
+    setMentoringText('')
+    e.target.parentNode.previousElementSibling.scrollTo(
+      0,
+      e.target.parentNode.previousElementSibling.scrollHeight,
+    )
   }
 
   // 작업 두개 합치고 -> 날짜별 정렬
-  //console.log(mentoDataArray)
+  console.log(dataArray, '+', mentoDataArray)
+  const mentoPageOutputArray = [...dataArray, ...mentoDataArray]
+  const sortedmentoPageArray = mentoPageOutputArray.sort((a, b) => {
+    return a.createdAt - b.createdAt
+  })
+
   return (
     <div className="mentoComunityMain">
       {mentoApearSet ? (
@@ -107,7 +142,7 @@ const Mento = () => {
       {mentoSet ? (
         <div className="mentoComunityMainContents">
           <div className="mentComunityDiv">
-            {dataArray.map((data, index) => (
+            {sortedmentoPageArray.map((data, index) => (
               <div
                 className={
                   data.user === data.mento ? 'talkBox-left' : 'talkBox-right'
@@ -123,7 +158,7 @@ const Mento = () => {
                 <span className="mentoringTextBox">{data.text}</span>
               </div>
             ))}
-            {mentoDataArray.map((data, index) => (
+            {/* {mentoDataArray.map((data, index) => (
               <div
                 className={
                   data.user === data.mento ? 'talkBox-left' : 'talkBox-right'
@@ -138,7 +173,7 @@ const Mento = () => {
                 </div>
                 <span className="mentoringTextBox">{data.text}</span>
               </div>
-            ))}
+            ))} */}
           </div>
           <div className="mentoComunityChatContainer">
             <input

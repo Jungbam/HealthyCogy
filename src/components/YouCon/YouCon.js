@@ -45,7 +45,7 @@ export default function YouCon() {
           key={Math.random()}
           className="youConPlayer"
           url={urlPath}
-          height="300px"
+          height="450px"
           playing={true}
           muted={true}
           controls={true}

@@ -42,14 +42,10 @@ const Intro = (props) => {
         <div className="pBox">
           <div className="info">
             <h2 className="introH2">"맞춤 다이어트 플랫폼"</h2>
-            <span className="info1">
+            <p className="info1">
               다이어트 성공의 가능성이 성공으로 꽃 피울 수 있도록 헬시코기가
               도와드립니다😀
-            </span>
-            {/* <p>
-            개인마다 다른 체형, 스타일, 식단을 오로지 자신에게 맞도록 헬시코기
-            플랫폼을 통해 ..{' '}
-          </p> */}
+            </p>
             <div className="chucheon-container">
               <Chucheon imgSet={introMiddle2} text={introMiddle3} />
               <Chucheon imgSet={introMiddle4} text={introMiddle5} />

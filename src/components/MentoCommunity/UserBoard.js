@@ -42,7 +42,7 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
   const onChangementoringTextHandler = (e) => {
     setMentoringText(e.target.value)
   }
-  const enterkey = async () => {
+  const enterkey = async (e) => {
     const createdAt = Date.now()
     if (window.event.keyCode == 13) {
       console.log('hi')
@@ -60,13 +60,39 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
         })
       setMentoringText('')
     }
+    e.target.parentNode.previousElementSibling.scrollTo(
+      0,
+      e.target.parentNode.previousElementSibling.scrollHeight,
+    )
   }
+
+  const enterClickHandler = async (e) => {
+    const createdAt = Date.now()
+    console.log('hi')
+    await dbService
+      .collection('comunity')
+      .doc(mentoId + createdAt)
+      .set({
+        createdAt,
+        user: mentoId,
+        mento: mentoId,
+        touser: userId,
+        text: mentoringText,
+        photoURL: '/Img/coach.jpg',
+        name: mentoId,
+      })
+    setMentoringText('')
+    e.target.parentNode.previousElementSibling.scrollTo(
+      0,
+      e.target.parentNode.previousElementSibling.scrollHeight,
+    )
+  }
+
+  //날짜순 정렬
   const mentoPageOutputArray = [...dataArray, ...mentoDataArray]
-  console.log(mentoPageOutputArray)
-  const sortedmentoPageArray = mentoPageOutputArray.sort(
-    (a, b) => new Date(a.data) - new Date(b.date),
-  )
-  //작업 -> 시간별로 정렬한 배열을 매핑하기
+  const sortedmentoPageArray = mentoPageOutputArray.sort((a, b) => {
+    return a.createdAt - b.createdAt
+  })
 
   console.log(sortedmentoPageArray)
   return (
@@ -90,7 +116,7 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
           onChange={onChangementoringTextHandler}
           onKeyUp={enterkey}
         ></input>
-        <button onClick={enterkey}>Enter</button>
+        <button onClick={enterClickHandler}>Enter</button>
       </div>
     </div>
   )

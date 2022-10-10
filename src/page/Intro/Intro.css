@@ -13,7 +13,7 @@ body {
   background: whitesmoke;
 }
 .pBox {
-  background-color: rgba(201, 161, 161, 0.313);
+  background-color: rgba(100, 37, 225, 0.05);
   font-family: 'ImcreSoojin';
   width: 90%;
   margin: 0 auto;
@@ -46,7 +46,8 @@ body {
 .fixedContent {
   padding: 0.5rem;
   border-radius: 10px;
-  background-color: bisque;
+  background-color: rgb(136, 214, 73);
+  border: 1px solid green;
   top: 15rem;
   right: 1rem;
   position: fixed;
@@ -67,6 +68,7 @@ body {
 }
 .info1 {
   font-size: 20px;
+  margin-bottom: 2rem;
 }
 .diteinfo {
   margin: 0 auto;
@@ -109,10 +111,6 @@ button {
   }
   .background-Img {
     background-image: url('/Img/backImgMin.png');
-  }
-  .info1 {
-    padding: 10px;
-    margin: 0 auto;
   }
   .player1 {
     display: none;

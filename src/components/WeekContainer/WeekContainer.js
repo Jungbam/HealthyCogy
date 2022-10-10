@@ -19,6 +19,7 @@ const WeekContainer = ({ userObj, date, setIsSetDate }) => {
         </button>
       </div>
       <WeekRoutin userObj={userObj} dayValue={date} />
+      <hr></hr>
       <FoodBoard userObj={userObj} date={date} />
     </div>
   )

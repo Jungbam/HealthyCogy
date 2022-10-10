@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { dbService } from '../../fbase'
 import dayjs from 'dayjs'
 import classes from './GetData.module.css'
-import EditModal from './EditModal/EditModal'
 import TipWindow from '../TipWindow/TipWindow'
 
 const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
@@ -26,14 +25,12 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
     })
   }, [date])
   const deleteHandler = async (docId) => {
-    const ok = window.confirm('진짜로 지우게?')
+    const ok = window.confirm(
+      `[확인]을 누르면 해당 내용이 삭제됩니다. 해당 내용을 수정하시려면   기록하기를 통해 수정해주세요.`,
+    )
     if (ok) {
       await dbService.collection('healthycogy').doc(docId.createdId).delete()
     }
-  }
-
-  const editCallHandler = async (docId) => {
-    setPage(<EditModal editDoc={docId} shutDownHandler={shutDownHandler} />)
   }
 
   return (
@@ -67,12 +64,12 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
             <div onClick={deleteHandler.bind(null, data)}>
               <ul>
                 <li>
-                  <span>+ 운동</span>
+                  <span className={classes.GetDataBoxTitle}>+ 운동</span>
                   <br />
                   {data.routin}{' '}
                 </li>
                 <li>
-                  <span>+ 식단</span>
+                  <span className={classes.GetDataBoxTitle}>+ 식단</span>
                   <br />
                   아침 : {data.breakfast}
                 </li>
@@ -80,7 +77,6 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
                 <li>저녁 : {data.dinner}</li>
               </ul>
             </div>
-            <button onClick={editCallHandler.bind(null, data)}>수정</button>
           </div>
         ))
       )}
