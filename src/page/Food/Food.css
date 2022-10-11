@@ -134,7 +134,7 @@
 .h4-tex {
   font-size: 2rem;
 }
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-width: 1200px) {
   .imgContent {
     flex-direction: column;
     width: 100%;
@@ -143,11 +143,19 @@
     background-color: rgb(188, 230, 183);
     background-image: url('/Img/candy.png');
   }
+  .textCon {
+    margin-top: 20px;
+  }
   .textBox {
+    justify-content: center;
     padding: 0;
   }
-  .textCon2 {
-    display: none;
+  .h4-tex {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+  .ab {
+    top: 90px;
   }
 }
 @media only screen and (max-width: 780px) {

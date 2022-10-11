@@ -149,9 +149,9 @@ const Food = (props) => {
         <div className="textBox">
           <h2>김신영 다이어트 식단</h2>
           <div className="textCon">
-            <h3 className="h3-tex">건강한 44사이즈를 만들고 싶다면 팔로 미!</h3>
+            <h3 className="h3-tex">건강한 44사이즈를 만들고 싶다면!</h3>
             <h4 className="h4-tex">
-              1. 맛있는 식단을 찾는다면 멸치볶음 다이어트 김밥으로!
+              1. 맛있는 식단을 찾는다면 멸치볶음 다이어트 김밥!
             </h4>
             <h4 className="h4-tex">2. 칼로리 조절이 힘든 드레싱은 No!</h4>
           </div>
@@ -186,10 +186,10 @@ const Food = (props) => {
               1. 하루 먹을 양을 나누어 먹는다고 생각하기
             </h4>
             <h4 className="h4-tex">
-              2. 에너지가 필요한 날에는 반드시 +@로 음식 섭취하기
+              2. 에너지가 필요한 날에는 +@ 음식 섭취하기
             </h4>
             <h4 className="h4-tex">
-              3. 비타민, 식이섬유, 다이어트 음료로 과식을 예방하기
+              3. 비타민, 다이어트 음료로 과식을 예방하기
             </h4>
           </div>
           <div className="textCon2">
