@@ -59,8 +59,8 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
           </h2>
         </div>
       ) : (
-        data.map((data) => (
-          <div key={Math.random()}>
+        data.map((data, index) => (
+          <div key={index}>
             <div onClick={deleteHandler.bind(null, data)}>
               <ul>
                 <span className={classes.GetDataBoxTitle}>+ 운동</span>

@@ -16,8 +16,8 @@ const WeekRoutin = ({ dayValue, userObj }) => {
   }
   return (
     <div className="WeekRoutin">
-      {dayCalculationArray.map((date) => (
-        <div key={Math.random()}>
+      {dayCalculationArray.map((date, index) => (
+        <div key={index}>
           <GetWeekRoutinList userObj={userObj} date={date} />
         </div>
       ))}

@@ -94,9 +94,9 @@ const RoutinVideo = ({ userObj, date }) => {
     <div className="RoutinVideoContainer">
       <h2> 일일 추천 운동 영상</h2>
       <Slider {...settings}>
-        {resultArray.map((urlPath) => (
+        {resultArray.map((urlPath, index) => (
           <ReactPlayer
-            key={Math.random()}
+            key={index}
             className="player"
             url={urlPath}
             width="90%"
