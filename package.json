@@ -30,7 +30,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://Jungbam.github.io/HealthyCogy",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -51,5 +50,6 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  }
+  },
+  "homepage": "http://Jungbam.github.io/HealthyCogy"
 }
