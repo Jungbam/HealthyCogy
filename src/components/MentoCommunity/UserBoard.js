@@ -45,7 +45,6 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
   const enterkey = async (e) => {
     const createdAt = Date.now()
     if (window.event.keyCode == 13) {
-      console.log('hi')
       await dbService
         .collection('comunity')
         .doc(mentoId + createdAt)
@@ -68,7 +67,6 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
 
   const enterClickHandler = async (e) => {
     const createdAt = Date.now()
-    console.log('hi')
     await dbService
       .collection('comunity')
       .doc(mentoId + createdAt)
@@ -94,7 +92,6 @@ const UserBoard = ({ userId, mentoId, photoURL }) => {
     return a.createdAt - b.createdAt
   })
 
-  console.log(sortedmentoPageArray)
   return (
     <div className="mentoMentoPageComunityMainContents">
       <div className="mentComunityDiv">

@@ -116,8 +116,7 @@ const Mento = () => {
     )
   }
 
-  // 작업 두개 합치고 -> 날짜별 정렬
-  console.log(dataArray, '+', mentoDataArray)
+  // 두개 합치고 -> 날짜별 정렬
   const mentoPageOutputArray = [...dataArray, ...mentoDataArray]
   const sortedmentoPageArray = mentoPageOutputArray.sort((a, b) => {
     return a.createdAt - b.createdAt

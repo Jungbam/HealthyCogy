@@ -18,7 +18,6 @@ export default function YouCon() {
       const resultArray = selectedRoutinArray.map((data) => {
         return data.url
       })
-      console.log(resultArray)
       setVideoArray(resultArray)
     })
   }, [])
@@ -37,7 +36,6 @@ export default function YouCon() {
   for (let i of randomNums) {
     resultArray.push(videoArray[i])
   }
-  console.log(resultArray)
   return (
     <div className="youtub-container">
       {resultArray.map((urlPath) => (

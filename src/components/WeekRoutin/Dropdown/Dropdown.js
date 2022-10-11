@@ -45,7 +45,6 @@ const Dropdown = ({ data, userId, dateId }) => {
       if (selectedDataRoutin.length === 0) {
         setRoutinDataExist([])
       } else {
-        // console.log('입력 값', selectedDataRoutin[0].routin)
         setRoutinDataExist(selectedDataRoutin[0].routin)
       }
     })
@@ -75,7 +74,6 @@ const Dropdown = ({ data, userId, dateId }) => {
     basicRoutinArray.splice(IndexNumber, 1)
     setInputResultArray(basicRoutinArray)
   }
-  // console.log('입력완료', routinDataExist)
   const routinInputHandler = async () => {
     await dbService
       .collection('MyRoutin')

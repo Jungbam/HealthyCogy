@@ -5,6 +5,7 @@
   overflow: hidden;
   border-radius: 200px;
   border: 1px solid white;
+  background-color: black;
   box-shadow: 0 2px 4px #333;
   cursor: pointer;
 }

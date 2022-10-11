@@ -32,7 +32,6 @@ const MentoCoumunity = () => {
         ...doc.data(),
       }))
       const selectedUserArray = dataArray.filter((data) => {
-        // console.log(data)
         return data.mento === userObj.uid
       })
       const myMentiIdArray = selectedUserArray.map((data) => data.user)
@@ -42,7 +41,6 @@ const MentoCoumunity = () => {
     //props로 userId를 내려준다. 뽑은 데이터 값을 만든다.
   }, [userObj])
 
-  console.log(userBoardProps)
   return (
     <div className="MentoComunityFullBox">
       {userBoardProps.map((data, index) => (

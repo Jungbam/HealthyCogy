@@ -65,7 +65,6 @@ const RoutinVideo = ({ userObj, date }) => {
       const resultArray = selectedRoutinArray.map((data) => {
         return data.url
       })
-      console.log(resultArray)
       setVideoArray(resultArray)
     })
   }

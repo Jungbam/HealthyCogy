@@ -63,18 +63,15 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
           <div key={Math.random()}>
             <div onClick={deleteHandler.bind(null, data)}>
               <ul>
-                <li>
-                  <span className={classes.GetDataBoxTitle}>+ 운동</span>
-                  <br />
-                  {data.routin}{' '}
-                </li>
-                <li>
-                  <span className={classes.GetDataBoxTitle}>+ 식단</span>
+                <span className={classes.GetDataBoxTitle}>+ 운동</span>
+                <li className={classes.mealLi}>{data.routin} </li>
+                <span className={classes.GetDataBoxTitle}>+ 식단</span>
+                <li className={classes.mealLi}>
                   <br />
                   아침 : {data.breakfast}
                 </li>
-                <li>점심 : {data.lunch}</li>
-                <li>저녁 : {data.dinner}</li>
+                <li className={classes.mealLi}>점심 : {data.lunch}</li>
+                <li className={classes.mealLi}>저녁 : {data.dinner}</li>
               </ul>
             </div>
           </div>
