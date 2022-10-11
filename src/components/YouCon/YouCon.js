@@ -34,17 +34,15 @@ export default function YouCon() {
   }
   const resultArray = []
   for (let i of randomNums) {
-    console.log(i)
     resultArray.push(videoArray[i])
   }
   return (
     <div className="youtub-container">
       {resultArray.map((urlPath, index) => (
         <>
-          {console.log(urlPath)}
           <ReactPlayer
             key={index}
-            className="youConPlayer"
+            className={"youConPlayer"+index}
             url={urlPath}
             height="450px"
             playing={true}

@@ -41,7 +41,7 @@ const FoodBoard = ({ userObj, date }) => {
       setData(outputArray)
     })
   }, [date])
-
+  //key작업 필요함.
   return (
     <div className="Food">
       <h3>+ 식단</h3>

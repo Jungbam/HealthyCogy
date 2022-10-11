@@ -27,7 +27,7 @@ const RequireLogin = () => {
               로그인
             </button>
           </div>
-          <ul className="requireloginDiv">
+          <ul className="requireNavDiv">
             <li>
               <NavLink
                 style={{ textDecoration: 'none', color: 'white' }}

@@ -157,22 +157,6 @@ const Mento = () => {
                 <span className="mentoringTextBox">{data.text}</span>
               </div>
             ))}
-            {/* {mentoDataArray.map((data, index) => (
-              <div
-                className={
-                  data.user === data.mento ? 'talkBox-left' : 'talkBox-right'
-                }
-                key={index}
-              >
-                <div className="mentoringUserBox">
-                  <img
-                    className="userMentoringProfile"
-                    src={data.photoURL}
-                  ></img>
-                </div>
-                <span className="mentoringTextBox">{data.text}</span>
-              </div>
-            ))} */}
           </div>
           <div className="mentoComunityChatContainer">
             <input

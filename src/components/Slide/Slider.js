@@ -40,7 +40,6 @@ export default function Slider(props) {
       </Text>
 
       <SliderContainer ref={slideRef}>
-        {/* {img.map((item)=>(<Slide>{item}</Slide>))} */}
         <Slide img={img[0]} />
         <Slide img={img[1]} />
         <Slide img={img[2]} />
