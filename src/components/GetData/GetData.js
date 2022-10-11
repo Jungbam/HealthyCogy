@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { dbService } from '../../fbase'
 import dayjs from 'dayjs'
 import classes from './GetData.module.css'
-import EditModal from './EditModal/EditModal'
 import TipWindow from '../TipWindow/TipWindow'
 
 const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
@@ -26,14 +25,12 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
     })
   }, [date])
   const deleteHandler = async (docId) => {
-    const ok = window.confirm('진짜로 지우게?')
+    const ok = window.confirm(
+      `[확인]을 누르면 해당 내용이 삭제됩니다. 해당 내용을 수정하시려면   기록하기를 통해 수정해주세요.`,
+    )
     if (ok) {
       await dbService.collection('healthycogy').doc(docId.createdId).delete()
     }
-  }
-
-  const editCallHandler = async (docId) => {
-    setPage(<EditModal editDoc={docId} shutDownHandler={shutDownHandler} />)
   }
 
   return (
@@ -42,9 +39,15 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
         <h2>달력에서</h2>
         <h2> 정보가져오기</h2>
         <hr></hr>
-        <p>원하는 해당 일자를 클릭하면 내 기록을 볼 수 있어요.</p>
-        <p>일자를 선택하면 운동루틴 추천이 떠요.</p>
-        <p>운동루틴을 정하면 루틴에 맞는 영상이 플레이됩니다.</p>
+        <ul>
+          <li className="TipLi">
+            원하는 해당 일자를 클릭하면 내 기록을 볼 수 있어요.
+          </li>
+          <li className="TipLi">일자를 선택하면 운동루틴 추천이 떠요.</li>
+          <li className="TipLi">
+            운동루틴을 정하면 루틴에 맞는 영상이 플레이됩니다.
+          </li>
+        </ul>
       </TipWindow>
       {data.length === 0 ? (
         <div className={classes.diaryContainer}>
@@ -56,25 +59,21 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
           </h2>
         </div>
       ) : (
-        data.map((data) => (
-          <div key={Math.random()}>
+        data.map((data, index) => (
+          <div key={index}>
             <div onClick={deleteHandler.bind(null, data)}>
               <ul>
-                <li>
-                  <span>+ 운동</span>
-                  <br />
-                  {data.routin}{' '}
-                </li>
-                <li>
-                  <span>+ 식단</span>
+                <span className={classes.GetDataBoxTitle}>+ 운동</span>
+                <li className={classes.mealLi}>{data.routin} </li>
+                <span className={classes.GetDataBoxTitle}>+ 식단</span>
+                <li className={classes.mealLi}>
                   <br />
                   아침 : {data.breakfast}
                 </li>
-                <li>점심 : {data.lunch}</li>
-                <li>저녁 : {data.dinner}</li>
+                <li className={classes.mealLi}>점심 : {data.lunch}</li>
+                <li className={classes.mealLi}>저녁 : {data.dinner}</li>
               </ul>
             </div>
-            <button onClick={editCallHandler.bind(null, data)}>수정</button>
           </div>
         ))
       )}

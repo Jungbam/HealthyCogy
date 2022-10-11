@@ -57,6 +57,12 @@
   font-family: 'ImcreSoojin';
   flex-direction: column;
 }
+.requireloginDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .google {
   font: inherit;
   margin-left: 10px;
@@ -66,9 +72,13 @@
   margin-top: 1px;
   margin-left: auto;
   border-radius: 10px;
+  cursor: pointer;
 }
-@media only screen and (max-width:780px){
-  .logininfo{font-size: 14px;}
-  #page_logo a{font-size: 35px;}
+@media only screen and (max-width: 780px) {
+  .logininfo {
+    font-size: 14px;
   }
-  
+  #page_logo a {
+    font-size: 35px;
+  }
+}

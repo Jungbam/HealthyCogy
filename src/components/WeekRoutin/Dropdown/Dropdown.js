@@ -45,7 +45,6 @@ const Dropdown = ({ data, userId, dateId }) => {
       if (selectedDataRoutin.length === 0) {
         setRoutinDataExist([])
       } else {
-        // console.log('입력 값', selectedDataRoutin[0].routin)
         setRoutinDataExist(selectedDataRoutin[0].routin)
       }
     })
@@ -75,7 +74,6 @@ const Dropdown = ({ data, userId, dateId }) => {
     basicRoutinArray.splice(IndexNumber, 1)
     setInputResultArray(basicRoutinArray)
   }
-  // console.log('입력완료', routinDataExist)
   const routinInputHandler = async () => {
     await dbService
       .collection('MyRoutin')
@@ -123,9 +121,11 @@ const Dropdown = ({ data, userId, dateId }) => {
           {dateId} 루틴 보기
         </button>
         <ul className={!showing ? 'dropdown-menu' : 'dropdown-menu show'}>
-          <span className="closedrop" onClick={closeDropdownHandler}>
-            X
-          </span>
+          <p className="closedropParent">
+            <span className="closedrop" onClick={closeDropdownHandler}>
+              X
+            </span>
+          </p>
           <div>
             <strong>오늘의 운동 : </strong>
             <select onChange={selectHandler} value={inputRoutin}>
@@ -158,7 +158,9 @@ const Dropdown = ({ data, userId, dateId }) => {
                 />
               ))
             : '배열이 아닙니다.'}
-          <button onClick={routinInputHandler}>나의 루틴으로 등록</button>
+          <button className="droproutinBtn" onClick={routinInputHandler}>
+            나의 루틴으로 등록
+          </button>
         </ul>
       </div>
     </div>

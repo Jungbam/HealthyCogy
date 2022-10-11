@@ -1,5 +1,8 @@
 .RoutinVideoContainer {
   width: 100%;
   height: 400px;
-  overflow: -moz-hidden-unscrollable;
+  margin-top: 1rem;
+}
+.RoutinVideoContainer h2 {
+  font-size: 3rem;
 }
