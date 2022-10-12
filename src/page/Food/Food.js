@@ -181,7 +181,7 @@ const Food = (props) => {
         <div className="textBox">
           <h2>박보람 다이어트 식단</h2>
           <div className="textCon">
-            <h3 className="h3-tex">무려 33kg 감량! 체질까지 바꾸는 식단!</h3>
+            <h3 className="h3-tex">33kg 감량! 체질까지 바꾸는 식단!</h3>
             <h4 className="h4-tex">
               1. 하루 먹을 양을 나누어 먹는다고 생각하기
             </h4>

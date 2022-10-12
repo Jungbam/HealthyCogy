@@ -66,6 +66,7 @@ const InputModal = (props) => {
         <div className={classes.content}>
           <label htmlFor="part">운동</label>
           <select onChange={handleSelect} value={inputRoutin}>
+            <option value={null || ''}>루틴 선택</option>
             <option value={'lowerbody' || ''}>lowerbody</option>
             <option value={'back' || ''}>back</option>
             <option value={'chest' || ''}>chest</option>
