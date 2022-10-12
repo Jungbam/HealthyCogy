@@ -12,6 +12,8 @@ export default function YouCon() {
       const dataArray = snapshot.docs.map((doc) => ({
         ...doc.data(),
       }))
+      console.log(dataArray)
+
       const selectedRoutinArray = dataArray.filter((data) => {
         return data.routin === 'basic'
       })
@@ -42,7 +44,7 @@ export default function YouCon() {
         <>
           <ReactPlayer
             key={index}
-            className={"youConPlayer"+index}
+            className={'youConPlayer' + index}
             url={urlPath}
             height="450px"
             playing={true}

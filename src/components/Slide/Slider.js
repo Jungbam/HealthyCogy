@@ -62,8 +62,9 @@ const Button = styled.div`
   all: unset;
   padding: 1em 2em;
   margin: 2em 2em;
-  color: burlywood;
+  color: black;
   border-radius: 10px;
+  background-color : green
   border: 1px solid burlywood;
   cursor: pointer;
   &:hover {
@@ -75,11 +76,11 @@ const SliderContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   margin-bottom: 2em;
-  display: flex; // 이미지들을 가로로 나열합니다.
+  display: flex;
 `
 const Text = styled.div`
   text-align: center;
-  color: burlywood;
+  color: black;
   p {
     color: #fff;
     font-size: 20px;
