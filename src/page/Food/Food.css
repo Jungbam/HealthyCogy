@@ -5,7 +5,7 @@
 }
 
 .enterContainer {
-  padding: 11rem;
+  padding: 11rem 0;
   width: 80%;
   margin: 0 auto;
   margin-top: 10rem;
@@ -252,9 +252,9 @@
   #hunger {
     display: none;
   }
-  .enterContainer {
+  /* .enterContainer {
     justify-content: flex-start;
-  }
+  } */
   .enterContainer h1 {
     font-family: 'ImcreSoojin';
     margin-bottom: 2rem;

@@ -13,7 +13,7 @@ const RequireLogin = () => {
       <div id="page_logo">
         <a href="/">헬시코기</a>
       </div>
-      <nav>
+      <nav className="navLogContainer">
         <div className="containerBox">
           <div className="requireloginDiv">
             <label className="logininfo" htmlFor="googleLogin">
