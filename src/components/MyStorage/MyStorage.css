@@ -29,6 +29,8 @@
     width: 60%;
   }
   .diaryContainer {
+    font-size: 8px;
+    padding: 2rem 0 0 0;
     width: 40%;
   }
   .inmydiary {
@@ -74,83 +76,23 @@
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 414px) {
-  .MyStorage {
-    flex-direction: column;
-    margin: 0;
-    max-width: 414px;
 
-    justify-content: center;
+@media only screen and (max-width: 320px) {
+  .MyStorage {
+    max-width: 320px;
   }
   .CalendarContainer {
     flex-direction: column;
-    width: 100%;
-    height: auto;
-    margin: 0 20px;
   }
   .react-calendar {
     width: 100%;
   }
   .diaryContainer {
+    font-size: 8px;
+    padding: 5px 0;
     width: 100%;
   }
-  .inmydiary {
-    width: 100%;
-  }
-  .WeekContainer {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin: 0 1rem;
-  }
-  .BoardContainer {
-    width: 100%;
-    margin: 10px 20px;
-  }
-  .dummyText {
-    font-size: 10px;
-  }
-  .RoutinVideoContainer h2 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-  }
-  .imgclick {
-    font-size: 1rem;
-  }
-}
-@media only screen and (max-width: 390px) {
-  .MyStorage {
-    flex-direction: column;
-    margin: 0;
-    justify-content: center;
-  }
-  .CalendarContainer {
-    width: 100%;
-    height: auto;
-    margin: 0 20px;
-    margin-top: 90px;
-  }
-  .WeekContainer {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    height: auto;
+  .formContainer input {
     width: 96%;
-    margin: 0 20px;
-  }
-  .BoardContainer {
-    width: 100%;
-    margin: 10px 20px;
-  }
-  .dummyText {
-    font-size: 10px;
-  }
-  .RoutinVideoContainer h2 {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-  .imgclick {
-    font-size: 1rem;
   }
 }

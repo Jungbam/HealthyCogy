@@ -13,17 +13,15 @@
   border-radius: 10%;
   box-shadow: 5px 5px 5px 5px gray;
 }
-label {
+.nab {
   font-size: 20px;
   padding: 10px;
 }
-input {
-  height: 20px;
+.weight {
+  font-size: 20px;
+  padding: 10px;
 }
-form {
-  width: 500px;
-  height: 70px;
-}
+
 .bmiButton {
   font-family: 'ImcreSoojin';
   display: block;
@@ -88,182 +86,9 @@ form {
 }
 @media only screen and (max-width: 768px) {
   .BMIpage {
-    width: 100%;
     height: 890px;
   }
-  .cal {
-    width: 95%;
-  }
-  .title {
+  .imgEl {
     width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (max-width: 414px) {
-  .BMIpage {
-    width: 100%;
-    height: 830px;
-  }
-  .cal {
-    width: 95%;
-  }
-  .title {
-    width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .BMIpage {
-    width: 100%;
-    height: 890px;
-  }
-  .cal {
-    width: 95%;
-  }
-  .title {
-    width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .BMIpage {
-    width: 100%;
-  }
-  .cal {
-    width: 95%;
-  }
-  .title {
-    width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
-  }
-}
-@media only screen and (max-width: 414px) {
-  .BMIpage {
-    width: 100%;
-    height: 750px;
-  }
-  .cal {
-    width: 95%;
-  }
-  .title {
-    width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .BMIpage {
-    width: 100%;
-    height: 700px;
-  }
-  .cal {
-    width: 95%;
-  }
-  .title {
-    width: 100%;
-    margin: 0;
-  }
-  .bmiform {
-    width: 100%;
-    padding: auto;
-  }
-  #height {
-    width: 70px;
-  }
-  #weight {
-    width: 70px;
-  }
-  .imgresult {
-    width: 100%;
-    padding: 0 auto;
-  }
-  .result {
-    font-size: 1.4rem;
   }
 }

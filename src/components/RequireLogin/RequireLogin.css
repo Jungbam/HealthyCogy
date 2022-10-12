@@ -102,8 +102,3 @@ li a {
     font-size: 30px;
   }
 }
-@media only screen and (max-width: 768px) {
-  .logininfo {
-    display: none;
-  }
-}

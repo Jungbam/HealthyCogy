@@ -35,5 +35,6 @@
 @media only screen and (max-width: 980px) {
   .dataBox {
     width: 100%;
+    padding: 0;
   }
 }

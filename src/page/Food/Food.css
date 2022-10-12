@@ -218,11 +218,8 @@
     padding: auto;
   }
   .enterContainer {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
+    width: 90%;
     flex-wrap: wrap;
-    align-content: space-around;
   }
   .enterContainer h1 {
     font-family: 'ImcreSoojin';
@@ -245,25 +242,17 @@
   .flexFoodBox {
     width: 100%;
     height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
     flex-wrap: wrap;
   }
   .imgContent {
     flex-direction: column;
-    width: 100%;
-    margin: 0;
-    background-color: rgb(188, 230, 183);
-    background-image: url('/Img/candy.png');
   }
   #hunger {
     display: none;
   }
   .enterContainer {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
     justify-content: flex-start;
   }
   .enterContainer h1 {
@@ -274,186 +263,33 @@
     margin: 7rem auto 3rem auto;
     margin-top: 7rem;
   }
-}
-
-@media only screen and (max-width: 768px) {
-}
-@media only screen and (max-width: 414px) {
-  .flexFoodBox {
-    width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  .ab {
+    top: 90px;
   }
-  .flexFoodBox img {
-    width: 90%;
-    height: 40%;
-  }
+}
+@media only screen and (max-width: 480px) {
   .imgContent {
-    flex-direction: row;
-    width: 100%;
+    height: 1000px;
+  }
+  .enterContainer {
+    flex-direction: column-reverse;
+  }
+  .flexFoodBox {
+    padding-top: 50px;
+    width: 96%;
     height: 800px;
-    margin: 0;
-    background-color: rgb(188, 230, 183);
-    background-image: url('/Img/candy.png');
-  }
-  .main-container {
-    height: 770px;
-  }
-  #hunger {
-    display: none;
-  }
-  .sicdanContainer {
-    padding: auto;
-  }
-  .enterContainer h1 {
-    font-family: 'ImcreSoojin';
-    margin-bottom: 2rem;
-    font-size: 1.3rem;
+    display: block;
   }
   .imgsic {
     margin: 0 auto;
-    margin-top: 1rem;
+    width: 95%;
   }
-  .textBox {
-    width: 90%;
-    height: 300px;
-    margin: 40px auto;
-  }
-  .textBox button {
-    margin: 0;
-    padding: 5px;
-  }
-  .h3-tex {
-    font-size: 1rem;
-  }
-  .h4-tex {
-    font-size: 1.2rem;
+  .ab {
+    top: 80px;
   }
 }
-@media only screen and (max-width: 390px) {
-  .flexFoodBox {
-    width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .flexFoodBox img {
-    width: 90%;
-    height: 40%;
-  }
-  .imgContent {
-    flex-direction: row;
-    width: 100%;
-    height: 700px;
-    margin: 0;
-    background-color: rgb(188, 230, 183);
-    background-image: url('/Img/candy.png');
-  }
-  .main-container {
-    height: 695px;
-  }
-  #hunger {
-    display: none;
-  }
-  .sicdanContainer {
-    padding: auto;
-  }
-  .enterContainer {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    justify-content: flex-start;
-  }
-  .enterContainer h1 {
-    font-family: 'ImcreSoojin';
-    margin-bottom: 2rem;
-    font-size: 1.3rem;
-  }
-  .imgsic {
-    margin: 0 auto;
-    margin-top: 1rem;
-  }
-  .textBox {
-    width: 90%;
-    height: 300px;
-    margin: 20px auto;
-  }
-  .textBox button {
-    margin: 0;
-    padding: 5px;
-  }
-  .h3-tex {
-    font-size: 1rem;
-  }
-  .h4-tex {
-    font-size: 1.3rem;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .flexFoodBox {
-    width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-  .flexFoodBox img {
-    width: 90%;
-    height: 40%;
-  }
-  .imgContent {
-    flex-direction: column;
-    width: 100%;
-    height: 600px;
-    margin: 0;
-    background-color: rgb(188, 230, 183);
-    background-image: url('/Img/candy.png');
-  }
-  .main-container {
-    height: 530px;
-  }
-  #hunger {
-    display: none;
-  }
-  .sicdanContainer {
-    padding: auto;
-    width: 100px;
-    height: 100px;
-    margin-right: 30px;
-  }
-  .enterContainer {
-    margin: 0;
-    padding: 0 auto;
-    display: flex;
-    flex-direction: row-reverse;
-    width: 40%;
-    justify-content: flex-start;
-  }
-  .enterContainer h1 {
-    font-family: 'ImcreSoojin';
-    margin-bottom: 2rem;
-    font-size: 1.3rem;
-  }
-  .imgsic {
-    margin: 0 auto;
-    margin-top: 1rem;
-  }
-  .textBox {
-    width: 90%;
-    height: 170px;
-    margin: 0 auto;
-  }
-  .textBox button {
-    margin: 0;
-    padding: 5px;
-  }
-  .h3-tex {
-    font-size: 1rem;
-  }
-  .h4-tex {
-    font-size: 0.5rem;
-  }
-  .textBox h2 {
-    margin: 0;
+@media only screen and (max-width: 320px) {
+  .ab {
+    top: 70px;
   }
 }
