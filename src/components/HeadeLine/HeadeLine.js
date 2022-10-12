@@ -54,18 +54,16 @@ const HeadeLine = (props) => {
               </li>
             </ul>
           </div>
-          <p className="name">
-            <strong>{props.user.displayName}</strong>님 반갑습니다.
-          </p>
-          <div className="aa">
-            <img className="userProfile" src={props.user.photoURL}></img>
-            <NavLink to="/" style={{ textDecoration: 'none' }}>
-              <div>
+          <div className="userProfileBox">
+            <p className="name">{props.user.displayName}님 반갑습니다.</p>
+            <div className="IfLogBox">
+              <img className="userProfile" src={props.user.photoURL}></img>
+              <NavLink to="/" style={{ textDecoration: 'none' }}>
                 <button className="logoutBtn" onClick={logoutHandler}>
                   로그아웃
                 </button>
-              </div>
-            </NavLink>
+              </NavLink>
+            </div>
           </div>
           <input type="checkbox" id="icon" />
           <label htmlFor="icon">

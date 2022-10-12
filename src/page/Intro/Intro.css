@@ -36,6 +36,7 @@ body {
   margin: 0 auto;
   display: flex;
   width: 100%;
+  flex-direction: row;
   justify-content: space-around;
 }
 .content-container {
@@ -47,6 +48,7 @@ body {
 .fixedContent {
   padding: 0.5rem;
   border-radius: 10px;
+  margin-right: 20px;
   background-color: rgb(136, 214, 73);
   border: 1px solid green;
   top: 15rem;
@@ -81,8 +83,38 @@ button {
   .youConPlayer1 {
     display: none;
   }
+  .youConPlayer2 {
+    width: 50%;
+  }
+  .youConPlayer3 {
+    width: 50%;
+  }
 }
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1024px) {
+  .background-Img {
+    background-image: url('/Img/backImgMiddle.png');
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .container {
+    width: 50%;
+  }
+  .container img {
+    width: 200px;
+    height: 200px;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  .containerimg {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 786px) {
+  main {
+    width: 100%;
+  }
   .chucheon-container {
     flex-direction: row;
   }
@@ -98,12 +130,6 @@ button {
   }
   .background-Img {
     background-image: url('/Img/backImgMin.png');
-  }
-  .player2 {
-    width: 50%;
-  }
-  .player3 {
-    width: 50%;
   }
   .containerimg {
     width: 100px;

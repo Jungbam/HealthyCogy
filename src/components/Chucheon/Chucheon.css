@@ -13,9 +13,9 @@
   object-fit: cover;
   border-radius: 50%;
 }
-.containerimg{
- margin: 0 auto;
- width: 400px;
+.containerimg {
+  margin: 0 auto;
+  width: 400px;
 }
 .food_items h2 {
   margin-bottom: 2rem;
@@ -23,9 +23,8 @@
 .food_items .text {
   padding: 1.5rem;
 }
-.containertext{
+.containertext {
   display: flex;
-
 }
 .text {
   float: left;
@@ -38,17 +37,4 @@
 .content {
   display: flex;
   justify-content: space-around;
-}
-
-/* pc 버전 */
-@media only screen and (min-width:300px){
-}
-
-/* 테블릿 버전        */
-@media only screen and (min-width:780px){
-}
-
-/* 스마트폰 버전 */
-@media only screen and (min-width:1200px){
-  /* 데스크톱 CSS*/
 }

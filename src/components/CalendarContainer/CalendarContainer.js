@@ -29,15 +29,17 @@ const CalendarContainer = ({ date, userObj, setDate, setIsSetDate }) => {
       <div></div>
       <Calendar calendarType="US" onChange={onChange} value={date} />
       <div>{page}</div>
-      <button className="inmydiary" onClick={callInputHandler}>
-        {month}월 {day}일 나의 운동 기록하기
-      </button>
-      <GetData
-        userObj={userObj}
-        date={date}
-        setPage={setPage}
-        shutDownHandler={shutDownHandler}
-      />
+      <div className="diaryContainer">
+        <button className="inmydiary" onClick={callInputHandler}>
+          {month}월 {day}일 나의 운동 기록하기
+        </button>
+        <GetData
+          userObj={userObj}
+          date={date}
+          setPage={setPage}
+          shutDownHandler={shutDownHandler}
+        />
+      </div>
     </div>
   )
 }
