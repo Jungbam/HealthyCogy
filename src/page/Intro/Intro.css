@@ -79,17 +79,7 @@ body {
 button {
   cursor: pointer;
 }
-@media only screen and (max-width: 1200px) {
-  .youConPlayer1 {
-    display: none;
-  }
-  .youConPlayer2 {
-    width: 50%;
-  }
-  .youConPlayer3 {
-    width: 50%;
-  }
-}
+
 @media only screen and (max-width: 1024px) {
   .background-Img {
     background-image: url('/Img/backImgMiddle.png');
@@ -114,6 +104,15 @@ button {
 @media only screen and (max-width: 786px) {
   main {
     width: 100%;
+  }
+  .youConPlayer1 {
+    display: none;
+  }
+  .youConPlayer2 {
+    width: 50%;
+  }
+  .youConPlayer3 {
+    width: 50%;
   }
   .chucheon-container {
     flex-direction: row;
