@@ -50,9 +50,6 @@
     width: 100%;
     margin: 10px auto;
   }
-  .dummyText {
-    font-size: 20px;
-  }
 }
 @media only screen and (max-width: 820px) {
   .MyStorage {
@@ -88,9 +85,6 @@
   }
   .BoardContainer {
     width: 100%;
-  }
-  .imgclick {
-    font-size: 1rem;
   }
 }
 
