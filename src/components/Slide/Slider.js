@@ -60,8 +60,8 @@ const Container = styled.div`
 `
 const Button = styled.div`
   all: unset;
-  padding: 1em 2em;
-  margin: 0.5em 2em;
+  padding: 4px;
+  margin: 0.5em;
   color: black;
   border-radius: 10px;
   background-color : green
