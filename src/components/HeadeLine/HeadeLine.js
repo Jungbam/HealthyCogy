@@ -71,7 +71,7 @@ const HeadeLine = (props) => {
             <span></span>
             <span></span>
           </label>
-          <div id="header">
+          <div className="header">
             <ul id="headerHambergerUl">
               {props.isMento ? (
                 <li>
