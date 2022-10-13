@@ -51,7 +51,7 @@ const GetData = ({ userObj, date, setPage, shutDownHandler }) => {
       </TipWindow>
       {data.length === 0 ? (
         <div className={classes.diaryContainer}>
-          <h1 className="input">내용을 입력해주세요.</h1>
+          <h2 className="input">내용을 입력해주세요.</h2>
           <br></br>
           <h2 className="input">
             기록하고 싶은 해당 일자를 누르고 △ 입력하기 버튼을 누르면 입력할 수

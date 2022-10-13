@@ -39,23 +39,23 @@ const MyPicture = ({ userObj, date }) => {
     <div className="mypictureContainer">
       {beforeWeekData.length === 1 ? (
         <div>
-          <h2>일주일 전 내모습</h2>
+          <p>일주일 전 내모습</p>
           <img className="mypicture" src={beforeWeekData} />
         </div>
       ) : (
         <div>
-          <h2 className="dummyText">일주일 전 내 모습이 없어요.</h2>
+          <p className="dummyText">일주일 전 내 모습이 없어요.</p>
           <img src="./Img/bodycheckbefore.png" className="dummyImg"></img>
         </div>
       )}
       {data.length === 1 ? (
         <div>
-          <h2>오늘의 내모습</h2>
+          <p>오늘의 내모습</p>
           <img className="mypicture" src={data} />
         </div>
       ) : (
         <div>
-          <h2 className="dummyText">오늘의 당신의 뱃살을 올려주세요.</h2>
+          <p className="dummyText">오늘의 당신의 뱃살을 올려주세요.</p>
           <img src="./Img/bodycheckafter.png" className="dummyImg"></img>
         </div>
       )}

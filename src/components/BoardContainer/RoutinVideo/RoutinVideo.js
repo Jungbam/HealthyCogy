@@ -92,7 +92,7 @@ const RoutinVideo = ({ userObj, date }) => {
   }
   return (
     <div className="RoutinVideoContainer">
-      <h2> 일일 추천 운동 영상</h2>
+      <p> 일일 추천 운동 영상</p>
       <Slider {...settings}>
         {resultArray.map((urlPath, index) => (
           <ReactPlayer
