@@ -63,9 +63,23 @@
     justify-content: center;
     box-sizing: border-box;
   }
-  .WeekContainer {
-    display: flex;
+  .CalendarContainer {
+    flex-direction: column;
+  }
+  .react-calendar {
     width: 100%;
+  }
+  .diaryContainer {
+    font-size: 8px;
+  }
+  .diaryContainer {
+    padding: 5px 0;
+    width: 100%;
+  }
+  .WeekContainer {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
     margin: 0 auto;
     margin-top: 0.5rem;
   }
@@ -81,17 +95,7 @@
   .MyStorage {
     max-width: 320px;
   }
-  .CalendarContainer {
-    flex-direction: column;
-  }
-  .react-calendar {
-    width: 100%;
-  }
-  .diaryContainer {
-    font-size: 8px;
-    padding: 5px 0;
-    width: 100%;
-  }
+
   .formContainer input {
     width: 96%;
   }
