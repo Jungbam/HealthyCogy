@@ -63,6 +63,9 @@
     justify-content: center;
     box-sizing: border-box;
   }
+  .formContainer input {
+    width: 90%;
+  }
   .CalendarContainer {
     flex-direction: column;
   }
@@ -94,9 +97,5 @@
 @media only screen and (max-width: 320px) {
   .MyStorage {
     max-width: 320px;
-  }
-
-  .formContainer input {
-    width: 96%;
   }
 }
