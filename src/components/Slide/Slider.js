@@ -53,15 +53,15 @@ export default function Slider(props) {
   )
 }
 const Container = styled.div`
-  width: 430px;
+  width: 300px;
   margin: auto;
-  height: 400px;
+  height: 380px;
   overflow: hidden; // 선을 넘어간 이미지들은 숨겨줍니다.
 `
 const Button = styled.div`
   all: unset;
   padding: 1em 2em;
-  margin: 2em 2em;
+  margin: 0.5em 2em;
   color: black;
   border-radius: 10px;
   background-color : green
