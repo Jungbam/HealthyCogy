@@ -166,7 +166,7 @@ const Mento = () => {
               onChange={onChangementoringTextHandler}
               onKeyUp={enterkey}
             ></input>
-            <button onClick={enterkey}>Enter</button>
+            <button onClick={enterClickHandler}>Enter</button>
           </div>
         </div>
       ) : (
