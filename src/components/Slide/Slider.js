@@ -55,7 +55,7 @@ export default function Slider(props) {
 const Container = styled.div`
   width: 300px;
   margin: auto;
-  height: 380px;
+  height: 420px;
   overflow: hidden; // 선을 넘어간 이미지들은 숨겨줍니다.
 `
 const Button = styled.div`
