@@ -105,6 +105,9 @@ button {
   main {
     width: 100%;
   }
+  .youtub-containe {
+    justify-content: space-around;
+  }
   .youConPlayer1 {
     display: none;
   }
