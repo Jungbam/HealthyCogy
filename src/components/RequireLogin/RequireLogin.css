@@ -98,6 +98,9 @@ li a {
   .containerBox {
     flex-direction: column;
   }
+  .requireNavDiv a {
+    font-size: 1rem;
+  }
 }
 @media only screen and (max-width: 480px) {
   .headerDiv ul li {
@@ -114,62 +117,14 @@ li a {
   .headerDiv ul li {
     padding-top: 0;
   }
-  .requireNavDiv a {
-    font-size: 2rem;
-  }
 }
 @media only screen and (max-width: 360px) {
   #page_logo a {
     font-size: 25px;
   }
-  .requireNavDiv a {
-    font-size: 1.5rem;
-  }
 }
 @media only screen and (max-width: 325px) {
   #page_logo a {
-    /* font-size: 17px; */
+    font-size: 17px;
   }
 }
-/*
-@media only screen and (max-width: 768px) {
-  .headerDiv {
-    max-width: 768px;
-    padding-right: 40px;
-  }
-  input[id='icon'] + label > span {
-    display: block;
-  }
-  .header1 {
-    display: none;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .headerDiv {
-    max-width: 480px;
-  }
-
-  #page_logo {
-    font-size: 30px;
-  }
-  #icon:checked + label + #header {
-    width: 200px;
-  }
-}
-@media only screen and (max-width: 375px) {
-  .headerDiv {
-    max-width: 375px;
-  }
-}
-@media only screen and (max-width: 335px) {
-  #page_logo {
-    font-size: 20px;
-  }
-}
-@media only screen and (max-width: 320px) {
-  .headerDiv {
-    max-width: 320px;
-  }
-}
-
-*/
