@@ -51,7 +51,8 @@
     ![image](https://user-images.githubusercontent.com/108196588/197661089-92cae6c7-7f88-4b27-a73c-2572940ec3dc.png)
     
     - 디자인 시스템 개발 후 프로젝트 진행에 대한 필요성
-    - 
+    
     - 테일윈드, ant-design 등 css 라이브러리 사용을 통한 반응형 등 디자인에 할애되는 시간 단축 필요
 
 *** Firebase 할당량 문제로 인하여 배포중단 ☞ 시연영상 개제 
+    - on Child를 이용해서 데일리나 시간대별로 데이터를 분산하고 realtime DB에서 firestore로 데이터를 백업해주는 식으로 해결방법 모색도 가능할지도...(feat.태오)
